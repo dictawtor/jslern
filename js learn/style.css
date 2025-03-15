@@ -1,0 +1,131 @@
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Navigation Bar Styles */
+  .navg {
+    background: rgba(187, 191, 235, 0.299);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    padding: 3px;
+    position: fixed;
+  }
+  
+  /* Logo Image Styles */
+  .logoimg img {
+    width: 70px;
+    height: 70px;
+    padding: 0 5px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 90px;   /* change the width as needed */
+    height: 90px;  /* change the height as needed */
+    border-radius: 50%;  /* makes it circular */
+    object-fit: cover;   /* ensures the image covers the element */
+    border: 2px solid #e43d12;  /* optional border styling */
+  }
+  
+  /* Profile Photo Styles */
+  .profile-photo {
+    width: 120px;   /* adjust width as needed */
+    height: 120px;  /* adjust height as needed */
+    border-radius: 50%;  /* circular shape */
+    object-fit: cover;   /* ensures the image covers the element */
+    border: 2px solid #e43d12;  /* optional border styling */
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    list-style: none;
+    padding: 0 5px;
+  }
+  
+  /* Link Styles */
+  .navbar a {
+    text-decoration: none;
+    color: #e43d12;
+  }
+  
+  /* Navbar List Item Styles */
+  .navbar ul,
+  li {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+  }
+  
+  /* Logo Name Styles */
+  .logo_Name {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 20px;
+    padding: 0 9px;
+    color: #e43d12;
+  }
+  
+  /* Main Container Styles */
+  .mainb {
+    height: 90vh;
+    display: flex;
+    padding-top: 80px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Main Board Styles */
+  .mainbord {
+    height: 800px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  
+  /* Sidebar Styles */
+  .side {
+    display: flex;
+    background: #ffffff;
+    height: 800px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  
+  /* Aside Styles */
+  aside {
+    width: 25%;
+  }
+  
+  /* Main Content Styles */
+  main {
+    width: 75%;
+  }
+  
+  /* Aside and Main Shared Styles */
+  aside,
+  main {
+    box-shadow: 0 2px 2px 0 rgb(224, 228, 237);
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid #e3c6be;
+    border-radius: 10px;
+    background: #ffffff;
+  }
+  
+  /* Paragraph Styles */
+  p {
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+  }
+  
