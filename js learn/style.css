@@ -18,19 +18,16 @@
   
   /* Logo Image Styles */
   .logoimg img {
-    width: 70px;
-    height: 70px;
-    padding: 0 5px;
-    border-radius: 50%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 90px;   /* change the width as needed */
-    height: 90px;  /* change the height as needed */
-    border-radius: 50%;  /* makes it circular */
-    object-fit: cover;   /* ensures the image covers the element */
-    border: 2px solid #e43d12;  /* optional border styling */
-  }
+      padding: 0 5px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 90px;   /* change the width as needed */
+      height: 90px;  /* change the height as needed */
+      border-radius: 50%;  /* makes it circular */
+      object-fit: cover;   /* ensures the image covers the element */
+      border: 2px solid #e43d12;  /* optional border styling */
+    }
   
   /* Profile Photo Styles */
   .profile-photo {

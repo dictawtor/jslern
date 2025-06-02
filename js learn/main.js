@@ -1,4 +1,3 @@
-
 // تمرین ترو و فالس
 
 // const price1 = 10;
@@ -199,23 +198,23 @@
 // for ( let i = 0  ; i < numbers.length ; i++) {
 //   if (numbers[i] % 2 === 0) {
 //     evenNumbers.push(numbers[i])
-    
-//   } 
+
+//   }
 // }
 // console.log(evenNumbers);
- //challenge star  
- // in male mane
+//challenge star
+// in male mane
 // let star = []
 // for(let i = 1 ; i <= 5 ; i++){
 //     if (i <= 5) {
 //         // const star = i
 //         star.push(i)
 //         console.log(...star);
-        
+
 //     }
-    
+
 // }
-// inm male ostad 
+// inm male ostad
 // for (let i = 1 ; i <= 5 ;i++){
 //     let string = " "
 //     for (let j = 1 ; j <= i ; j++){
@@ -235,13 +234,9 @@
 //   ) {
 //     newArray.push(current);
 //   }
-    
-    
+
 // }
 // console.log(newArray);
-
-
-
 
 // function
 // function showMessage() {
@@ -260,36 +255,34 @@
 //   const result = a + b;
 //   console.log(result);
 // }
-// sum(2, 3); 
+// sum(2, 3);
 
-//مبحث return  در فانکشن 
+//مبحث return  در فانکشن
 
 /**
  * مبحث return در فانکشن:
- * 
+ *
  * در جاوااسکریپت، کلمه کلیدی `return` برای بازگرداندن مقدار از یک تابع استفاده می‌شود.
  * زمانی که تابعی به دستور `return` می‌رسد، اجرای تابع متوقف شده و مقدار مشخص‌شده به جایی که تابع فراخوانی شده بازگردانده می‌شود.
  * اگر در تابع از `return` استفاده نشود، مقدار بازگشتی تابع به طور پیش‌فرض `undefined` خواهد بود.
- * 
+ *
  * مثال:
- * 
+ *
  * function sum(a, b) {
  *   return a + b;
  * }
- * 
+ *
  * const result = sum(2, 3); // مقدار result برابر با 5 خواهد بود
- * 
+ *
  * نکته: بعد از اجرای دستور `return`، هیچ کدی در ادامه‌ی تابع اجرا نخواهد شد.
  */
 
 // function sum(a, b) {
 //     // return a + b; // مقدار حاصل جمع را باز می‌گرداند
-//     // console.log("This line will not be executed"); // این خط هرگز اجرا نخواهد شد  
+//     // console.log("This line will not be executed"); // این خط هرگز اجرا نخواهد شد
 // }
 // const result = sum(2, 3);
 // console.log(result);
-
-
 
 /**
  * مبحث Scope (دامنه متغیرها) در جاوااسکریپت:
@@ -307,7 +300,7 @@
  *    متغیرهایی که با let یا const درون یک بلاک ({ ... }) تعریف می‌شوند، فقط در همان بلاک قابل دسترسی هستند.
  *
  * مثال:
- * 
+ *
  * let a = 10; // Global Scope
  * function test() {
  *   let b = 20; // Function Scope
@@ -333,15 +326,15 @@
  * - Function Expressionها (تخصیص تابع به متغیر) مانند متغیرها رفتار می‌کنند و فقط اعلان متغیر Hoist می‌شود.
  *
  * مثال:
- * 
+ *
  * console.log(a); // undefined
  * var a = 5;
- * 
+ *
  * foo(); // "Hello"
  * function foo() {
  *   console.log("Hello");
  * }
- * 
+ *
  * // اما:
  * bar(); // TypeError: bar is not a function
  * var bar = function() {
@@ -351,13 +344,11 @@
  * استفاده صحیح از Hoisting باعث جلوگیری از خطاهای رایج و افزایش خوانایی کد می‌شود.
  */
 
-
-
 // "use strict"; // فعال کردن حالت سختگیرانه
 
 // در strict mode:
 // 1. متغیرها حتما باید با let, const یا var تعریف شوند
-// 2. حذف متغیرها و توابع ممنوع است 
+// 2. حذف متغیرها و توابع ممنوع است
 // 3. استفاده از this در سطح global به undefined اشاره می‌کند
 // 4. تکرار نام پارامتر در تابع مجاز نیست
 // 5. استفاده از کلمات رزرو شده برای نام متغیر ممنوع است
@@ -371,11 +362,11 @@
 
 // strict mode یک مکانیزم برای نوشتن کد تمیزتر و امن تر در JavaScript است
 
-//function expression چیه 
+//function expression چیه
 // function expression یک نوع تعریف تابع است که در آن تابع به یک متغیر نسبت داده می‌شود.
-// این نوع تعریف تابع به ما اجازه می‌دهد که تابع را به عنوان یک مقدار به متغیرها، آرایه‌ها یا اشیاء نسبت دهیم.    
+// این نوع تعریف تابع به ما اجازه می‌دهد که تابع را به عنوان یک مقدار به متغیرها، آرایه‌ها یا اشیاء نسبت دهیم.
 // function expression به دو صورت تعریف می‌شود:
-// 1. با استفاده از کلمه کلیدی `function` و نام تابع (Function Declaration) 
+// 1. با استفاده از کلمه کلیدی `function` و نام تابع (Function Declaration)
 // 2. بدون نام (Anonymous Function) که به یک متغیر نسبت داده می‌شود
 // function expression به ما اجازه می‌دهد که توابع را به عنوان مقادیر در جاوااسکریپت استفاده کنیم.
 
@@ -384,35 +375,32 @@
 // این نوع تعریف تابع به ما اجازه می‌دهد که تابع را به عنوان یک مقدار به متغیرها، آرایه‌ها یا اشیاء نسبت دهیم.
 // function declaration به ما اجازه می‌دهد که توابع را به عنوان مقادیر در جاوااسکریپت استفاده کنیم.
 
-
-
-
-//IIFE (Immediately Invoked Function Expression)  
+//IIFE (Immediately Invoked Function Expression)
 // یک الگوی طراحی در جاوااسکریپت است که به ما اجازه می‌دهد که یک تابع را بلافاصله پس از تعریف آن اجرا کنیم.
- //مثال 
+//مثال
 // (function() {
-//     console.log("This is an IIFE");  
+//     console.log("This is an IIFE");
 // })(); // بلافاصله اجرا می‌شود
 
 // arrow function
-// یک نوع تعریف تابع در جاوااسکریپت است که با استفاده از علامت `=>` تعریف می‌شود.    
+// یک نوع تعریف تابع در جاوااسکریپت است که با استفاده از علامت `=>` تعریف می‌شود.
 // این نوع تعریف تابع به ما اجازه می‌دهد که توابع را به صورت مختصرتر و با سینتکس ساده‌تری تعریف کنیم.
 // example
-// const add = (a, b) => a + b; 
+// const add = (a, b) => a + b;
 // const result = add(2, 3);
-// console.log(result); // 5 
+// console.log(result); // 5
 
 //callback function
 // یک تابع است که به عنوان آرگومان به یک تابع دیگر ارسال می‌شود و در آن تابع اجرا می‌شود.
 // این الگو به ما اجازه می‌دهد که توابع را به صورت غیرهمزمان اجرا کنیم و از نتایج آن‌ها در زمان مناسب استفاده کنیم.
-// مثال 
+// مثال
 // function greet(name, callback) {
-//     console.log(`Hello, ${name}!`);  
+//     console.log(`Hello, ${name}!`);
 //     callback(); // اجرای تابع callback
-// }    
+// }
 // function sayGoodbye() {
 //     console.log("Goodbye!");
-// }    
+// }
 // greet("Morteza", sayGoodbye); // خروجی: Hello, Morteza! \n Goodbye!
 // //example 2
 // function fetchData(callback) {
@@ -428,17 +416,16 @@
 // function processData(data, callback) {
 //     const processedData = data.map(item => item * 2); // پردازش داده‌ها
 //     callback(processedData); // اجرای تابع callback با داده‌های پردازش‌شده
-// }   
+// }
 // const numbers = [1, 2, 3, 4, 5];
 // processData(numbers, (result) => {
 //     console.log("Processed data:", result); // خروجی: Processed data: [2, 4, 6, 8, 10]
-// }); 
-
+// });
 
 //Challange :Write a functhion to finde the count of a letter in string
 
 // function countLetter (str , Letter){
-//    let count = 0;       
+//    let count = 0;
 //     for (let i = 0; i < str.length; i++) {
 //       if(str[i] === Letter) {
 //         count++
@@ -449,15 +436,13 @@
 //  const result = countLetter( "hi i am morteza" , "i")
 //  console.log(result); // 2
 
-
-
 //   for Each   چیه
 //   forEach یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بر روی هر عنصر آرایه یک تابع را اجرا کنیم.
 //   این متد به صورت زیر استفاده می‌شود:
 // array.forEach((element) => {
 //     // کد مورد نظر برای هر عنصر
 // });
-//example 
+//example
 // const numbers = [1, 2, 3, 4, 5];
 // numbers.forEach((number) => {
 //     console.log(number);
@@ -469,7 +454,7 @@
 // // 4
 // // 5
 // // این متد به ما اجازه می‌دهد که بر روی هر عنصر آرایه یک تابع را اجرا کنیم و از آن برای انجام عملیات مختلف بر روی عناصر آرایه استفاده کنیم.
-// // نکته: متد forEach هیچ مقداری را بازنمی‌گرداند و فقط برای اجرای یک تابع بر روی هر عنصر آرایه استفاده می‌شود.    
+// // نکته: متد forEach هیچ مقداری را بازنمی‌گرداند و فقط برای اجرای یک تابع بر روی هر عنصر آرایه استفاده می‌شود.
 // // مثال دیگر
 // const fruits = ["apple", "banana", "orange"];
 // fruits.forEach((fruit) => {
@@ -478,12 +463,12 @@
 // // خروجی:
 // // apple
 // // banana
-// // orange   
+// // orange
 
 // map
-// map یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بر روی هر عنصر آرایه یک تابع را اجرا کنیم و نتیجه آن را در یک آرایه جدید ذخیره کنیم.   
+// map یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بر روی هر عنصر آرایه یک تابع را اجرا کنیم و نتیجه آن را در یک آرایه جدید ذخیره کنیم.
 // این متد به صورت زیر استفاده می‌شود:
-// array.map((element) => { 
+// array.map((element) => {
 //     // کد مورد نظر برای هر عنصر
 //     return newValue; // مقدار جدید برای عنصر
 // });
@@ -494,7 +479,7 @@
 // });
 // console.log(doubledNumbers); // خروجی: [2, 4, 6, 8, 10]
 // // این متد به ما اجازه می‌دهد که بر روی هر عنصر آرایه یک تابع را اجرا کنیم و نتیجه آن را در یک آرایه جدید ذخیره کنیم.
-// نکته: متد map یک آرایه جدید با مقادیر جدید بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد. 
+// نکته: متد map یک آرایه جدید با مقادیر جدید بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد.
 // مثال دیگر
 // const fruits = ["apple", "banana", "orange"];
 // const fruitLengths = fruits.map((fruit) => {
@@ -502,7 +487,7 @@
 // });
 // console.log(fruitLengths); // خروجی: [5, 6, 6]
 // // این متد به ما اجازه می‌دهد که بر روی هر عنصر آرایه یک تابع را اجرا کنیم و نتیجه آن را در یک آرایه جدید ذخیره کنیم.
-// نکته: متد map یک آرایه جدید با مقادیر جدید بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد. 
+// نکته: متد map یک آرایه جدید با مقادیر جدید بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد.
 
 //find
 // find یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
@@ -519,11 +504,11 @@
 // console.log(foundNumber); // خروجی: 4
 // // این متد به ما اجازه می‌دهد که اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
 // نکته: اگر هیچ عنصری با شرط مشخص شده مطابقت نداشته باشد، متد find مقدار undefined را برمی‌گرداند.
- //findIndex
+//findIndex
 // findIndex یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا ایندکس اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
 // این متد به صورت زیر استفاده می‌شود:
 // array.findIndex((element) => {
-//     // شرط مورد نظر برای پیدا کردن عنصر  
+//     // شرط مورد نظر برای پیدا کردن عنصر
 //     return condition; // اگر شرط برقرار باشد، ایندکس عنصر را برمی‌گرداند
 // });
 // example
@@ -533,5 +518,145 @@
 // });
 // console.log(foundIndex); // خروجی: 3
 // // این متد به ما اجازه می‌دهد که ایندکس اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
-// نکته: اگر هیچ عنصری با شرط مشخص شده مطابقت نداشته باشد، متد findIndex مقدار -1 را برمی‌گرداند.    
-vsdv
+// نکته: اگر هیچ عنصری با شرط مشخص شده مطابقت نداشته باشد، متد findIndex مقدار -1 را برمی‌گرداند.
+
+//filter
+// filter یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا عناصری را که با شرط مشخص شده مطابقت دارند، پیدا کنیم و در یک آرایه جدید ذخیره کنیم.
+// این متد به صورت زیر استفاده می‌شود:
+// array.filter((element) => {
+//     // شرط مورد نظر برای پیدا کردن عناصر
+//     return condition; // اگر شرط برقرار باشد، عنصر را در آرایه جدید قرار می‌دهد
+// });
+// example
+// const numbers = [1, 2, 3, 4, 5];
+// const filteredNumbers = numbers.filter((number) => {
+//     return number > 3; // پیدا کردن اعداد بزرگتر از 3
+// });
+// console.log(filteredNumbers); // خروجی: [4, 5]
+// // این متد به ما اجازه می‌دهد که عناصری را که با شرط مشخص شده مطابقت دارند، پیدا کنیم و در یک آرایه جدید ذخیره کنیم.
+
+// نکته: متد filter یک آرایه جدید با عناصری که با شرط مشخص شده مطابقت دارند، بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد.
+
+//reduce
+// reduce یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا یک مقدار واحد را از آرایه محاسبه کنیم.
+// این متد به صورت زیر استفاده می‌شود:
+// array.reduce((accumulator, currentValue) => {
+//     // کد مورد نظر برای محاسبه مقدار جدید
+//     return newValue; // مقدار جدید برای accumulator
+// }, initialValue);
+// example
+// const numbers = [1, 2, 3, 4, 5];
+// const sum = numbers.reduce((accumulator, currentValue) => {
+//     return accumulator + currentValue; // جمع کردن مقادیر
+// }, 0);
+// console.log(sum); // خروجی: 15
+// // این متد به ما اجازه می‌دهد که یک مقدار واحد را از آرایه محاسبه کنیم.
+
+// some & every
+// some یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بررسی کنیم آیا حداقل یک عنصر در آرایه با شرط مشخص شده مطابقت دارد یا خیر.
+// این متد به صورت زیر استفاده می‌شود:
+// array.some((element) => {
+//     // شرط مورد نظر برای بررسی عنصر
+//     return condition; // اگر شرط برقرار باشد، true برمی‌گرداند
+// });
+// example
+// const numbers = [1, 2, 3, 4, 5];
+// const hasEvenNumber = numbers.some((number) => {
+//     return number % 2 === 0; // بررسی وجود عدد زوج
+// });
+// console.log(hasEvenNumber); // خروجی: true
+// // این متد به ما اجازه می‌دهد تا بررسی کنیم آیا حداقل یک عنصر در آرایه با شرط مشخص شده مطابقت دارد یا خیر.
+
+// every یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بررسی کنیم آیا همه عناصر در آرایه با شرط مشخص شده مطابقت دارند یا خیر.
+// این متد به صورت زیر استفاده می‌شود:
+// array.every((element) => {
+//     // شرط مورد نظر برای بررسی عنصر
+//     return condition; // اگر شرط برقرار باشد، true برمی‌گرداند
+// });
+// example
+// const numbers = [1, 2, 3, 4, 5];
+// const allPositive = numbers.every((number) => {
+//     return number > 0; // بررسی مثبت بودن همه اعداد
+// });
+// console.log(allPositive); // خروجی: true
+// // این متد به ما اجازه می‌دهد تا بررسی کنیم آیا همه عناصر در آرایه با شرط مشخص شده مطابقت دارند یا خیر.
+// نکته: متد some اگر حداقل یک عنصر با شرط مشخص شده مطابقت داشته باشد، مقدار true برمی‌گرداند و در غیر این صورت مقدار false. متد every نیز اگر همه عناصر با شرط مشخص شده مطابقت داشته باشند، مقدار true برمی‌گرداند و در غیر این صورت مقدار false.
+
+// Challenge 1. Find customers with age>60 and age<10
+// Challenge 2. Build customer data with title and full name
+
+// const customers = [
+//   {
+//     id: 1,
+//     f_name: "Abby",
+//     l_name: "Thomas",
+//     gender: "M",
+//     married: true,
+//     age: 32,
+//     expense: 500,
+//     purchased: ["Shampoo", "Toys", "Book"],
+//   },
+//   {
+//     id: 2,
+//     f_name: "Jerry",
+//     l_name: "Tom",
+//     gender: "M",
+//     married: true,
+//     age: 64,
+//     expense: 100,
+//     purchased: ["Stick", "Blade"],
+//   },
+//   {
+//     id: 3,
+//     f_name: "Dianna",
+//     l_name: "Cherry",
+//     gender: "F",
+//     married: true,
+//     age: 22,
+//     expense: 1500,
+//     purchased: ["Lipstik", "Nail Polish", "Bag", "Book"],
+//   },
+//   {
+//     id: 4,
+//     f_name: "Dev",
+//     l_name: "Currian",
+//     gender: "M",
+//     married: true,
+//     age: 82,
+//     expense: 90,
+//     purchased: ["Book"],
+//   },
+//   {
+//     id: 5,
+//     f_name: "Maria",
+//     l_name: "Gomes",
+//     gender: "F",
+//     married: false,
+//     age: 7,
+//     expense: 300,
+//     purchased: ["Toys"],
+//   },
+// ];
+// console.log("ok");
+// Challenge 1: Find customers with age > 60 and age < 10
+// const filteredCustomers = customers.filter ( (customers ) => {
+//     return customers.age > 40 || customers.age < 10;
+// })
+// console.log(filteredCustomers);
+// Challenge 2: Build customer data with title and full name
+// const customerData = customers.map((customer) => {
+//   if (customer.gender === "M") {
+//     console.log("hi mr", `${customer.f_name} ${customer.l_name}`);
+//   } else if (customer.married === true) {
+//     console.log("hi mrs", `${customer.f_name} ${customer.l_name}`);
+//   } else {
+//     console.log("hi miss", `${customer.f_name} ${customer.l_name}`);
+//   }
+//   //     return {
+//   //         title: "hi",
+//   //         // f_name: customer.f_name,
+//   //         // l_name: customer.l_name,
+//   //         full_name: `${customer.f_name} ${customer.l_name}`
+//   //     };
+// });
+
