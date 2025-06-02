@@ -660,3 +660,112 @@
 //   //     };
 // });
 
+
+//111 
+//this  در جاوااسکریپت
+// this یک کلمه کلیدی در جاوااسکریپت است که به شیء فعلی اشاره می‌کند که در آن کد اجرا می‌شود.     
+// در محیط‌های مختلف، this می‌تواند به اشیاء مختلف اشاره کند. در اینجا چند مثال از نحوه استفاده از this در جاوااسکریپت آورده شده است:
+// 1. در تابع معمولی:
+// function showThis() {
+//     console.log(this); // در اینجا this به شیء global اشاره می‌کند
+// }
+// showThis(); // خروجی: Window یا global در محیط Node.js
+// 2. در یک شیء:
+// const person = {
+//     name: "Morteza",
+//     showName: function() {
+//         console.log(this.name); // در اینجا this به شیء person اشاره می‌کند   
+//     }
+// };
+// person.showName(); // خروجی: Morteza
+// 3. در کلاس‌ها:
+// class Person {
+//     constructor(name) {
+//         this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
+//     }
+//     showName() {
+//         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
+//     }
+// }
+// }
+// const person1 = new Person("Morteza");
+// person1.showName(); // خروجی: Morteza
+// 4. در رویدادها:
+// const button = document.querySelector("button");
+// button.addEventListener("click", function() {
+//     console.log(this); // در اینجا this به عنصر button اشاره می‌کند
+// });
+// 5. در تابع‌های arrow:
+// const person = {
+//     name: "Morteza",
+//     showName: () => {
+//         console.log(this.name); // در اینجا this به شیء global اشاره می‌کند، زیرا arrow function از this محیط بیرونی خود استفاده می‌کند
+//     }
+// };
+// person.showName(); // خروجی: undefined (اگر در محیط global اجرا شود)
+// 6. در متدهای شیء:
+// const car = {
+//     brand: "Toyota",
+//     showBrand: function() {
+//         console.log(this.brand); // در اینجا this به شیء car اشاره می‌کند
+//     }
+// };
+// car.showBrand(); // خروجی: Toyota
+// 7. در تابع‌های constructor:
+// function Car(brand) {
+//     this.brand = brand; // در اینجا this به شیء جدید اشاره می‌کند
+// }
+//     this.showBrand = function() {
+//         console.log(this.brand); // در اینجا this به شیء فعلی اشاره می‌کند
+//     };
+// }
+// const myCar = new Car("Honda");
+// myCar.showBrand(); // خروجی: Honda
+// 8. در متدهای prototype:
+// function Car(brand) {
+//     this.brand = brand; // در اینجا this به شیء جدید اشاره می‌کند
+// }
+// }
+Car.prototype.showBrand = function() {
+    console.log(this.brand); // در اینجا this به شیء فعلی اشاره می‌کند
+};
+const myCar = new Car("Honda");
+myCar.showBrand(); // خروجی: Honda
+// 9. در تابع‌های callback:
+// function greet(name) {
+//     console.log(`Hello, ${name}!`);
+// }
+// setTimeout(greet, 1000, "Alice"); // خروجی: Hello, Alice!
+// 10. در تابع‌های constructor با استفاده از bind:
+// function Person(name) {
+//     this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
+// }
+//     this.showName = function() {
+//         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
+//     };
+// }
+const person1 = new Person("Morteza");
+const boundShowName = person1.showName.bind(person1);
+boundShowName(); // خروجی: Morteza
+// 11. در تابع‌های constructor با استفاده از call و apply:
+// function Person(name) {
+//     this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
+// }
+//     this.showName = function() {
+//         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند 
+//     };
+// }
+const person1 = new Person("Morteza");
+const person2 = new Person("Ali");
+person1.showName.call(person2); // خروجی: Ali
+// person1.showName.apply(person2); // خروجی: Ali
+// 12. در تابع‌های constructor با استفاده از bind:
+// function Person(name) {
+//     this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
+// }
+//     this.showName = function() {
+//         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
+//     };
+// }
+
+//
