@@ -1018,12 +1018,30 @@
 // // نکته: تابع خالص به ما اجازه می‌دهد تا کدهای قابل پیش‌بینی و تست‌پذیرتری بنویسیم، در حالی که تابع غیرخالص ممکن است باعث ایجاد مشکلاتی در تست و نگهداری کد شود. استفاده از توابع خالص معمولاً توصیه می‌شود زیرا باعث افزایش قابلیت اطمینان و خوانایی کد می‌شود.
 
 //challenge : generate a random integer
-function generateRandomInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-console.log(generateRandomInteger(1, 10)); // خروجی: یک عدد تصادفی بین 1 و 10
-console.log(generateRandomInteger(5, 15)); // خروجی: یک عدد تصادفی بین 5 و 15   
-// نکته: تابع generateRandomInteger یک عدد صحیح تصادفی بین min و max (شامل هر دو) تولید می‌کند. این تابع از Math.random() برای تولید یک عدد تصادفی در بازه [0, 1) استفاده می‌کند و سپس آن را به بازه مورد نظر مقیاس می‌دهد و با Math.floor() به عدد صحیح تبدیل می‌کند. این تابع غیرخالص است زیرا برای هر بار فراخوانی ممکن است خروجی متفاوتی تولید کند.
+// function generateRandomInteger(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+// console.log(generateRandomInteger(1, 10)); // خروجی: یک عدد تصادفی بین 1 و 10
+// console.log(generateRandomInteger(5, 15)); // خروجی: یک عدد تصادفی بین 5 و 15   
+// // نکته: تابع generateRandomInteger یک عدد صحیح تصادفی بین min و max (شامل هر دو) تولید می‌کند. این تابع از Math.random() برای تولید یک عدد تصادفی در بازه [0, 1) استفاده می‌کند و سپس آن را به بازه مورد نظر مقیاس می‌دهد و با Math.floor() به عدد صحیح تبدیل می‌کند. این تابع غیرخالص است زیرا برای هر بار فراخوانی ممکن است خروجی متفاوتی تولید کند.
 
 
 
+// const randomnum = (min, max) => {
+//     if (!min , !max) {
+//         max = min;
+//         min = 0;
+//     }
+//     const result = Math.floor(Math.random() * (max - min + 1)) + min;
+//     return result
+
+// }
+// console.log(randomnum(50));
+
+// date 
+
+
+
+
+
+ 
