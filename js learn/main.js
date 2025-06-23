@@ -1100,4 +1100,131 @@ setTimeout(() => {
 
 //trycatch 
 // try...catch یک ساختار در جاوااسکریپت است که به ما اجازه می‌دهد تا خطاها را مدیریت کنیم و از برنامه‌مان در برابر خطاهای غیرمنتظره محافظت کنیم. این ساختار شامل دو بخش اصلی است: بخش try که کدی را که ممکن است خطا ایجاد کند، در بر می‌گیرد و بخش catch که کدی را که در صورت بروز خطا اجرا می‌شود، در بر می‌گیرد.
-// // مثال ساده از استفاده از try...catch:
+// // مثال ساده از استفاده از try...catch: 
+try {
+    // کدی که ممکن است خطا ایجاد کند
+    console.log(DetermineAge("invalid-date"));
+} catch (error) {
+    // کدی که در صورت بروز خطا اجرا می‌شود
+    console.error("Error occurred:", error);
+}
+// // نکته: در این مثال، تابع DetermineAge با یک تاریخ نامعتبر فراخوانی شده است که باعث ایجاد یک خطا می‌شود. بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا برنامه‌مان را در برابر خطاهای غیرمنتظره محافظت کنیم و از کرش کردن برنامه جلوگیری کنیم.
+// // مثال از استفاده از try...catch برای مدیریت خطاهای شبکه:
+try {
+    // کدی که ممکن است خطا ایجاد کند
+    fetch("https://api.example.com/data")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => console.log(data))
+        .catch(error => {
+            console.error("Error occurred:", error);
+        });
+} catch (error) {
+    // کدی که در صورت بروز خطا اجرا می‌شود
+    console.error("Error occurred:", error);
+}
+// // نکته: در این مثال، از fetch برای دریافت داده‌ها از یک API استفاده شده است. اگر پاسخ شبکه موفقیت‌آمیز نباشد، یک خطا ایجاد می‌شود که در بخش catch مدیریت می‌شود. این ساختار به ما اجازه می‌دهد تا خطاهای شبکه را مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
+// // نکته: استفاده از try...catch به ما اجازه می‌دهد تا برنامه‌مان   را در برابر خطاهای غیرمنتظره محافظت کنیم و از کرش کردن برنامه جلوگیری کنیم. این ساختار به ما امکان می‌دهد تا خطاها را به صورت کنترل‌شده مدیریت کنیم و پیام‌های خطا را به کاربران نمایش دهیم یا اقدامات جایگزین انجام دهیم. 
+// // Challenge: Write a function that uses try...catch to handle JSON parsing errors
+function parseJSON(jsonString) {    
+    try {
+        const parsedData = JSON.parse(jsonString);
+        return parsedData;
+    } catch (error) {
+        console.error("Error parsing JSON:", error);
+        return null; // یا می‌توانید یک مقدار پیش‌فرض برگردانید
+    }
+}
+console.log(parseJSON('{"name": "Morteza", "age": 22}')); // خروجی: { name: 'Morteza', age: 22 }
+console.log(parseJSON('invalid-json')); // خروجی: Error parsing JSON: [SyntaxError: Unexpected token i in JSON at position 0]
+// // نکته: در این مثال، تابع parseJSON یک رشته JSON را می‌پ 
+// ذیرد و سعی می‌کند آن را با استفاده از JSON.parse تجزیه کند. اگر رشته JSON نامعتبر باشد و باعث ایجاد یک خطا شود، بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا خطاهای تجزیه JSON را مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
+// // Challenge: Write a function that uses try...catch to handle errors when accessing object properties
+function getProperty(obj, key) {
+    try {
+        return obj[key];
+    } catch (error) {
+        console.error("Error accessing property:", error);
+        return null; // یا می‌توانید یک مقدار پیش‌فرض برگردانید
+    }
+}
+const user = { name: "Morteza", age: 22 };
+console.log(getProperty(user, "name")); // خروجی: Morteza
+console.log(getProperty(user, "invalidKey")); // خروجی: Error accessing property: [TypeError: Cannot read properties of undefined (reading 'invalidKey')]   
+// // نکته: در این مثال، تابع getProperty یک شیء و یک کلید را می‌پذیرد و سعی می‌کند مقدار مربوط به آن کلید را از شیء دریافت کند. اگر کلید نامعتبر باشد و باعث ایجاد یک خطا شود، بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا خطاهای دسترسی به ویژگی‌های شیء را مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
+// finally
+// finally یک بخش اختیاری در ساختار try...catch است که به ما اجازه می   
+// دهد تا کدی را که باید همیشه اجرا شود، صرف نظر از اینکه خطایی رخ داده است یا نه، در آن قرار دهیم. این بخش معمولاً برای انجام عملیات پاک‌سازی یا آزادسازی منابع استفاده می‌شود.
+// // مثال ساده از استفاده از finally:
+try {
+    // کدی که ممکن است خطا ایجاد کند
+    console.log(getProperty(user, "name"));
+} catch (error) {
+    // کدی که در صورت بروز خطا اجرا می‌شود
+    console.error("Error occurred:", error);
+} finally {
+    // کدی که همیشه اجرا می‌شود
+    console.log("Finally block executed");
+}
+// // نکته: در این مثال، بخش finally همیشه اجرا می‌شود، صرف نظر از اینکه خطایی رخ داده است یا نه. این بخش به ما اجازه می‌دهد تا عملیات پاک‌سازی یا آزادسازی منابع را انجام دهیم.
+// // مثال از استفاده از finally برای بستن یک فایل:
+const fs = require('fs');
+
+let fileHandle;
+try {
+    fileHandle = fs.openSync('example.txt', 'r');
+    // کدی که ممکن است خطا ایجاد کند
+    const data = fs.readFileSync(fileHandle, 'utf8');
+    console.log(data);
+} catch (error) {
+    // کدی که در صورت بروز خطا اجرا می‌شود
+    console.error("Error occurred:", error);
+} finally {
+    // کدی که همیشه اجرا می‌شود
+    if (fileHandle) {
+        fs.closeSync(fileHandle);
+        console.log("File closed");
+    }
+}
+// // نکته: در این مثال، بخش finally همیشه اجرا می‌شود و فایل باز شده را می‌بندد، صرف نظر از اینکه خطایی رخ داده است یا نه. این بخش به ما اجازه می‌دهد تا منابع را آزاد کنیم و از نشت منابع جلوگیری کنیم.
+// // نکته: استفاده از finally به ما اجازه می‌دهد تا کدی را که باید
+// همیشه اجرا شود، صرف نظر از اینکه خطایی رخ داده است یا نه، در یک مکان مشخص قرار دهیم. این ساختار به ما امکان می‌دهد تا عملیات پاک‌سازی یا آزادسازی منابع را به صورت کنترل‌شده انجام دهیم و از نشت منابع جلوگیری کنیم.
+// throw
+// throw یک کلمه کلیدی در جاوااسکریپت است که به ما اجازه می‌دهد تا یک خطا را به صورت دستی پرتاب کنیم. این کار معمولاً زمانی انجام می‌شود که بخواهیم یک وضعیت خطا را شناسایی کنیم و آن را به بالاترین سطح کد (مثلاً یک تابع فراخوانی‌کننده) گزارش دهیم.   
+// // مثال ساده از استفاده از throw:
+function divide(a, b) { 
+    if (b === 0) {
+        throw new Error("Division by zero is not allowed");
+    }
+    return a / b;
+}
+try {
+    console.log(divide(10, 2)); // خروجی: 5
+    console.log(divide(10, 0)); // این خطا را پرتاب می‌کند
+}
+catch (error) {
+    console.error("Error occurred:", error);
+}
+// // نکته: در این مثال، تابع divide بررسی می‌کند که آیا مخرج برابر با صفر است یا نه. اگر مخرج صفر باشد، یک خطا با استفاده از throw پرتاب می‌شود. بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا خطاها را به صورت کنترل‌شده مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
+// // مثال از استفاده از throw برای اعتبارسنجی ورودی:
+function validateInput(input) {
+    if (typeof input !== "number") {
+        throw new Error("Invalid input: Input must be a number");
+    }
+    return true;
+}
+try {
+    validateInput(42); // ورودی معتبر
+    validateInput("not a number"); // این خطا را پرتاب می‌کند
+} catch (error) {
+    console.error("Error occurred:", error);
+}
+// // نکته: در این مثال، تابع validateInput بررسی می‌کند که آیا ورودی یک عدد است یا نه. اگر ورودی معتبر نباشد، یک خطا با استفاده از throw پرتاب می‌شود. بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا ورودی‌ها را اعتبارسنجی کنیم و خطاها را به صورت کنترل‌شده مدیریت کنیم.
+
+//134
+// data structure
+// data structure یا ساختار داده‌ها، روشی برای سازماندهی و ذخیره‌سازی داده‌ها به گونه‌ای است که دسترسی و مدیریت آن‌ها آسان‌تر شود. ساختارهای داده می‌توانند به صورت خطی (مانند آرایه‌ها و لیست‌های پیوندی) یا غیرخطی (مانند درخت‌ها و گراف‌ها) باشند.
