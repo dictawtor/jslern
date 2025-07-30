@@ -1318,3 +1318,56 @@ userMap.deleteUser("sara@example.com");
 userMap.displayUsers(); // خروجی: Email: ali@example.com, Name: Ali, Age: 25    
 // نکته: در این مثال، کلاس UserMap یک Map برای ذخیره اطلاعات کاربران ایجاد می‌کند. متدهای addUser، getUser و deleteUser برای اضافه کردن، دریافت و حذف کاربران استفاده می‌شوند. همچنین متد displayUsers برای نمایش تمام کاربران در Map استفاده می‌شود. این ساختار داده به ما اجازه می‌دهد تا اطلاعات کاربران را به صورت کلید-مقدار ذخیره کنیم و به راحتی به آن‌ها دسترسی پیدا کنیم.
 
+//Sets
+// Set یک ساختار داده در جاوااسکریپت است که به ما اجازه می  ‌دهد تا مجموعه‌ای از مقادیر منحصر به فرد را ذخیره کنیم. این ساختار داده به ما امکان می‌دهد تا مقادیر تکراری را حذف کنیم و به راحتی به مقادیر دسترسی پیدا کنیم.     
+const mySet = new Set();
+mySet.add("value1");
+mySet.add("value2");
+mySet.add("value3");
+console.log(mySet.has("value1")); // خروجی: true
+console.log(mySet.has("value4")); // خروجی: false
+mySet.delete("value2");
+console.log(mySet.size); // خروجی: 2
+mySet.clear();
+console.log(mySet.size); // خروجی: 0    
+// متد های Set
+// Set دارای چندین متد مفید است که به ما در مدیریت داده‌ها کمک می‌کند:    
+// 1. add(value): برای اضافه کردن یک مقدار به Set استفاده می‌شود.
+mySet.add("value4");        
+// 2. has(value): برای بررسی وجود یک مقدار در Set استفاده می‌شود.
+console.log(mySet.has("value4")); // خروجی: true    
+// 3. delete(value): برای حذف یک مقدار از Set استفاده می‌شود.
+mySet.delete("value4");
+console.log(mySet.has("value4")); // خروجی: false
+
+// 4. clear(): برای حذف تمام مقادیر از Set استفاده می‌شود.
+mySet.clear();  
+console.log(mySet.size); // خروجی: 0    
+// 5. size: برای دریافت تعداد مقادیر در Set استفاده می‌شود.
+console.log(mySet.size); // خروجی: 0
+// 6. values(): برای دریافت یک iterator از مقادیر Set استفاده می‌شود.
+const valuesIterator = mySet.values();  
+for (const value of valuesIterator) {
+    console.log("Value:", value);
+}
+// 7. forEach(callback): برای اجرای یک تابع بر روی هر مقدار در Set استفاده می‌شود.
+mySet.forEach((value) => {  
+    console.log("Value:", value);
+});
+// نکته: Set یک ساختار داده بسیار مفید است که به ما اجازه می‌دهد تا مجموعه‌ای از مقادیر منحصر به فرد را ذخیره کنیم و به راحتی به مقادیر دسترسی پیدا کنیم.     
+
+// این ساختار داده به ما امکان می‌دهد تا مقادیر تکراری را حذف کنیم و از مزایای عملکردی بالایی برخوردار است.
+
+
+// Symbols// Symbol یک نوع داده در جاوااسکریپت است که به ما اجازه می‌دهد تا یک مقدار منحصر به فرد و غیرقابل تغییر ایجاد کنیم. این نوع داده معمولاً برای ایجاد کلیدهای منحصر به فرد در اشیاء یا برای شناسایی ویژگی‌های خاص در اشیاء استفاده می‌شود.    
+const mySymbol = Symbol("description");
+console.log(mySymbol); // خروجی: Symbol(description)
+console.log(typeof mySymbol); // خروجی: symbol  
+// نکته: Symbol یک نوع داده منحصر به فرد است که می‌تواند برای ایجاد کلیدهای منحصر به فرد در اشیاء استفاده شود. این نوع داده به ما اجازه می‌دهد تا ویژگی‌های خاصی را در اشیاء تعریف کنیم که با سایر ویژگی‌ها تداخل نداشته باشند.
+// مثال از استفاده از Symbol به عنوان کلید در یک شیء:
+const myObject = {
+    [mySymbol]: "value1",
+    anotherKey: "value2"
+};  
+console.log(myObject[mySymbol]); // خروجی: value1
+console.log(myObject.anotherKey); // خروجی: value2  
