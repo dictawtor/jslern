@@ -1258,6 +1258,63 @@ console.log(myMap.has("key1")); // خروجی: false
 
 // 5. clear(): برای حذف تمام جفت‌های کلید-مقدار از Map استفاده می‌شود.
 myMap.clear();
+
 console.log(myMap.size); // خروجی: 0    
 
+// 6. size: برای دریافت تعداد جفت‌های کلید-مقدار در Map استفاده می‌شود.
+console.log(myMap.size); // خروجی: 0    
+
+// 7. keys(): برای دریافت یک iterator از کلیدهای Map استفاده می‌شود.
+const keysIterator = myMap.keys();
+for (const key of keysIterator) {
+    console.log("Key:", key);
+}
+// 8. values(): برای دریافت یک iterator از مقادیر Map استفاده می‌شود.
+const valuesIterator = myMap.values();
+for (const value of valuesIterator) {
+    console.log("Value:", value);
+}
+// iteration in Map
+// 9. entries(): برای دریافت یک iterator از جفت‌های کلید-مقدار Map استفاده می‌شود.    
+const entriesIterator = myMap.entries();
+for (const [key, value] of entriesIterator) {   
+    console.log(`Key: ${key}, Value: ${value}`);
+}   
+// 10. forEach(callback): برای اجرای یک تابع بر روی هر جفت کلید-مقدار در Map استفاده می‌شود.
+myMap.forEach((value, key) => {
+    console.log(`Key: ${key}, Value: ${value}`);
+});
+// نکته: Map یک ساختار داده بسیار مفید است که به ما اجازه می‌دهد تا داده‌ها را به صورت کلید-مقدار ذخیره کنیم و به راحتی به آن‌ها دسترسی پیدا کنیم. این ساختار داده به ما امکان می‌دهد تا داده‌ها را به صورت غیرترتیبی ذخیره کنیم و از مزایای عملکردی بالایی برخوردار است.
+// Challenge: Create a Map to store user information (name, age, email) and implement methods to add, get, and delete users
+class UserMap {
+    constructor() {
+        this.users = new Map();
+    }
+
+    addUser(name, age, email) {
+        this.users.set(email, { name, age });
+    }
+
+    getUser(email) {
+        return this.users.get(email);
+    }
+
+    deleteUser(email) {
+        this.users.delete(email);
+    }
+
+    displayUsers() {
+        this.users.forEach((user, email) => {
+            console.log(`Email: ${email}, Name: ${user.name}, Age: ${user.age}`);
+        });
+    }
+}
+const userMap = new UserMap();
+userMap.addUser("Morteza", 22, "morteza@example.com");
+userMap.addUser("Ali", 25, "ali@example.com");
+userMap.addUser("Sara", 30, "sara@example.com");
+userMap.displayUsers();
+userMap.deleteUser("sara@example.com");
+userMap.displayUsers(); // خروجی: Email: ali@example.com, Name: Ali, Age: 25    
+// نکته: در این مثال، کلاس UserMap یک Map برای ذخیره اطلاعات کاربران ایجاد می‌کند. متدهای addUser، getUser و deleteUser برای اضافه کردن، دریافت و حذف کاربران استفاده می‌شوند. همچنین متد displayUsers برای نمایش تمام کاربران در Map استفاده می‌شود. این ساختار داده به ما اجازه می‌دهد تا اطلاعات کاربران را به صورت کلید-مقدار ذخیره کنیم و به راحتی به آن‌ها دسترسی پیدا کنیم.
 
