@@ -1371,3 +1371,29 @@ const myObject = {
 };  
 console.log(myObject[mySymbol]); // خروجی: value1
 console.log(myObject.anotherKey); // خروجی: value2  
+// نکته: در این مثال، از Symbol به عنوان یک کلید منحصر به فرد در شیء myObject استفاده شده است. این کلید می‌تواند برای شناسایی ویژگی‌های خاص در شیء استفاده شود و با سایر کلیدها تداخل نخواهد داشت.    
+
+// shared symbols
+// Symbol.for(key) یک متد است که به ما اجازه می‌دهد تا یک Symbol را  با یک کلید مشخص ایجاد کنیم یا به یک Symbol موجود با آن کلید دسترسی پیدا کنیم. این متد به ما اجازه می‌دهد تا Symbols را در سراسر برنامه به اشتراک بگذاریم و از آن‌ها در بخش‌های مختلف کد استفاده کنیم.
+const sharedSymbol = Symbol.for("sharedKey");   
+console.log(sharedSymbol); // خروجی: Symbol(sharedKey)
+console.log(Symbol.keyFor(sharedSymbol)); // خروجی: sharedKey   
+// نکته: در این مثال، از Symbol.for برای ایجاد یک Symbol با کلید "sharedKey" استفاده شده است. اگر یک Symbol با این کلید قبلاً وجود داشته باشد، این متد به آن دسترسی پیدا می‌کند و در غیر این صورت یک Symbol جدید ایجاد می‌کند.
+// مثال از استفاده از Symbol.for برای ایجاد یک Symbol مشترک:
+const anotherSharedSymbol = Symbol.for("sharedKey");
+console.log(anotherSharedSymbol === sharedSymbol); // خروجی: true   
+// نکته: در این مثال، anotherSharedSymbol به همان Symbol که با کلید "sharedKey" ایجاد شده است، اشاره می‌کند. این به ما اجازه می‌دهد تا Symbols را در سراسر برنامه به اشتراک بگذاریم و از آن‌ها در بخش‌های مختلف کد استفاده کنیم.        
+// نکته: استفاده از Symbol.for به ما اجازه می‌دهد تا Symbols را در سراسر برنامه به اشتراک بگذاریم و از آن‌ها در بخش‌های مختلف کد استفاده کنیم. این نوع داده به ما امکان می‌دهد تا ویژگی‌های خاصی را در اشیاء تعریف کنیم که با سایر ویژگی‌ها تداخل نداشته باشند و از مزایای عملکردی بالایی برخوردار است.
+// Challenge: Create a Symbol to represent a unique identifier for a user
+const userIdSymbol = Symbol("userId");  
+const user = {
+    [userIdSymbol]: 12345,
+    name: "Morteza",
+    age: 22
+};
+console.log(user[userIdSymbol]); // خروجی: 12345
+console.log(user.name); // خروجی: Morteza   
+console.log(user.age); // خروجی: 22
+// // نکته: در این مثال، از Symbol به عنوان یک شناسه منحصر به فرد برای کاربر استفاده شده است. این شناسه می‌تواند برای شناسایی منحصر به فرد کاربر در برنامه استفاده شود و با سایر ویژگی‌ها تداخل نخواهد داشت.
+ 
+//start rock paper scissors game
