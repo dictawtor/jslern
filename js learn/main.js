@@ -818,7 +818,7 @@
 // setter و getter دو مفهوم مهم در برنامه‌نویسی شیءگرا هستند که به ما اجازه می‌دهند تا به صورت کنترل‌شده به ویژگی‌های یک شیء دسترسی پیدا کنیم و آن‌ها را تغییر دهیم.
 // setter یک متد است که به ما اجازه می‌دهد تا مقدار یک ویژگی را تنظیم کنیم. این متد معمولاً با پیشوند "set" تعریف می‌شود و یک پارامتر می‌پذیرد که مقدار جدید برای ویژگی است.
 // getter یک متد است که به ما اجازه می‌دهد تا مقدار یک ویژگی را دریافت کنیم. این متد معمولاً با پیشوند "get" تعریف می‌شود و هیچ پارامتری نمی‌پذیرد.// مثال:function Person(name)
- //مثال ساده
+//مثال ساده
 // class Person {
 //     constructor(name) {
 //         this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
@@ -1387,15 +1387,15 @@
 // console.log(userObj.age); // خروجی: 22
 // // // نکته: در این مثال، از Symbol به عنوان یک شناسه منحصر به فرد برای کاربر استفاده شده است. این شناسه می‌تواند برای شناسایی منحصر به فرد کاربر در برنامه استفاده شود و با سایر ویژگی‌ها تداخل نخواهد داشت.
 
-// promises 
-// Promise یک نوع داده در جاوااسکریپت است که به ما اجازه می‌دهد تا عملیات غیرهمزمان را مدیریت کنیم. یک Promise می‌تواند در یکی از سه حالت زیر باشد:
+// promises
+// می‌تواند در یکی از سه حالت زیر باشد: Promise یک نوع داده در جاوااسکریپت است که به ما اجازه می‌دهد تا عملیات غیرهمزمان را مدیریت کنیم. یک // Promise
 // 1. Pending: حالت اولیه، در حال انتظار برای نتیجه
 // 2. Fulfilled: عملیات با موفقیت انجام شده و نتیجه در دسترس است
 // 3. Rejected: عملیات با خطا مواجه شده و دلیل خطا در دسترس است
 
 // مثال از ایجاد یک Promise:
 // const myPromise = new Promise((resolve, reject) => {
-//   const success = false; // فرض کنید عملیات موفقیت‌آمیز بود
+//   const success = true; // فرض کنید عملیات موفقیت‌آمیز بود
 //   if (success) {
 //     resolve("Operation successful");
 //   } else {
@@ -1403,7 +1403,7 @@
 //   }
 // });
 
-// // استفاده از then و catch برای مدیریت نتیجه Promise
+// // // Promise برای مدیریت نتیجه catch و then استفاده از
 // myPromise
 //   .then((result) => {
 //     console.log(result); // خروجی: Operation successful
@@ -1411,9 +1411,62 @@
 //   .catch((error) => {
 //     console.error(error);
 //   });
+const choices = ["rock", "paper", "scissor"];
+let playerScore = 0;
+let computerScore = 0;
 
-// // // نکته: در این مثال، از then برای مدیریت نتیجه موفقیت‌آمیز و از catch برای مدیریت خطا استفاده شده است
+const checkWinner = (player, computer) => {
+  if (player === computer) {
+    return "draw";
+  } else if (player === "rock") {
+    return computer === "scissor" ? "you win" : "you lose";
+  } else if (player === "paper") {
+    return computer === "rock" ? "you win" : "you lose";
+  } else if (player === "scissor") {
+    return computer === "paper" ? "you win" : "you lose";
+  }
+};
+const showResult = (result) => {
+  if (result === "you win") {
+    console.log("win");
+    playerScore++;
+  } else if (result === "you lose") {
+    console.log("loser");
+    computerScore++;
+  } else {
+    console.log("its tie");
+  }
+  console.log(`your score is ${playerScore}`);
+  console.log(`computer score is ${computerScore}`);
+  console.log("--------------------------------------------------------");
+};
+const winCondition = () => {
+  if (playerScore === 5) {
+    console.log("you are the champion");
+  } else if (computerScore === 5) {
+    console.log("computer is the champion");
+  }
+};
 
-// //توضیح this
-// // در جاوااسکریپت، کلمه کلیدی this به شیء فعلی اشاره می‌کند که در آن کد در حال اجرا است. رفتار this ممکن است بسته به نحوه فراخوانی تابع متفاوت باشد. در توابع عادی، this به شیء global (یا undefined در حالت strict) اشاره می‌کند، در حالی که در متدهای شیء، this به شیء والد اشاره می‌کند.    
-
+const play = () => {
+  const playerchoice = prompt("choose rock paper scissor");
+  if (choices.indexOf(playerchoice?.toLowerCase()) !== -1) {
+    console.log(`you choose  ${playerchoice}`);
+  } else {
+    console.log("تغلب نکن عزیزم  :/");
+    return;
+  }
+  const randomnum = Math.floor(Math.random() * choices.length);
+  const computer = choices[randomnum];
+  console.log(`computer choose ${computer}`);
+  const gameresult = checkWinner(playerchoice, computer);
+  showResult(gameresult);
+  winCondition();
+  if (playerScore === 5 || computerScore === 5) {
+    return;
+  } else {
+    play();
+  }
+};
+play();
+ 
