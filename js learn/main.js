@@ -1411,6 +1411,8 @@
 //   .catch((error) => {
 //     console.error(error);
 //   });
+
+//rock paper scissor game
 const choices = ["rock", "paper", "scissor"];
 let playerScore = 0;
 let computerScore = 0;
