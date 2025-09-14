@@ -1473,9 +1473,44 @@
 // play();
 
 
-//Number guse game
-const randomNumbers = Math.floor(Math.random() * 100)
-console.log(randomNumbers);
-const playerchoice = prompt()
-console.log(playerchoice);
+ // 
+  
+ //"Number guess game" //
+
+// const randomNumber = Math.floor(Math.random() * 100);
+
+// let attempts = 1;
+
+// // console.log(`you win in ${attempts} attempts`);
+
+// const play = () => {
+//   let playerchoice = prompt("Guess a number between 0 and 99:");
+//   if (
+//     isNaN(Number(playerchoice)) ||
+//     playerchoice === null ||
+//     playerchoice.trim() === ""
+//   ) {
+//     console.log(`you lose in ${attempts} attempts. `);
+//     return;
+//   }else  if (Number(playerchoice) == randomNumber) {
+//     console.log("you win");
+//   } else if (Number(playerchoice) > randomNumber) {
+//     console.log("your guess is too high");
+//     play();
+//   } else {
+//     console.log("your guess is too low");
+//     play();
+//   }
+
+//   attempts++;
+// };
+// play();
+
+//  DOM => document object model
+//  DOM یک ساختار درختی از عناصر HTML است که به ما اجازه می‌دهد تا به راحتی به عناصر صفحه وب دسترسی پیدا کنیم و آن‌ها را تغییر دهیم.
+//  با استفاده از DOM می‌توانیم:
+//  1. عناصر جدیدی به صفحه اضافه کنیم
+//  2. عناصر موجود را ویرایش کنیم
+//  3. عناصر را حذف کنیم
+//  4. رویدادها را مدیریت کنیم  
 
