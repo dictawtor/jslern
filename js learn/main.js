@@ -1413,62 +1413,69 @@
 //   });
 
 //rock paper scissor game
-const choices = ["rock", "paper", "scissor"];
-let playerScore = 0;
-let computerScore = 0;
+// const choices = ["rock", "paper", "scissor"];
+// let playerScore = 0;
+// let computerScore = 0;
 
-const checkWinner = (player, computer) => {
-  if (player === computer) {
-    return "draw";
-  } else if (player === "rock") {
-    return computer === "scissor" ? "you win" : "you lose";
-  } else if (player === "paper") {
-    return computer === "rock" ? "you win" : "you lose";
-  } else if (player === "scissor") {
-    return computer === "paper" ? "you win" : "you lose";
-  }
-};
-const showResult = (result) => {
-  if (result === "you win") {
-    console.log("win");
-    playerScore++;
-  } else if (result === "you lose") {
-    console.log("loser");
-    computerScore++;
-  } else {
-    console.log("its tie");
-  }
-  console.log(`your score is ${playerScore}`);
-  console.log(`computer score is ${computerScore}`);
-  console.log("--------------------------------------------------------");
-};
-const winCondition = () => {
-  if (playerScore === 5) {
-    console.log("you are the champion");
-  } else if (computerScore === 5) {
-    console.log("computer is the champion");
-  }
-};
+// const checkWinner = (player, computer) => {
+//   if (player === computer) {
+//     return "draw";
+//   } else if (player === "rock") {
+//     return computer === "scissor" ? "you win" : "you lose";
+//   } else if (player === "paper") {
+//     return computer === "rock" ? "you win" : "you lose";
+//   } else if (player === "scissor") {
+//     return computer === "paper" ? "you win" : "you lose";
+//   }
+// };
+// const showResult = (result) => {
+//   if (result === "you win") {
+//     console.log("win");
+//     playerScore++;
+//   } else if (result === "you lose") {
+//     console.log("loser");
+//     computerScore++;
+//   } else {
+//     console.log("its tie");
+//   }
+//   console.log(`your score is ${playerScore}`);
+//   console.log(`computer score is ${computerScore}`);
+//   console.log("--------------------------------------------------------");
+// };
+// const winCondition = () => {
+//   if (playerScore === 5) {
+//     console.log("you are the champion");
+//   } else if (computerScore === 5) {
+//     console.log("computer is the champion");
+//   }
+// };
 
-const play = () => {
-  const playerchoice = prompt("choose rock paper scissor");
-  if (choices.indexOf(playerchoice?.toLowerCase()) !== -1) {
-    console.log(`you choose  ${playerchoice}`);
-  } else {
-    console.log("تغلب نکن عزیزم  :/");
-    return;
-  }
-  const randomnum = Math.floor(Math.random() * choices.length);
-  const computer = choices[randomnum];
-  console.log(`computer choose ${computer}`);
-  const gameresult = checkWinner(playerchoice, computer);
-  showResult(gameresult);
-  winCondition();
-  if (playerScore === 5 || computerScore === 5) {
-    return;
-  } else {
-    play();
-  }
-};
-play();
- 
+// const play = () => {
+//   const playerchoice = prompt("choose rock paper scissor");
+//   if (choices.indexOf(playerchoice?.toLowerCase()) !== -1) {
+//     console.log(`you choose  ${playerchoice}`);
+//   } else {
+//     console.log("تغلب نکن عزیزم  :/");
+//     return;
+//   }
+//   const randomnum = Math.floor(Math.random() * choices.length);
+//   const computer = choices[randomnum];
+//   console.log(`computer choose ${computer}`);
+//   const gameresult = checkWinner(playerchoice, computer);
+//   showResult(gameresult);
+//   winCondition();
+//   if (playerScore === 5 || computerScore === 5) {
+//     return;
+//   } else {
+//     play();
+//   }
+// };
+// play();
+
+
+//Number guse game
+const randomNumbers = Math.floor(Math.random() * 100)
+console.log(randomNumbers);
+const playerchoice = prompt()
+console.log(playerchoice);
+
