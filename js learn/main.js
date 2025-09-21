@@ -1473,9 +1473,7 @@
 // play();
 
 
- // 
-  
- //"Number guess game" //
+ // "Number guess game" //
 
 // const randomNumber = Math.floor(Math.random() * 100);
 
@@ -1513,4 +1511,191 @@
 //  2. عناصر موجود را ویرایش کنیم
 //  3. عناصر را حذف کنیم
 //  4. رویدادها را مدیریت کنیم  
+
+// Single Selectors 
+//توضیح
+// Single selectors به ما این امکان را می‌دهند که تنها یک عنصر خاص را در DOM انتخاب کنیم و به آن دسترسی پیدا کنیم. این کار معمولاً با استفاده از متدهایی مانند getElementById، querySelector و ... انجام می‌شود. 
+
+// مثال:
+// const element = document.getElementById("myElement");
+
+
+// querySelector( ) فقط اولین عنصر را انتخاب می‌کند
+// querySelectorAll( ) تمام عناصر را انتخاب می‌کند       
+// const element = document.querySelector("#myElement"); // id عنصر با شناسه myElement 
+// const allElements = document.querySelectorAll(".myClass"); // class عنصر با کلاس myClass    
+// const secondElement = document.querySelector(".myClass:nth-of-type(2)"); // انتخاب عنصر دوم با کلاس myClass
+// const element = document.getElementById("myElement"); // id عنصر با شناسه myElement
+
+ // multi selectors  
+// const allElements = document.querySelectorAll(".myClass"); // class عنصر با کلاس myClass
+// const element = document.getElementsByTagName("div"); // انتخاب تمام عناصر div  
+// const  element = document.getElementsByClassName("myClass"); // انتخاب تمام عناصر با کلاس myClass   
+
+//child elements
+// const parentElement = document.getElementById("parent");
+// const childElements = parentElement.children; // انتخاب تمام عناصر فرزند
+// // const firstChild = childElements[0]; // انتخاب اولین عنصر فرزند
+// // sibling elements
+// const secondChild = childElements[1]; // انتخاب دومین عنصر فرزند
+// const thirdChild = childElements[2]; // انتخاب سومین عنصر فرزند
+
+// firstParagraph.p = "متن جدید برای پاراگراف اول";
+
+
+// CSS styling
+// const element = document.querySelector(".matn1");
+
+// element.style.color = "red";
+
+//Inserting elements to dom  all 
+
+
+// const newElement = document.createElement("p");
+// newElement.textContent = "متن جدید برای پاراگراف اول";
+// document.body.appendChild(newElement);
+// newElement.innerHTML = "متن جدید برای پاراگراف اول"; // به همراه کد HTML
+// document.body.removeChild(newElement);
+// ایجاد یک عنصر جدید
+// const newDiv = document.createElement("div");
+// // اضافه کردن متن به عنصر جدید
+// newDiv.textContent = "این یک div جدید است که به DOM اضافه شده است.";
+// // اضافه کردن کلاس یا ویژگی به عنصر جدید
+// newDiv.className = "new-div";
+// newDiv.style.backgroundColor = "#f0f0f0";
+// newDiv.style.padding = "10px";
+
+// // اضافه کردن عنصر جدید به انتهای body
+// document.body.appendChild(newDiv);
+
+// // اگر بخواهیم عنصر را قبل از یک عنصر خاص اضافه کنیم:
+// const referenceElement = document.querySelector(".matn1");
+// document.body.insertBefore(newDiv, referenceElement);
+
+// // حذف یک عنصر از DOM
+// // document.body.removeChild(newDiv);
+
+// // نکته: با استفاده از createElement می‌توانیم هر نوع عنصر HTML بسازیم (مانند p، div، span و ...).
+// // با appendChild عنصر را به انتهای والد اضافه می‌کنیم.
+// // با insertBefore عنصر را قبل از یک عنصر خاص قرار می‌دهیم.
+// // با removeChild عنصر را حذف می‌کنیم.
+
+// //ٍٍٍٍEvent توضیح کامل
+const button = document.querySelector(".my-button");
+// button.addEventListener("click", () => {
+//   alert("ماوس روی دکمه قرار گرفت!");
+// });
+// button.addEventListener("mouseover", () => {
+//   alert("ماوس روی دکمه قرار گرفت!");
+//   button.classList.toggle("active");
+// });
+
+// button.addEventListener("mouseleave", () => {
+//   alert("ماوس از روی دکمه خارج شد!");
+//   button.classList.toggle("active");
+// });
+
+
+// button.addEventListener("mousemove", () => {
+//   alert("ماوس روی دکمه قرار گرفت!");
+//   button.classList.toggle("active");
+// });
+
+
+// button.addEventListener("keydown", () => {
+//   alert("کلید روی دکمه فشار داده شد!");
+
+// });.
+
+const Input = document.querySelector("input");
+// Input.addEventListener("change", () => {
   
+
+//   const value = Input.value;
+//   console.log("Input value:", value);
+// });
+
+// Input.addEventListener("focus", () => {
+//   console.log("Input field is focused");
+// });
+
+// Input.addEventListener("blur", () => {
+//   console.log("Input field is blurred");
+// });
+
+// window.addEventListener("load", () => {
+//   console.log("Window is fully loaded");
+// });
+
+// window.addEventListener("resize", () => {
+//   console.log("Window is resized");
+// });
+
+// window.addEventListener("scroll", () => {
+//   console.log("Window is scrolled");
+// });
+
+// window.addEventListener("unload", () => {
+//   console.log("Window is unloading");
+// });
+// //toggle
+// const toggleButton = document.querySelector(".toggle-button");
+// toggleButton.addEventListener("click", () => {
+//   const element = document.querySelector(".toggle-element");
+//   element.classList.toggle("hidden");
+// });
+
+//target 
+// const targetElement = document.querySelector(".target-element");
+
+
+
+
+//prevent default
+// const form = document.querySelector("form");
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   console.log("Form submitted!");
+// });
+
+//stop propagation
+// button.addEventListener("click", (event) => {
+//   event.stopPropagation();
+//   console.log("Button clicked!");
+// });
+
+//remove event listener
+// button.removeEventListener("click", (event) => {  
+//   event.stopPropagation();
+//   console.log("Button clicked!");
+// }); 
+
+//dataset
+// const datasetElement = document.querySelector(".dataset-element");
+// datasetElement.dataset.customProperty = "Custom Value";
+// console.log("Dataset property:", datasetElement.dataset.customProperty);
+//توضیح دیتا ست
+// دیتا ست (Dataset) یک ویژگی در HTML است که به ما این امکان را می‌دهد تا داده‌های سفارشی را به عناصر HTML اضافه کنیم.
+// این داده‌ها به صورت جفت کلید-مقدار ذخیره می‌شوند و می‌توانند از طریق JavaScript به راحتی خوانده و تغییر داده شوند.
+
+// console.log(window.innerHeight, window.innerWidth);
+
+//screen
+// console.log(window.screen.height, window.screen.width);
+// console.log(screen.availHeight, screen.availWidth);
+
+//location
+// console.log(window.location.href = "http://google.com");
+// console.log(window.location.hostname);
+// console.log(window.location.pathname);
+
+//history
+// console.log(window.history.length);
+// window.history.back();
+// window.history.forward();
+// window.history.go(-1);
+
+//navigator
+// console.log(navigator.userAgent);
+// console.log(navigator.platform);
+// console.log(navigator.language);
