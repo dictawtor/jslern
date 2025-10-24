@@ -1699,3 +1699,45 @@ const Input = document.querySelector("input");
 // console.log(navigator.userAgent);
 // console.log(navigator.platform);
 // console.log(navigator.language);
+
+
+//189 client-side storage
+ // دیتا های  پرسیستنت (Persistent Data) توضیح
+ // دیتا های پرسیستنت به داده هایی اطلاق می شود که پس از بسته شدن مرورگر یا بارگذاری مجدد صفحه، همچنان در دسترس باقی می مانند. این نوع داده ها معمولاً در ذخیره سازی محلی (Local Storage) یا ذخیره سازی سشن (Session Storage) مرورگر ذخیره می شوند.
+ //دیتا های ولیدیت (Volatile Data) توضیح
+ // دیتا های ولیدیت به داده هایی اطلاق می شود که تنها در طول یک جلسه کاربر (Session) در دسترس هستند و پس از بسته شدن مرورگر یا بارگذاری مجدد صفحه، از بین می روند. این نوع داده ها معمولاً در حافظه موقت (Memory) ذخیره می شوند و به سرعت قابل دسترسی هستند، اما پس از پایان جلسه کاربر، دیگر در دسترس نخواهند بود.  
+
+
+ //local storage (توضیح)
+ // ذخیره سازی محلی (Local Storage) یک مکان برای ذخیره داده ها در مرورگر است که پس از بسته شدن مرورگر یا بارگذاری مجدد صفحه، داده ها همچنان در دسترس باقی می مانند. این نوع ذخیره سازی به ما این امکان را می دهد تا داده ها را به صورت کلید-مقدار ذخیره کنیم و در هر زمان به آن ها دسترسی داشته باشیم.
+
+//  localStorage.setItem("name", "mohammad"); //تا پنج مگابایت
+//  const data = { name: "mohammad" };
+//  localStorage.setItem("data", JSON.stringify(data));
+
+//  const retrievedData = localStorage.getItem("data");
+//  const parsedData = JSON.parse(retrievedData);
+//  console.log("Retrieved data:", parsedData);
+
+//ویرایش و حذف دیتا
+//  localStorage.setItem("name", "ali");
+//  localStorage.removeItem("name");
+// console.log(localStorage.length);
+// console.log(localStorage.key(0));
+// localStorage.clear();
+
+//sessionStorage
+//  sessionStorage.setItem("name", "mohammad"); //تا پنج مگابایت
+//  const data = { name: "mohammad" };
+//  sessionStorage.setItem("data", JSON.stringify(data));
+
+//  const retrievedData = sessionStorage.getItem("data");
+//  const parsedData = JSON.parse(retrievedData);
+//  console.log("Retrieved data:", parsedData);
+
+//ویرایش و حذف دیتا
+//  sessionStorage.setItem("name", "ali");
+//  sessionStorage.removeItem("name");
+// console.log(sessionStorage.length);
+// console.log(sessionStorage.key(0));
+// sessionStorage.clear();
