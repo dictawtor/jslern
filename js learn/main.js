@@ -1736,8 +1736,12 @@ const Input = document.querySelector("input");
 //  console.log("Retrieved data:", parsedData);
 
 //ویرایش و حذف دیتا
-//  sessionStorage.setItem("name", "ali");
+//  sessionStorage.setItem("name", "ali"); 
 //  sessionStorage.removeItem("name");
 // console.log(sessionStorage.length);
 // console.log(sessionStorage.key(0));
-// sessionStorage.clear();
+// sessionStorage.clear(); 
+
+
+// // cookies  تا ۸۰ کیلوبایت
+//  document.cookie = "name=mohammad; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; max-age=3";
