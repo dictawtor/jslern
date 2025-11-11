@@ -3,9 +3,9 @@ const dateInput = document.getElementById("date-input");
 const addbutton = document.getElementById("add-button");
 const alertMessage = document.getElementById("alert-message");
 const todosBody = document.querySelector("tbody");
-const deletAllButton = document.getElementById ("deleteAll")
+const deleteAllButton = document.getElementById("deleteAll");
 
-const todos = JSON.parse(localStorage.getItem("todos")) || [];
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 const generateId = () => {
   return Math.round(
@@ -31,7 +31,7 @@ const saveTolocalstorage = () => {
 };
 
 const displayTodos = () => {
-  todosBody.innerHTML = ""
+  todosBody.innerHTML = "";
   if (!todos.length) {
     todosBody.innerHTML = "<tr><td colspan = '4'> No Task Found</td></tr>";
     return;
@@ -45,9 +45,9 @@ const displayTodos = () => {
             <td>
                 <button>Edit</button>
                 <button>DO</button>
-                <button>Delete</button>
+                <button onclick="deleteHandler()">Delete</button>
           </td>
-    </tr> `
+    </tr> `;
   });
 };
 
@@ -63,7 +63,7 @@ const addHandler = () => {
   if (task) {
     todos.push(todo);
     saveTolocalstorage();
-    displayTodos()
+    displayTodos();
     taskInput.value = "";
     dateInput.value = "";
     console.log(todos);
@@ -73,8 +73,21 @@ const addHandler = () => {
   }
 };
 
+let deleteAllHandler = () => {
+  if (todos.length) {
+    todos = [];
+    saveTolocalstorage();
+    displayTodos();
+    showAlert(" All todos cleared ", "success");
+  } else {
+    showAlert("No todos to clear", "error");
+  }
+};
+const deleteHandler = () =>{ 
+  console.log("object");
 
+}
 
-window.addEventListener("load" , displayTodos)
+window.addEventListener("load", displayTodos);
 addbutton.addEventListener("click", addHandler);
-deletAllButton.addEventListener("click" , deleteAllHandler)
+deleteAllButton.addEventListener("click", deleteAllHandler);
