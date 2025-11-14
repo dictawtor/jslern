@@ -1745,3 +1745,58 @@ const Input = document.querySelector("input");
 
 // // cookies  تا ۸۰ کیلوبایت
 //  document.cookie = "name=mohammad; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; max-age=3";
+
+//module in js 
+
+// // ماژول‌ها در جاوااسکریپت به ما این امکان را می‌دهند که کدهای خود را به بخش‌های کوچکتر و قابل مدیریت تقسیم کنیم. این کار باعث می‌شود که کدها سازمان‌یافته‌تر و قابل استفاده مجدد باشند.   
+// // export
+// // با استفاده از کلمه کلیدی export می‌توانیم توابع، کلاس‌ها یا متغیرها را از یک ماژول صادر کنیم تا در ماژول‌های دیگر قابل استفاده باشند.
+// // مثال از استفاده از export:
+// // module1.js
+// export const pi = 3.14;
+// export function add(a, b) {
+//   return a + b;
+// }    
+// export class Circle {
+//   constructor(radius) {
+//     this.radius = radius;    
+//   }
+// named export
+//   area() {
+//     return pi * this.radius * this.radius;
+
+//   }
+//import
+// // با استفاده از کلمه کلیدی import می‌توانیم توابع، کلاس‌ها یا متغیرهای صادر شده از یک ماژول دیگر را وارد کنیم و در ماژول فعلی استفاده کنیم.
+// // مثال از استفاده از import:
+// // main.js
+// import { pi, add, Circle } from "./module1.js";
+// console.log("Value of pi:", pi); // خروجی: Value of pi: 3.14
+// console.log("Sum:", add(2, 3)); // خروجی: Sum: 5 
+
+// const myCircle = new Circle(5);
+// console.log("Area of circle:", myCircle.area()); // خروجی: Area of circle: 78.5  
+// // نکته: در این مثال، ماژول module1.js شامل یک متغیر pi، یک تابع add و یک کلاس Circle است که با استفاده از export صادر شده‌اند. در ماژول main.js، این موارد با استفاده از import وارد شده‌اند و می‌توانیم از آن‌ها استفاده کنیم.
+// // default export
+// // با استفاده از کلمه کلیدی export default می‌توانیم یک تابع، کلاس یا متغیر را به عنوان صادر شده پیش‌فرض از یک ماژول تعریف کنیم. این به ما اجازه می‌دهد که هنگام وارد کردن آن ماژول، نیازی به استفاده از نام خاصی نداشته باشیم.         
+// // مثال از استفاده از export default:
+// // module2.js
+// export default function multiply(a, b) { 
+//   return a * b;
+// } 
+// // main2.js
+// import multiply from "./module2.js"; 
+// console.log("Product:", multiply(2, 3)); // خروجی: Product: 6
+// // نکته: در این مثال، ماژول module2.js شامل یک تابع multiply است که با استفاده از export default صادر شده است. در ماژول main2.js، این تابع با استفاده از import وارد شده است و می‌توانیم از آن استفاده کنیم بدون اینکه نیازی به نام خاصی داشته باشیم.
+// // Challenge: Create a module that exports a function to calculate the factorial of a number and import it in another file to use it
+// // factorialModule.js
+// export function factorial(n) {
+//   if (n === 0 || n === 1) {
+//     return 1;    
+//   } else {
+//     return n * factorial(n - 1);
+//   }
+
+
+
+
