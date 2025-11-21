@@ -1,411 +1,942 @@
-# jslern
+# راهنمای جامع یادگیری JavaScript
+
+**نویسنده:** دیکتاتور (Dictator)  
+**تاریخ:** نوامبر 2025  
+**موضوع:** یادگیری کامل اصول JavaScript
 
 ---
 
-### ۱. مبانی جاوا اسکریپت (JavaScript Basics)
+## فهرست مطالب
 
-#### تعریف متغیر و ثابت
-در جاوا اسکریپت برای ذخیره داده‌ها از متغیرها (`let`) و ثابت‌ها (`const`) استفاده می‌کنیم. ثابت‌ها مقادیری هستند که پس از تعریف اولیه، قابل تغییر نیستند.
+1. [مبانی JavaScript و متغیرها](#1-مبانی-javascript-و-متغیرها)
+2. [انواع داده‌ها](#2-انواع-دادهها)
+3. [عملگرها](#3-عملگرها)
+4. [رشته‌های کاراکتری](#4-رشتههای-کاراکتری)
+5. [آرایه‌ها](#5-آرایهها)
+6. [شرط‌های منطقی](#6-شرطهای-منطقی)
+7. [حلقه‌ها](#7-حلقهها)
+8. [توابع](#8-توابع)
+9. [شیء‌ها](#9-شیءها)
+10. [DOM Manipulation](#10-dom-manipulation)
+11. [Event Handling](#11-event-handling)
+12. [Asynchronous Programming](#12-asynchronous-programming)
+
+---
+
+## 1. مبانی JavaScript و متغیرها
+
+### تعریف متغیر
+
+متغیر یک ظرف برای ذخیره داده است. در JavaScript، سه روش برای تعریف متغیر داریم:
+
+| روش | توضیح | مثال |
+|-----|-------|------|
+| `const` | ثابت (نمی‌تواند تغییر کند) | `const age = 26;` |
+| `let` | متغیر (می‌تواند تغییر کند) | `let name = "علی";` |
+| `var` | روش قدیمی (تجنب کنید) | `var city = "تهران";` |
+
+### نکات مهم
+
+✓ از `const` به طور پیش‌فرض استفاده کنید  
+✓ از `let` استفاده کنید هنگامی که نیاز به تغییر دارید  
+✓ از `var` استفاده نکنید (روش قدیمی است)  
+✓ نام متغیرها باید معنی‌دار باشند
+
+### مثال
 
 ```javascript
-// تعریف ثابت‌ها برای قیمت‌ها
-const price1 = 10;
-const price2 = 15;
-const price3 = 4000;
+const name = "علی";        // ثابت
+let age = 26;              // متغیر (می‌تواند تغییر کند)
+console.log(name, age);
+```
 
-// تعریف متغیر برای موجودی حساب
-let balance = 500;
-console.log("موجودی حساب شما:", balance); // خروجی: 500
+---
 
-عملگرهای ریاضی و اولویت آن‌ها
-جاوا اسکریپت از عملگرهای ریاضی استاندارد (+, -, *, /) پشتیبانی می‌کند و اولویت عملیات (ضرب و تقسیم بر جمع و تفریق) را رعایت می‌کند.
-// محاسبه قیمت کل با در نظر گرفتن اولویت عملگرها (ابتدا ضرب)
-const totalPrice = price1 + price2 + price3 * 2; // 10 + 15 + 8000
-console.log("قیمت کل:", totalPrice); // خروجی: 8025
+## 2. انواع داده‌ها
 
-// محاسبه میانگین
-const averagePrice = totalPrice / 4;
-console.log("میانگین قیمت:", averagePrice);
+### اقسام داده در JavaScript
 
-// محاسبه قیمت نهایی با 5% تخفیف
-const finalPrice = totalPrice * 0.95;
-console.log("قیمت نهایی پس از تخفیف:", finalPrice);
+| نوع | توضیح | مثال |
+|------|-------|------|
+| String | متن | `"سلام"` یا `'سلام'` |
+| Number | عدد صحیح یا اعشاری | `42` یا `3.14` |
+| Boolean | true یا false | `true` یا `false` |
+| undefined | مقدار نامعریف‌شده | `undefined` |
+| null | بدون مقدار | `null` |
+| Object | شیء | `{ name: "علی" }` |
+| Array | آرایه | `[1, 2, 3]` |
 
-عملگر شرطی سه‌تایی (Ternary Operator)
-یک راه کوتاه برای نوشتن دستورات if-else است. ساختار آن به این صورت است: شرط ? مقدار در صورت درستی : مقدار در صورت نادرستی.
-const canBuy = balance >= finalPrice;
-const message = canBuy
-  ? "تبریک! شما می‌توانید خرید کنید."
-  : "متاسفانه موجودی شما کافی نیست.";
+### مثال‌ها
 
-console.log(message);
+```javascript
+const text = "سلام";           // String
+const number = 42;              // Number
+const isActive = true;          // Boolean
+const empty = null;             // Null
+let undefValue;                 // Undefined (خودکار)
 
-Template Literals (قالب‌های رشته‌ای)
-این قابلیت به ما اجازه می‌دهد تا متغیرها را به سادگی درون رشته‌ها قرار دهیم. برای این کار از علامت بک‌تیک (`) و ساختار ${variable} استفاده می‌شود.
-const name = "مرتضی";
+// بررسی نوع:
+console.log(typeof text);       // "string"
+console.log(typeof number);     // "number"
+console.log(typeof isActive);   // "boolean"
+```
+
+### Type Coercion (تبدیل نوع خودکار)
+
+```javascript
+console.log("5" + 3);      // "53" (String concatenation)
+console.log(5 + 3);        // 8 (Numeric addition)
+console.log("5" - 3);      // 2 (تبدیل خودکار به عدد)
+```
+
+---
+
+## 3. عملگرها
+
+### عملگرهای ریاضی
+
+| عملگر | توضیح | مثال |
+|-------|-------|------|
+| `+` | جمع | `10 + 5` = 15 |
+| `-` | تفریق | `10 - 5` = 5 |
+| `*` | ضرب | `10 * 5` = 50 |
+| `/` | تقسیم | `10 / 5` = 2 |
+| `%` | باقی‌مانده | `10 % 3` = 1 |
+| `**` | توان | `2 ** 3` = 8 |
+
+### عملگرهای مقایسه
+
+| عملگر | توضیح |
+|-------|-------|
+| `>` | بزرگ‌تر از |
+| `<` | کوچک‌تر از |
+| `>=` | بزرگ‌تر یا مساوی |
+| `<=` | کوچک‌تر یا مساوی |
+| `===` | مساوی دقیق (strict) |
+| `!==` | نامساوی دقیق |
+
+### عملگرهای منطقی
+
+```javascript
+true && false       // AND - false
+true || false       // OR - true
+!true              // NOT - false
+```
+
+### عملگرهای انتساب
+
+```javascript
+let x = 10;
+x += 5;    // x = x + 5   → 15
+x -= 3;    // x = x - 3   → 12
+x *= 2;    // x = x * 2   → 24
+x /= 2;    // x = x / 2   → 12
+```
+
+---
+
+## 4. رشته‌های کاراکتری
+
+### خصوصیات String
+
+```javascript
+const text = "سلام، نام من علی است";
+
+console.log(text.length);        // طول رشته: 22
+console.log(text[0]);            // حرف اول: س
+console.log(text[text.length-1]); // حرف آخر: ت
+```
+
+### متدهای مهم String
+
+| متد | توضیح | مثال |
+|------|-------|------|
+| `toUpperCase()` | تبدیل به بزرگ | `"hello".toUpperCase()` → "HELLO" |
+| `toLowerCase()` | تبدیل به کوچک | `"HELLO".toLowerCase()` → "hello" |
+| `charAt(index)` | حرف در شاخص | `"hello".charAt(0)` → "h" |
+| `indexOf(str)` | شاخص شروع | `"hello".indexOf("ll")` → 2 |
+| `includes(str)` | آیا شامل است | `"hello".includes("ell")` → true |
+| `slice(start, end)` | برش | `"hello".slice(0, 3)` → "hel" |
+| `split(separator)` | تقسیم | `"a,b,c".split(",")` → ["a", "b", "c"] |
+| `replace(old, new)` | جایگزین | `"hello".replace("h", "H")` → "Hello" |
+
+### Template Literals (رشته‌های الگو)
+
+```javascript
+const name = "علی";
 const age = 26;
 
-// روش قدیمی
-// const introductionText = "سلام، نام من " + name + " است و " + age + " سال سن دارم.";
+// روش قدیمی:
+const msg1 = "سلام " + name + " شما " + age + " ساله‌اید";
 
-// روش جدید با Template Literals
-const introductionText = `سلام، نام من ${name} است و من ${age} سال سن دارم.`;
-console.log(introductionText);
+// روش جدید (Template Literal):
+const msg2 = `سلام ${name} شما ${age} ساله‌اید`;
 
-۲. کار با انواع داده (Data Types)
-متدهای اعداد (Number Methods)
- * toString(): یک عدد را به معادل رشته‌ای آن تبدیل می‌کند.
- * toFixed(n): یک عدد را به رشته تبدیل کرده و آن را تا n رقم اعشار گرد می‌کند.
-<!-- end list -->
-const number1 = 50;
-console.log(typeof number1); // خروجی: "number"
+console.log(msg2);
+```
 
-const numberAsString = number1.toString();
-console.log(typeof numberAsString); // خروجی: "string"
+---
 
-const number2 = 50.1354654;
-console.log(number2.toFixed(2)); // خروجی: "50.14" (گرد شده)
+## 5. آرایه‌ها
 
-متدهای رشته‌ها (String Methods)
- * charAt(index): کاراکتر موجود در یک موقعیت (index) خاص را برمی‌گرداند.
- * toUpperCase(): تمام حروف رشته را به حروف بزرگ تبدیل می‌کند.
- * replace(old, new): بخشی از رشته را با یک مقدار جدید جایگزین می‌کند.
- * slice(startIndex, endIndex): قسمتی از رشته را از ایندکس شروع تا پایان برش می‌دهد.
- * indexOf(substring): ایندکس اولین wystąpienie یک زیررشته را پیدا می‌کند.
-چالش ۱: بزرگ کردن حرف اول یک متن
-const text = "hi, i am morteza and i'm a developer";
-const firstLetter = text.charAt(0);
-const upperCaseFirstLetter = firstLetter.toUpperCase();
-const finalText = text.replace(firstLetter, upperCaseFirstLetter);
-console.log(finalText); // خروجی: "Hi, i am morteza and i'm a developer"
+### ایجاد آرایه
 
-چالش ۲: مخفی کردن بخشی از شماره تلفن
-const phone = "09011546532";
-const partToHide = phone.slice(3, 7); // از ایندکس 3 تا 7 را برش می‌دهد
-const finalPhone = phone.replace(partToHide, "****");
-console.log(finalPhone); // خروجی: "090****6532"
+```javascript
+const fruits = ["سیب", "موز", "نارنجی"];
+const numbers = [1, 2, 3, 4, 5];
+const mixed = ["متن", 42, true, null];
 
-چالش ۳: استخراج نام و نام خانوادگی
-const fullName = "Morteza Azami";
-const spaceIndex = fullName.indexOf(" "); // پیدا کردن ایندکس فاصله
-const firstName = fullName.slice(0, spaceIndex);
-const lastName = fullName.slice(spaceIndex + 1);
-const nameDetailsText = `نام شما ${firstName} و نام خانوادگی شما ${lastName} است.`;
-console.log(nameDetailsText);
+console.log(fruits[0]);        // "سیب" (اولین عنصر)
+console.log(fruits.length);    // 3 (تعداد عناصر)
+```
 
-۳. ساختارهای کنترلی (Control Flow)
-دستورات شرطی if, else if, else
-این دستورات به برنامه اجازه می‌دهند بر اساس درستی یا نادرستی یک شرط، کدهای مختلفی را اجرا کنند.
+### متدهای مهم آرایه
+
+#### متدهای تغییردهنده:
+
+| متد | توضیح |
+|------|-------|
+| `push(item)` | اضافه کردن به انتهای آرایه |
+| `pop()` | حذف از انتهای آرایه |
+| `unshift(item)` | اضافه کردن به ابتدای آرایه |
+| `shift()` | حذف از ابتدای آرایه |
+
+#### متدهای غیرتغییردهنده:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// map: تبدیل عناصر
+const doubled = numbers.map(num => num * 2);
+// [2, 4, 6, 8, 10]
+
+// filter: فیلتر کردن عناصر
+const evens = numbers.filter(num => num % 2 === 0);
+// [2, 4]
+
+// reduce: کاهش به یک مقدار
+const sum = numbers.reduce((total, num) => total + num, 0);
+// 15
+
+// forEach: تکرار روی عناصر
+numbers.forEach((num, index) => {
+  console.log(`${index}: ${num}`);
+});
+
+// includes: بررسی وجود عنصر
+console.log(numbers.includes(3));  // true
+
+// indexOf: شاخص عنصر
+console.log(numbers.indexOf(3));   // 2
+
+// slice: برش آرایه
+console.log(numbers.slice(0, 3));  // [1, 2, 3]
+
+// join: ترکیب با جدا‌کننده
+console.log(numbers.join("-"));    // "1-2-3-4-5"
+
+// concat: ترکیب دو آرایه
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+console.log(arr1.concat(arr2));    // [1, 2, 3, 4]
+```
+
+---
+
+## 6. شرط‌های منطقی
+
+### if/else if/else
+
+```javascript
 const age = 20;
 
-if (age >= 18) {
-  console.log("شما یک بزرگسال هستید.");
-} else if (age >= 13) {
-  console.log("شما یک نوجوان هستید.");
+if (age < 18) {
+  console.log("زیر‌سن");
+} else if (age < 65) {
+  console.log("بالغ");
 } else {
-  console.log("شما یک کودک هستید.");
+  console.log("بازنشسته");
 }
+```
 
-چالش: تشخیص نوع مثلث
-const side1 = 5;
-const side2 = 5;
-const side3 = 5;
+### Ternary Operator (عملگر سه‌تایی)
 
-if (side1 === side2 && side2 === side3) {
-  console.log("این یک مثلث متساوی‌الاضلاع است.");
-} else if (side1 === side2 || side1 === side3 || side2 === side3) {
-  console.log("این یک مثلث متساوی‌الساقین است.");
-} else {
-  console.log("این یک مثلث مختلف‌الاضلاع است.");
-}
+```javascript
+const status = age >= 18 ? "بالغ" : "زیر‌سن";
+console.log(status);
+```
 
-دستور switch
-یک جایگزین برای if-else if های تودرتو است که خوانایی کد را در زمان مقایسه یک متغیر با مقادیر مختلف، بالا می‌برد.
+### switch statement
+
+```javascript
 const day = 3;
+let dayName;
 
 switch (day) {
   case 1:
-    console.log("شنبه");
+    dayName = "شنبه";
     break;
   case 2:
-    console.log("یکشنبه");
+    dayName = "یک‌شنبه";
     break;
   case 3:
-    console.log("دوشنبه");
+    dayName = "دوشنبه";
     break;
-  // ... سایر روزها
   default:
-    console.log("روز نامعتبر است.");
-    break;
+    dayName = "نامعلوم";
 }
+```
 
-حلقه‌ها (Loops)
-برای تکرار یک قطعه کد استفاده می‌شوند.
- * for: زمانی که تعداد تکرارها مشخص است.
- * while: تا زمانی که یک شرط برقرار است، تکرار می‌شود.
- * do...while: شبیه while است، با این تفاوت که بدنه حلقه حداقل یک بار اجرا می‌شود.
- * for...of: برای پیمایش اعضای یک آرایه (Array).
- * for...in: برای پیمایش خصوصیات (properties) یک شیء (Object).
-<!-- end list -->
-// حلقه for (شمارش معکوس)
-for (let i = 5; i > 0; i--) {
-  console.log(i);
+### مثال عملی: بررسی نوع مثلث
+
+```javascript
+const side1 = 5, side2 = 5, side3 = 5;
+
+if (side1 + side2 > side3 && 
+    side1 + side3 > side2 && 
+    side2 + side3 > side1) {
+  
+  if (side1 === side2 && side2 === side3) {
+    console.log("مثلث متساوی‌الاضلاع");
+  } else if (side1 === side2 || side2 === side3 || side1 === side3) {
+    console.log("مثلث متساوی‌الساقین");
+  } else {
+    console.log("مثلث مختلف‌الاضلاع");
+  }
+} else {
+  console.log("مثلث نامعتبر");
 }
+```
 
-// حلقه while
-let i = 1;
+---
+
+## 7. حلقه‌ها
+
+### حلقه for
+
+```javascript
+for (let i = 0; i < 5; i++) {
+  console.log(i);  // 0, 1, 2, 3, 4
+}
+```
+
+### حلقه while
+
+```javascript
+let i = 0;
 while (i < 5) {
   console.log(i);
   i++;
 }
+```
 
-// حلقه for...of برای آرایه
-const fruits = ["Apple", "Banana", "Cherry"];
-for (const fruit of fruits) {
-  console.log(fruit);
+### حلقه do...while
+
+```javascript
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+```
+
+### حلقه for...of (برای آرایه‌ها)
+
+```javascript
+const colors = ["قرمز", "سبز", "آبی"];
+
+for (const color of colors) {
+  console.log(color);
 }
+```
 
-// حلقه for...in برای شیء
-const person = {
-  name: "مرتضی",
-  age: 26,
-  job: "توسعه‌دهنده"
-};
+### حلقه for...in (برای شیء‌ها)
+
+```javascript
+const person = { name: "علی", age: 26, city: "تهران" };
+
 for (const key in person) {
   console.log(`${key}: ${person[key]}`);
 }
+```
 
-چالش: چاپ اعداد زوج در یک آرایه
-const numbers = [13, 23, 12, 45, 22, 48, 66, 100];
-const evenNumbers = [];
+### break و continue
 
-for (let i = 0; i < numbers.length; i++) {
-  if (numbers[i] % 2 === 0) {
-    evenNumbers.push(numbers[i]);
-  }
-}
-console.log("اعداد زوج:", evenNumbers); // خروجی: [12, 22, 48, 66, 100]
-
-چالش: چاپ الگوی ستاره (یا عدد)
+```javascript
 for (let i = 1; i <= 5; i++) {
-  let line = "";
-  for (let j = 1; j <= i; j++) {
-    line += j + " ";
-  }
-  console.log(line);
+  if (i === 2) continue;  // از 2 بگذر
+  if (i === 4) break;     // توقف در 4
+  console.log(i);         // 1, 3
 }
-/*
-خروجی:
-1
-1 2
-1 2 3
-1 2 3 4
-1 2 3 4 5
-*/
+```
 
-۴. آرایه‌ها و متدهای آن‌ها (Arrays)
-آرایه‌ها مجموعه‌ای از داده‌ها هستند که می‌توانند از هر نوعی باشند.
-const myArray = ["مرتضی", "اعظمی", 26, true];
-console.log(myArray[1]); // خروجی: "اعظمی"
+---
 
-متدهای مهم آرایه:
- * join(separator): تمام اعضای آرایه را به هم متصل کرده و یک رشته می‌سازد.
- * concat(otherArray): یک آرایه جدید با ترکیب آرایه فعلی و آرایه دیگر می‌سازد.
- * flat(): آرایه‌های تودرتو را به یک آرایه مسطح تبدیل می‌کند.
- * includes(value): بررسی می‌کند که آیا یک مقدار در آرایه وجود دارد یا نه (true یا false برمی‌گرداند).
- * indexOf(value): ایندکس اولین موقعیت یک مقدار را برمی‌گرداند (اگر وجود نداشته باشد، -1 برمی‌گرداند).
- * push(value): یک یا چند عنصر به انتهای آرایه اضافه می‌کند.
-<!-- end list -->
-const newArray = myArray.concat([1, 12, 3]);
-console.log(newArray);
+## 8. توابع
 
-console.log(myArray.includes(26)); // خروجی: true
-console.log(myArray.indexOf("علی")); // خروجی: -1
+### تعریف تابع - روش‌های مختلف
 
-متدهای پیشرفته آرایه (حلقه‌های تابعی)
-این متدها یک تابع (callback function) به عنوان ورودی می‌گیرند و آن را روی اعضای آرایه اجرا می‌کنند.
- * forEach(callback): تابع را برای هر عنصر آرایه اجرا می‌کند (چیزی برنمی‌گرداند).
- * map(callback): یک آرایه جدید با نتایج اجرای تابع بر روی هر عنصر ایجاد می‌کند.
- * filter(callback): یک آرایه جدید از عناصری که شرط داخل تابع برای آن‌ها true است، ایجاد می‌کند.
- * find(callback): اولین عنصری که شرط را برآورده کند، برمی‌گرداند.
- * reduce(callback, initialValue): تمام عناصر آرایه را به یک مقدار واحد (مانند مجموع اعداد) کاهش می‌دهد.
- * some(callback): بررسی می‌کند آیا حداقل یک عنصر شرط را برآورده می‌کند (true/false).
- * every(callback): بررسی می‌کند آیا همه عناصر شرط را برآورده می‌کنند (true/false).
-مثال برای map, filter, reduce
+#### 1. Function Declaration (اعلان تابع)
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3));  // 5
+```
+
+#### 2. Function Expression (عبارت تابع)
+
+```javascript
+const multiply = function(a, b) {
+  return a * b;
+};
+
+console.log(multiply(4, 5));  // 20
+```
+
+#### 3. Arrow Function (تابع پیکان‌دار)
+
+```javascript
+// فرم کوتاه (یک خط):
+const square = x => x * x;
+console.log(square(5));  // 25
+
+// فرم بلند (چندین خط):
+const divide = (a, b) => {
+  if (b === 0) return 0;
+  return a / b;
+};
+```
+
+### پارامترهای پیش‌فرض
+
+```javascript
+function greet(name = "دوست", age = 25) {
+  console.log(`سلام ${name}, ${age} ساله‌ای`);
+}
+
+greet();                  // سلام دوست, 25 ساله‌ای
+greet("علی", 30);        // سلام علی, 30 ساله‌ای
+```
+
+### Rest Parameters (پارامترهای باقی‌مانده)
+
+```javascript
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4, 5));  // 15
+```
+
+### Higher Order Functions (توابع مرتبه‌بالا)
+
+```javascript
+// توابعی که توابع دیگری را درونشان دارند
 const numbers = [1, 2, 3, 4, 5];
 
-// map: همه اعداد را دو برابر کن
-const doubled = numbers.map(num => num * 2);
-console.log(doubled); // خروجی: [2, 4, 6, 8, 10]
+const evens = numbers.filter(n => n % 2 === 0);
+const doubled = numbers.map(n => n * 2);
+const total = numbers.reduce((acc, n) => acc + n, 0);
 
-// filter: فقط اعداد بزرگتر از 3 را نگه دار
-const greaterThanThree = numbers.filter(num => num > 3);
-console.log(greaterThanThree); // خروجی: [4, 5]
+console.log("فیلتر:", evens);      // [2, 4]
+console.log("نقشه:", doubled);     // [2, 4, 6, 8, 10]
+console.log("تقلیل:", total);      // 15
+```
 
-// reduce: همه اعداد را با هم جمع کن
-const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-console.log(sum); // خروجی: 15
+---
 
-۵. توابع (Functions)
-توابع بلاک‌های کدی هستند که برای انجام یک کار مشخص طراحی شده‌اند و می‌توانند بارها فراخوانی شوند.
-انواع تعریف تابع
- * Function Declaration (تعریف اعلانی): این نوع تابع Hoist می‌شود (یعنی می‌توان قبل از تعریف، آن را فراخوانی کرد).
-   showMessage(); // کار می‌کند
-function showMessage() {
-  console.log("سلام!");
-}
+## 9. شیء‌ها
 
- * Function Expression (عبارت تابعی): تابع به یک متغیر اختصاص داده می‌شود و Hoist نمی‌شود.
-   // showGreeting(); // خطا می‌دهد: TypeError
-const showGreeting = function() {
-  console.log("درود!");
-};
-showGreeting();
+### ایجاد شیء
 
- * Arrow Function (تابع پیکانی): یک سینتکس کوتاه‌تر و مدرن‌تر برای نوشتن توابع.
-   const add = (a, b) => a + b;
-console.log(add(5, 3)); // خروجی: 8
-
-پارامتر و return
-توابع می‌توانند مقادیری را به عنوان ورودی (پارامتر) دریافت کرده و یک مقدار را به عنوان خروجی (return) بازگردانند. اگر تابعی return نداشته باشد، به طور پیش‌فرض undefined برمی‌گرداند.
-function multiply(a, b) {
-  return a * b; // نتیجه را به جایی که تابع فراخوانی شده باز می‌گرداند
-}
-
-const result = multiply(4, 5);
-console.log(result); // خروجی: 20
-
-تابع Callback
-تابعی است که به عنوان آرگومان به یک تابع دیگر ارسال می‌شود تا در زمان مناسب اجرا شود. این الگو در جاوا اسکریپت ناهمگام (Asynchronous) بسیار پرکاربرد است.
-function processData(data, callback) {
-  const processedData = data.map(item => item.toUpperCase());
-  callback(processedData); // اجرای تابع callback با داده‌های پردازش‌شده
-}
-
-const names = ["ali", "reza", "sara"];
-
-processData(names, (result) => {
-  console.log("نام‌های پردازش‌شده:", result); // خروجی: ["ALI", "REZA", "SARA"]
-});
-
-۶. مفاهیم پیشرفته جاوا اسکریپت
-Scope (دامنه) و Hoisting (بالا بردن)
- * Scope: مشخص می‌کند که یک متغیر در کدام قسمت‌های کد قابل دسترسی است (سراسری، تابعی، بلاکی).
- * Hoisting: مکانیزم جاوا اسکریپت است که در آن، تعریف متغیرهای var و توابع اعلانی (Function Declarations) به بالای Scope خود منتقل می‌شوند. متغیرهای let و const نیز Hoist می‌شوند اما تا زمان مقداردهی در "Temporal Dead Zone" قرار دارند و قابل استفاده نیستند.
-کلمه کلیدی this
-this به شیئی اشاره می‌کند که تابع در حال اجرا به آن تعلق دارد. مقدار this بسته به نحوه فراخوانی تابع تعیین می‌شود:
- * در یک متد شیء: به خود آن شیء اشاره می‌کند.
- * در یک تابع معمولی (در حالت غیر Strict): به شیء سراسری (window در مرورگر) اشاره می‌کند.
- * در توابع Arrow: مقدار this را از محیط بیرونی (lexical scope) خود به ارث می‌برد.
- * در Event Listener ها: به عنصری که رویداد روی آن رخ داده اشاره می‌کند.
-متدهای call, apply, bind
-این متدها به ما اجازه می‌دهند مقدار this را به صورت دستی برای یک تابع تنظیم کنیم.
- * call(thisArg, arg1, arg2, ...): تابع را با this مشخص شده و آرگومان‌های جداگانه فراخوانی می‌کند.
- * apply(thisArg, [argsArray]): شبیه call است اما آرگومان‌ها را در قالب یک آرایه می‌گیرد.
- * bind(thisArg): یک تابع جدید ایجاد می‌کند که this آن برای همیشه به thisArg متصل (bind) شده است.
-<!-- end list -->
-const person1 = { name: "علی" };
-const person2 = { name: "سارا" };
-
-function greet() {
-  console.log(`سلام، ${this.name}!`);
-}
-
-greet.call(person1); // خروجی: سلام، علی!
-greet.apply(person2); // خروجی: سلام، سارا!
-
-const greetForPerson1 = greet.bind(person1);
-greetForPerson1(); // خروجی: سلام، علی!
-
-Closure (کلوژر)
-یک Closure زمانی ایجاد می‌شود که یک تابع داخلی به متغیرهای تابع بیرونی خود دسترسی داشته باشد، حتی پس از اینکه تابع بیرونی اجرای خود را به پایان رسانده باشد. این قابلیت برای ایجاد متغیرهای خصوصی و حفظ حالت (state) بسیار مفید است.
-function createCounter() {
-  let count = 0; // این متغیر در Closure محبوس می‌شود
-
-  return function() {
-    count++;
-    console.log(count);
-  };
-}
-
-const counter1 = createCounter();
-counter1(); // خروجی: 1
-counter1(); // خروجی: 2
-
-const counter2 = createCounter(); // یک شمارنده جدید و مستقل
-counter2(); // خروجی: 1
-
-Getter و Setter
-متدهایی هستند که به ما اجازه می‌دهند به صورت کنترل‌شده به خصوصیات یک شیء دسترسی پیدا کرده (get) یا آن‌ها را تغییر دهیم (set).
-const user = {
-  firstName: 'مرتضی',
-  lastName: 'س',
-
-  // Getter برای دریافت نام کامل
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
+```javascript
+const person = {
+  name: "علی احمدی",
+  age: 26,
+  city: "تهران",
+  email: "ali@example.com",
+  
+  // متد (تابع داخل شیء):
+  greet: function() {
+    return `سلام، من ${this.name} هستم`;
   },
-
-  // Setter برای تنظیم نام کامل
-  set fullName(value) {
-    const parts = value.split(' ');
-    this.firstName = parts[0];
-    this.lastName = parts[1];
+  
+  // Arrow Function به عنوان متد:
+  getInfo: () => {
+    return `${person.name} - ${person.age} ساله`;
   }
 };
 
-console.log(user.fullName); // Getter فراخوانی می‌شود -> خروجی: مرتضی س
+// دسترسی به ویژگی‌ها:
+console.log(person.name);        // "علی احمدی"
+console.log(person["age"]);      // 26
+console.log(person.greet());     // "سلام، من علی احمدی هستم"
+```
 
-user.fullName = "علی رضایی"; // Setter فراخوانی می‌شود
-console.log(user.firstName); // خروجی: علی
+### اضافه کردن و حذف ویژگی
 
-۷. مدیریت خطا (Error Handling)
-try...catch...finally
-این ساختار به ما اجازه می‌دهد کدهایی که ممکن است خطا ایجاد کنند را مدیریت کنیم.
- * try: کدی که ممکن است خطا دهد در این بلاک قرار می‌گیرد.
- * catch: اگر در بلاک try خطایی رخ دهد، اجرای کد به این بلاک منتقل می‌شود.
- * finally: این بلاک همیشه اجرا می‌شود، چه خطایی رخ دهد چه ندهد (مناسب برای پاک‌سازی منابع).
- * throw: برای ایجاد و پرتاب یک خطای سفارشی استفاده می‌شود.
-<!-- end list -->
-function divide(a, b) {
-  if (b === 0) {
-    throw new Error("تقسیم بر صفر مجاز نیست!");
+```javascript
+// اضافه کردن:
+person.phone = "09111234567";
+
+// حذف:
+delete person.email;
+```
+
+### Object Methods
+
+```javascript
+// Object.keys: تمام کلیدها
+console.log(Object.keys(person));    // ["name", "age", "city", "phone"]
+
+// Object.values: تمام مقادیر
+console.log(Object.values(person));  // ["علی احمدی", 26, "تهران", "09111234567"]
+
+// Object.entries: کلید-مقدار
+console.log(Object.entries(person)); // [["name", "علی احمدی"], ...]
+
+// حلقه روی شیء:
+for (const key in person) {
+  console.log(`${key}: ${person[key]}`);
+}
+```
+
+### Destructuring (تخریب)
+
+```javascript
+const { name, age, city } = person;
+console.log(name, age, city);  // علی احمدی 26 تهران
+
+// با نام‌های متفاوت:
+const { name: n, age: a } = person;
+console.log(n, a);
+```
+
+### شیء‌های تودرتو
+
+```javascript
+const company = {
+  name: "شرکت فناوری",
+  employees: [
+    { id: 1, name: "علی", position: "توسعه‌دهنده" },
+    { id: 2, name: "فاطمه", position: "طراح" }
+  ],
+  location: {
+    city: "تهران",
+    country: "ایران"
   }
-  return a / b;
+};
+
+console.log(company.location.city);     // "تهران"
+console.log(company.employees[0].name); // "علی"
+```
+
+---
+
+## 10. DOM Manipulation
+
+### انتخاب عناصر
+
+```javascript
+// توسط ID:
+const element = document.getElementById("myId");
+
+// توسط Selector:
+const element = document.querySelector(".myClass");
+const elements = document.querySelectorAll("p");
+
+// توسط Tag Name:
+const allDivs = document.getElementsByTagName("div");
+```
+
+### تغییر محتوا
+
+```javascript
+// تنها متن:
+element.textContent = "متن جدید";
+
+// شامل HTML:
+element.innerHTML = "<b>متن غلیظ</b>";
+```
+
+### تغییر Styling
+
+```javascript
+element.style.color = "red";
+element.style.fontSize = "20px";
+element.style.display = "none";
+```
+
+### مدیریت کلاس‌ها
+
+```javascript
+// اضافه کردن کلاس:
+element.classList.add("active");
+
+// حذف کلاس:
+element.classList.remove("inactive");
+
+// تبدیل (اگر وجود دارد حذف، وگرنه اضافه):
+element.classList.toggle("highlight");
+
+// بررسی داشتن کلاس:
+if (element.classList.contains("active")) {
+  // ...
+}
+```
+
+### ایجاد عناصر جدید
+
+```javascript
+const newDiv = document.createElement("div");
+newDiv.textContent = "عنصر جدید";
+newDiv.className = "new-class";
+
+// اضافه کردن به صفحه:
+document.body.appendChild(newDiv);
+
+// اضافه کردن قبل از عنصری:
+parent.insertBefore(newDiv, sibling);
+```
+
+### ویژگی‌های HTML
+
+```javascript
+// تنظیم ویژگی:
+element.setAttribute("data-id", "123");
+element.setAttribute("disabled", true);
+
+// دریافت ویژگی:
+const id = element.getAttribute("data-id");
+
+// حذف ویژگی:
+element.removeAttribute("disabled");
+```
+
+---
+
+## 11. Event Handling
+
+### رویدادهای مهم
+
+| رویداد | توضیح |
+|-------|-------|
+| `click` | کلیک روی عنصر |
+| `dblclick` | دوبار کلیک |
+| `mouseover` | موس روی عنصر |
+| `mouseout` | موس خارج از عنصر |
+| `mousedown` | فشردن دکمه موس |
+| `mouseup` | رها کردن دکمه موس |
+| `input` | تغییر مقدار input |
+| `change` | تغییر مقدار select |
+| `submit` | ارسال فرم |
+| `keydown` | فشردن کلید |
+| `keyup` | رها کردن کلید |
+| `load` | بارگذاری صفحه |
+| `scroll` | پیمایش صفحه |
+
+### رویدادگیری (Event Listening)
+
+#### روش 1: در HTML
+
+```html
+<button onclick="handleClick()">کلیک کنید</button>
+
+<script>
+function handleClick() {
+  console.log("دکمه کلیک شد!");
+}
+</script>
+```
+
+#### روش 2: با JavaScript
+
+```javascript
+const button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+  console.log("دکمه کلیک شد!");
+});
+```
+
+#### روش 3: با Event Object
+
+```javascript
+button.addEventListener("click", (event) => {
+  console.log("کلیک کننده:", event.target);
+  console.log("نوع رویداد:", event.type);
+  
+  // جلوگیری از رفتار پیش‌فرض:
+  event.preventDefault();
+  
+  // متوقف کردن انتشار:
+  event.stopPropagation();
+});
+```
+
+### حذف Event Listener
+
+```javascript
+function handleClick() {
+  console.log("کلیک شد");
 }
 
-try {
-  console.log("در حال تلاش برای تقسیم...");
-  const result = divide(10, 0);
-  console.log("نتیجه:", result); // این خط اجرا نمی‌شود
-} catch (error) {
-  console.error("خطایی رخ داد:", error.message);
-} finally {
-  console.log("عملیات تقسیم پایان یافت.");
-}
+button.addEventListener("click", handleClick);
+button.removeEventListener("click", handleClick);
+```
 
-۸. ساختارهای داده (Data Structures)
-Map
-یک ساختار داده کلید-مقدار (key-value) است که برخلاف اشیاء معمولی، هر نوع داده‌ای (حتی اشیاء و توابع) می‌تواند به عنوان کلید در آن استفاده شود. Map ترتیب اضافه شدن عناصر را حفظ می‌کند.
-const userRoles = new Map();
+### مثال عملی: فرم
 
-// افزودن داده با set()
-userRoles.set("admin", "دسترسی کامل");
-userRoles.eet("editor", "دسترسی برای ویرایش");
-userRoles.set(123, "کاربر مهمان");
+```javascript
+const form = document.querySelector("form");
+const input = document.querySelector("input");
 
-// دریافت داده با get()
-console.log(userRoles.get("admin")); // خروجی: دسترسی کامل
-
-// بررسی وجود کلید با has()
-console.log(userRoles.has("viewer")); // خروجی: false
-
-// مشاهده تعداد عناصر با size
-console.log("تعداد نقش‌ها:", userRoles.size); // خروجی: 3
-
-// پیمایش Map
-userRoles.forEach((value, key) => {
-  console.log(`نقش ${key}: ${value}`);
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("مقدار:", input.value);
+  form.reset();
 });
 
+input.addEventListener("input", (event) => {
+  console.log("در حال نوشتن:", event.target.value);
+});
+```
 
+---
+
+## 12. Asynchronous Programming
+
+### چرا Asynchronous؟
+
+Asynchronous برنامه‌نویسی (برنامه‌نویسی غیرهمزمان) برای عملیات‌هایی است که وقت می‌برند:
+- درخواست‌های شبکه‌ای
+- خواندن/نوشتن فایل‌ها
+- پرس‌وجوهای پایگاه‌داده
+- محاسبات سنگین
+
+### Callback Functions (توابع بازخوانی)
+
+```javascript
+function fetchData(callback) {
+  console.log("درحال بارگذاری...");
+  
+  setTimeout(() => {
+    const data = { id: 1, name: "علی" };
+    callback(data);
+  }, 2000);
+}
+
+fetchData((result) => {
+  console.log("داده‌ها دریافت شدند:", result);
+});
+```
+
+**مشکل:** Callback Hell (تودرتو شدن زیاد)
+
+### Promise
+
+**Promise یک شی است که نمایندگی یک عملیات غیرهمزمان است.**
+
+سه حالت:
+- **Pending:** درحال انتظار
+- **Fulfilled:** موفق (resolve)
+- **Rejected:** ناموفق (reject)
+
+```javascript
+function fetchUser(userId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (userId > 0) {
+        resolve({ id: userId, name: "محمد" });
+      } else {
+        reject("شناسه نامعتبر");
+      }
+    }, 2000);
+  });
+}
+
+// استفاده:
+fetchUser(1)
+  .then(user => {
+    console.log("کاربر:", user);
+  })
+  .catch(error => {
+    console.error("خطا:", error);
+  });
+```
+
+### Promise Chain
+
+```javascript
+fetchUser(1)
+  .then(user => {
+    console.log("کاربر:", user);
+    return fetchPosts(user.id);  // Promise بعدی
+  })
+  .then(posts => {
+    console.log("پست‌ها:", posts);
+    return fetchComments(posts[0].id);
+  })
+  .then(comments => {
+    console.log("نظرات:", comments);
+  })
+  .catch(error => {
+    console.error("خطا:", error);
+  });
+```
+
+### Async/Await
+
+**بهترین روش برای کار با Promise‌ها**
+
+```javascript
+async function getUserWithPosts(userId) {
+  try {
+    console.log("درحال بارگذاری...");
+    
+    // منتظر تا Promise حل شود:
+    const user = await fetchUser(userId);
+    console.log("کاربر:", user);
+    
+    const posts = await fetchPosts(user.id);
+    console.log("پست‌ها:", posts);
+    
+    return { user, posts };
+  } catch (error) {
+    console.error("خطا:", error);
+  }
+}
+
+// استفاده:
+getUserWithPosts(1)
+  .then(result => console.log("نتیجه:", result));
+```
+
+### Promise.all (اجرای موازی)
+
+```javascript
+function task1() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("تسک 1"), 1000);
+  });
+}
+
+function task2() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("تسک 2"), 1500);
+  });
+}
+
+// اجرا همزمان:
+Promise.all([task1(), task2()])
+  .then(results => {
+    console.log("نتایج:", results);
+  });
+```
+
+### Event Loop (ترتیب اجرا)
+
+```javascript
+console.log("1. شروع");
+
+setTimeout(() => {
+  console.log("4. Macro Task (setTimeout)");
+}, 0);
+
+Promise.resolve()
+  .then(() => {
+    console.log("3. Micro Task (Promise)");
+  });
+
+console.log("2. پایان");
+
+/*
+خروجی:
+1. شروع
+2. پایان
+3. Micro Task (Promise)
+4. Macro Task (setTimeout)
+*/
+```
+
+**ترتیب اجرا:**
+1. Synchronous code
+2. Micro Tasks (Promise, async/await)
+3. Macro Tasks (setTimeout, setInterval)
+
+---
+
+## نکات و بهترین‌رویه‌ها
+
+### ✓ نام‌گذاری
+
+- استفاده از `camelCase`: `myVariable`
+- `UPPER_CASE` برای ثابت‌ها: `MAX_SIZE = 100`
+- نام‌های معنی‌دار انتخاب کنید
+
+### ✓ متغیرها
+
+- از `const` به طور پیش‌فرض استفاده کنید
+- از `let` هنگام نیاز به تغییر
+- از `var` استفاده نکنید
+
+### ✓ مقایسه
+
+- `===` و `!==` استفاده کنید، نه `==` و `!=`
+- Type coercion درکش کنید
+
+### ✓ Asynchronous
+
+- `async/await` را ترجیح دهید
+- `try/catch` برای خطاگیری
+- `Promise.all` برای موازی‌سازی
+
+### ✓ DOM
+
+- `querySelector` استفاده کنید (modern)
+- Event delegation برای بهره‌وری
+- Debounce/Throttle برای رویدادهای فرکانس‌بالا
+
+### ✓ عمومی
+
+- کد پاک و خوان‌پذیر بنویسید
+- توابع کوچک و یک‌کاره باشند
+- کد خود را مستند‌سازی کنید
+- از MDN برای مرجع استفاده کنید
+
+---
+
+## خلاصه‌ای از موضوعات
+
+| موضوع | شامل |
+|-------|-------|
+| **متغیرها** | const، let، var، نام‌گذاری |
+| **انواع داده** | String، Number، Boolean، Object، Array، null، undefined |
+| **عملگرها** | ریاضی، مقایسه، منطقی، انتساب |
+| **رشته‌ها** | length، slice، split، replace، indexOf |
+| **آرایه‌ها** | push، pop، map، filter، reduce، forEach |
+| **شرط‌ها** | if/else، switch، ternary operator |
+| **حلقه‌ها** | for، while، for...of، for...in |
+| **توابع** | declaration، expression، arrow، parameters |
+| **شیء‌ها** | properties، methods، destructuring |
+| **DOM** | querySelector، innerHTML، classList |
+| **رویدادها** | addEventListener، preventDefault |
+| **Async** | callback، Promise، async/await، Promise.all |
+
+---
+
+## منابع و مراجع
+
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [JavaScript.info](https://javascript.info/)
+- [Codecademy](https://www.codecademy.com/)
+- [FreeCodeCamp](https://www.freecodecamp.org/)
+
+---
+
+**نویسنده:** دیکتاتور (Dictator)  
+**تاریخ:** نوامبر 2025  
+**ورژن:** 1.0
