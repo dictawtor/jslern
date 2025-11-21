@@ -1,23 +1,39 @@
-// تمرین ترو و فالس
+// ╔═══════════════════════════════════════════════════════════════════════════╗
+// ║                                                                           ║
+// ║                     راهنمای جامع یادگیری JavaScript                     ║
+// ║                                                                           ║
+// ║  نویسنده: دیکتاتور (Dictator)                                            ║
+// ║  تاریخ: نوامبر 2025                                                      ║
+// ║  موضوع: یادگیری کامل اصول JavaScript                                   ║
+// ║                                                                           ║
+// ╚═══════════════════════════════════════════════════════════════════════════╝
 
-// const price1 = 10;
-// const price2 = 15;
-// const price3 = 4000;
-// const balance = 500;
-// console.log("your account balance is :", balance);
-// const totalPrice = price1 + price2 + price3 * 2;
+// تمرین عملی 1: محاسبه قدرت خرید
+console.log("\n═══════════════════════════════════════════════════════════");
+console.log("تمرین 1: محاسبه قدرت خرید");
+console.log("═══════════════════════════════════════════════════════════");
 
-// console.log("TotalPrice :", totalPrice);
-// const averagePrice = totalPrice / 4;
-// console.log("AveragePrice :", averagePrice);
-// const finalPrice = totalPrice * 0.95;
-// console.log("finalPrice :", finalPrice);
-// const canBuy = balance >= finalPrice;
-// // console.log("Can buy : " , canBuy);
-// const message = canBuy
-//   ? "horaaa you can buy"
-//   : " sorry your account balance is not enough";
-// console.log(message);
+const price1 = 10;
+const price2 = 15;
+const price3 = 4000;
+const balance = 500;
+
+console.log("موجودی حساب:", balance);
+
+const totalPrice = price1 + price2 + price3 * 2;
+console.log("قیمت کل:", totalPrice);
+
+const averagePrice = totalPrice / 4;
+console.log("قیمت متوسط:", averagePrice);
+
+const finalPrice = totalPrice * 0.95;
+console.log("قیمت نهایی (95%):", finalPrice);
+
+const canBuy = balance >= finalPrice;
+const message = canBuy
+  ? "✓ شما می‌توانید خرید کنید!"
+  : "✗ موجودی حساب کافی نیست";
+console.log(message);
 
 // // متد های toFixde و toString
 // const number = 50;
@@ -1838,9 +1854,405 @@ const Input = document.querySelector("input");
 // fetchData("https://jsonplaceholder.typicode.com/posts/1");
 // // نکته: در این مثال، تابع fetchData یک تابع غیرهمزمان است که از API داده‌ها را واکشی می‌کند. با استفاده از کلمات کلیدی async و await، ما می‌توانیم عملیات واکشی داده‌ها را به صورت غیرهمزمان انجام دهیم و منتظر بمانیم تا داده‌ها دریافت شوند قبل از اینکه آن‌ها را چاپ کنیم. اگر خطایی رخ دهد، بخش catch آن را مدیریت می‌کند و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا عملیات غیرهمزمان را به صورت ساده‌تر و قابل خواندن‌تر مدیریت کنیم.
 // // نکته: استفاده از برنامه‌نویسی غیرهمزمان به ما اجازه می‌دهد تا برنامه‌های واکنش‌پذیرتر و کارآمدتری بسازیم که بتوانند با رویدادها و ورودی‌های کاربر به صورت همزمان تعامل داشته باشند. این ویژگی به ویژه در برنامه‌های وب بسیار مهم است، جایی که کاربران انتظار دارند که برنامه‌ها به سرعت واکنش نشان دهند و بتوانند با آن‌ها تعامل داشته باشند بدون اینکه منتظر بمانند تا عملیات زمان‌بر کامل شود.
-// callback in asynchronous programming
+
 // // در برنامه‌نویسی غیرهمزمان، کال‌بک‌ها (Callbacks) توابعی هستند که به عنوان آرگومان به یک تابع غیرهمزمان ارسال می‌شوند و زمانی که عملیات غیرهمزمان کامل شد، این توابع فراخوانی می‌شوند. کال‌بک‌ها به ما اجازه می‌دهند تا کدی را تعریف کنیم که باید پس از اتمام یک عملیات خاص اجرا شود، بدون اینکه برنامه منتظر بماند تا آن عملیات کامل شود.
 
 
+// ====================================================================
+// ================== مبحث Asynchronous (غیرهمزمان) ==================
+// ====================================================================
+
+// توضیح جامع و دقیق مبحث Asynchronous:
+
+// 1. مقدمه و تعریف:
+// Asynchronous برنامه‌نویسی (برنامه‌نویسی غیرهمزمان) به معنای انجام عملیات‌هایی است که
+// سریع تکمیل نمی‌شوند و برنامه نباید منتظر بماند تا آن‌ها کامل شوند.
+// در برنامه‌نویسی Synchronous (همزمان)، خطوط کد یکی‌یکی اجرا می‌شوند و اگر یک عملیات
+// زمان‌بر باشد، برنامه کل متوقف می‌شود. اما در Asynchronous، برنامه می‌تواند کارهای دیگری
+// را انجام دهد درحالی‌که منتظر است تا عملیات زمان‌بر تکمیل شود.
+
+console.log("===== مثال 1: Synchronous vs Asynchronous =====");
+
+// مثال Synchronous (زمان‌بر و بلاکینگ):
+function slowTask() {
+  console.log("شروع کار زمان‌بر...");
+  for (let i = 0; i < 1000000000; i++) {
+    // حلقه ای که وقت می‌برد
+  }
+  console.log("کار زمان‌بر تکمیل شد!");
+}
+
+console.log("1. قبل از شروع کار");
+// slowTask(); // این خط برنامه را کند می‌کند
+console.log("2. بعد از تعریف کار (توجه: کار هنوز شروع نشده)");
+
+// ====================================================================
+// 2. Callback Functions (توابع بازخوانی):
+// ====================================================================
+// Callback یک تابع است که به عنوان آرگومان به تابع دیگری پاس داده می‌شود
+// و بعد از اتمام یک عملیات غیرهمزمان فراخوانی می‌شود.
+
+console.log("\n===== مثال 2: Callback Functions =====");
+
+function fetchUserData(userId, callback) {
+  console.log(`درحال واکشی داده‌های کاربر ${userId}...`);
+  
+  // شبیه‌سازی یک درخواست شبکه‌ای که 2 ثانیه طول می‌کشد
+  setTimeout(() => {
+    const userData = {
+      id: userId,
+      name: "علی احمدی",
+      email: "ali@example.com"
+    };
+    // بعد از اتمام، callback را با داده‌ها فراخوانی کنید
+    callback(userData);
+  }, 2000);
+}
+
+// استفاده از callback:
+// fetchUserData(1, function(data) {
+//   console.log("داده‌های کاربر دریافت شد:", data);
+// });
+
+// مسئله Callback Hell (Pyramid of Doom):
+// زمانی که چندین عملیات غیرهمزمان درون یکدیگر تودرتو شوند:
+
+function fetchUser(userId, callback) {
+  setTimeout(() => {
+    const user = { id: userId, name: "علی" };
+    callback(user);
+  }, 1000);
+}
+
+function fetchPosts(userId, callback) {
+  setTimeout(() => {
+    const posts = [
+      { id: 1, title: "پست اول" },
+      { id: 2, title: "پست دوم" }
+    ];
+    callback(posts);
+  }, 1000);
+}
+
+function fetchComments(postId, callback) {
+  setTimeout(() => {
+    const comments = [
+      { id: 1, text: "نظر اول" }
+    ];
+    callback(comments);
+  }, 1000);
+}
+
+console.log("\n===== مثال 3: Callback Hell =====");
+// این ساختار بسیار تودرتو و خوانایی‌پذیری کم است:
+/*
+fetchUser(1, function(user) {
+  console.log("کاربر:", user);
+  fetchPosts(user.id, function(posts) {
+    console.log("پست‌ها:", posts);
+    fetchComments(posts[0].id, function(comments) {
+      console.log("نظرات:", comments);
+    });
+  });
+});
+*/
+
+// ====================================================================
+// 3. Promise (وعده):
+// ====================================================================
+// Promise یک شی است که نمایندگی یک عملیات غیرهمزمان است.
+// Promise می‌تواند در سه حالت باشد:
+// - Pending (در انتظار): عملیات هنوز تکمیل نشده
+// - Fulfilled (موفق): عملیات با موفقیت تکمیل شد و یک مقدار بازگشت
+// - Rejected (ناموفق): عملیات ناموفق بود و یک خطا بازگشت
+
+console.log("\n===== مثال 4: Promise =====");
+
+// ایجاد یک Promise:
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const success = true;
+    if (success) {
+      resolve("عملیات با موفقیت تکمیل شد!"); // fulfilled
+    } else {
+      reject("خطایی رخ داد!"); // rejected
+    }
+  }, 2000);
+});
+
+// استفاده از Promise:
+// myPromise
+//   .then(result => {
+//     console.log("نتیجه:", result);
+//   })
+//   .catch(error => {
+//     console.error("خطا:", error);
+//   });
+
+// مثال عملی‌تر:
+function fetchUserPromise(userId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (userId > 0) {
+        resolve({
+          id: userId,
+          name: "محمد",
+          email: "mohammad@example.com"
+        });
+      } else {
+        reject("شناسه کاربر باید مثبت باشد!");
+      }
+    }, 1500);
+  });
+}
+
+console.log("\n===== مثال 5: Promise Chain =====");
+// زنجیر Promise (بهتر از Callback Hell):
+/*
+fetchUserPromise(1)
+  .then(user => {
+    console.log("کاربر:", user);
+    return fetchPosts(user.id);
+  })
+  .then(posts => {
+    console.log("پست‌ها:", posts);
+    return fetchComments(posts[0].id);
+  })
+  .then(comments => {
+    console.log("نظرات:", comments);
+  })
+  .catch(error => {
+    console.error("خطا در فرایند:", error);
+  });
+*/
+
+// ====================================================================
+// 4. Async/Await:
+// ====================================================================
+// Async/Await روش مدرن‌تر و خوان‌تری برای کار با Promise است.
+// async کلمه کلیدی تابع را غیرهمزمان می‌کند و همیشه یک Promise بازمی‌گرداند.
+// await برای منتظر ماندن تا Promise حل شود استفاده می‌شود (فقط در تابع async).
+
+console.log("\n===== مثال 6: Async/Await =====");
+
+async function getUserWithPosts(userId) {
+  try {
+    console.log("درحال بارگذاری داده‌ها...");
+    
+    // منتظر تا Promise حل شود
+    const user = await fetchUserPromise(userId);
+    console.log("کاربر دریافت شد:", user);
+    
+    // می‌توانیم async را دوباره استفاده کنیم
+    // const posts = await fetchPostsPromise(user.id);
+    // console.log("پست‌ها:", posts);
+    
+    return user;
+  } catch (error) {
+    console.error("خطا در دریافت داده‌ها:", error);
+  }
+}
+
+// فراخوانی تابع async:
+// getUserWithPosts(5)
+//   .then(result => {
+//     console.log("نتیجه نهایی:", result);
+//   });
+
+// ====================================================================
+// 5. Parallel Execution (اجرای موازی):
+// ====================================================================
+// استفاده از Promise.all برای انجام چندین عملیات همزمان:
+
+console.log("\n===== مثال 7: Promise.all =====");
+
+function task1() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("تسک 1 تکمیل شد"), 1000);
+  });
+}
+
+function task2() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("تسک 2 تکمیل شد"), 1500);
+  });
+}
+
+function task3() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("تسک 3 تکمیل شد"), 800);
+  });
+}
+
+// اجرای موازی - اگر یکی ناموفق شود، همه ناموفق می‌شوند:
+/*
+Promise.all([task1(), task2(), task3()])
+  .then(results => {
+    console.log("تمام تسک‌ها تکمیل شدند:", results);
+  })
+  .catch(error => {
+    console.error("یکی از تسک‌ها ناموفق شد:", error);
+  });
+*/
+
+// Promise.race - اولین Promise تکمیل شده بازگشت می‌کند:
+/*
+Promise.race([task1(), task2(), task3()])
+  .then(result => {
+    console.log("اولین تسک تکمیل شد:", result);
+  });
+*/
+
+// ====================================================================
+// 6. Error Handling (مدیریت خطا):
+// ====================================================================
+console.log("\n===== مثال 8: Error Handling =====");
+
+async function fetchWithErrorHandling(url) {
+  try {
+    // در عملیات واقعی: const response = await fetch(url);
+    // اگر URL نامعتبر باشد:
+    if (!url) {
+      throw new Error("URL نمی‌تواند خالی باشد!");
+    }
+    
+    // شبیه‌سازی درخواست:
+    const result = await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ status: 200, data: "موفق" });
+      }, 1000);
+    });
+    
+    console.log("درخواست موفق:", result);
+    return result;
+  } catch (error) {
+    console.error("خطا در درخواست:", error.message);
+    // می‌توانیم خطا را دوباره پرتاب کنیم یا مقدار پیش‌فرض برگردانیم
+    return { status: 500, error: error.message };
+  } finally {
+    // این بلاک همیشه اجرا می‌شود (موفق یا ناموفق)
+    console.log("درخواست پایان یافت.");
+  }
+}
+
+// فراخوانی:
+// fetchWithErrorHandling("https://example.com")
+//   .then(result => console.log("نتیجه:", result));
+
+// ====================================================================
+// 7. Real-World Example (مثال عملی واقعی):
+// ====================================================================
+console.log("\n===== مثال 9: مثال واقعی =====");
+
+// شبیه‌سازی یک درخواست API واقعی:
+function fetchFromAPI(endpoint) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() > 0.3) {
+        resolve({
+          status: 200,
+          data: `داده‌های ${endpoint}`,
+          timestamp: new Date().toISOString()
+        });
+      } else {
+        reject(new Error("Connection Timeout"));
+      }
+    }, 1000 + Math.random() * 2000);
+  });
+}
+
+// استفاده از Async/Await:
+async function getUserDataWithRetry(userId, maxRetries = 3) {
+  let lastError;
+  
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      console.log(`تلاش ${attempt} برای دریافت داده‌های کاربر...`);
+      const result = await fetchFromAPI(`/users/${userId}`);
+      console.log("موفق! داده‌ها دریافت شدند:");
+      return result;
+    } catch (error) {
+      lastError = error;
+      console.log(`تلاش ${attempt} ناموفق بود: ${error.message}`);
+      
+      if (attempt < maxRetries) {
+        // منتظر 2 ثانیه قبل از تلاش دوباره
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
+    }
+  }
+  
+  // اگر تمام تلاش‌ها ناموفق شد:
+  throw lastError;
+}
+
+// فراخوانی:
+/*
+getUserDataWithRetry(1)
+  .then(data => {
+    console.log("داده‌های نهایی:", data);
+  })
+  .catch(error => {
+    console.error("ناتوانایی در دریافت داده‌ها بعد از تمام تلاش‌ها:", error);
+  });
+*/
+
+// ====================================================================
+// 8. Event Loop و Call Stack:
+// ====================================================================
+console.log("\n===== مثال 10: Event Loop =====");
+
+// درک اینکه چگونه Asynchronous کار می‌کند:
+console.log("شروع برنامه");
+
+setTimeout(() => {
+  console.log("Timeout 1 (0ms)");
+}, 0);
+
+Promise.resolve()
+  .then(() => {
+    console.log("Promise تکمیل شد");
+  });
+
+setTimeout(() => {
+  console.log("Timeout 2 (0ms)");
+}, 0);
+
+console.log("پایان برنامه");
+
+/*
+خروجی:
+شروع برنامه
+پایان برنامه
+Promise تکمیل شد
+Timeout 1 (0ms)
+Timeout 2 (0ms)
+
+توضیح:
+1. کد Synchronous ابتدا اجرا می‌شود
+2. سپس Microtasks (Promise) اجرا می‌شوند
+3. در نهایت Macrotasks (setTimeout) اجرا می‌شوند
+*/
+
+// ====================================================================
+// 9. خلاصه و نکات مهم:
+// ====================================================================
+console.log("\n===== خلاصه نکات مهم =====");
+
+/*
+✓ Callback: روش قدیمی، منجر به Callback Hell می‌شود
+✓ Promise: بهتر از Callback، اما کد هنوز کمی پیچیده است
+✓ Async/Await: بهترین و خوان‌ترین روش، مثل کد Synchronous به نظر می‌رسد
+
+✓ try/catch برای مدیریت خطا استفاده کنید
+✓ await فقط در تابع async می‌تواند استفاده شود
+✓ Promise.all برای اجرای موازی چندین Promise
+✓ Event Loop درکش مهم است برای درک ترتیب اجرا
+
+✓ Asynchronous برنامه‌های واکنش‌پذیر و کارآمد ایجاد می‌کند
+✓ مناسب برای عملیات شبکه‌ای، فایل سیستم، و موارد دیگر
+*/
+
+console.log("پایان توضیح مبحث Asynchronous");
 
 

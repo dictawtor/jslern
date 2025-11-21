@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع یادگیری JavaScript</title>
+    <style>
+        * {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        body {
+            font-family: 'B Nazanin', 'XB Ziba', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-top: 30px;
+            font-size: 28px;
+        }
+        
+        h2 {
+            color: #34495e;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            margin-top: 25px;
+            font-size: 22px;
+        }
+        
+        h3 {
+            color: #7f8c8d;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        
+        code, pre {
+            background-color: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            direction: ltr;
+            text-align: left;
+        }
+        
+        pre {
+            overflow-x: auto;
+            padding: 15px;
+        }
+        
+        code {
+            display: inline-block;
+            padding: 2px 6px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+        }
+        
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 12px;
+            text-align: right;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f0f0f0;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-right: 40px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .checkmark {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .note {
+            background-color: #fff3cd;
+            border-right: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .warning {
+            background-color: #f8d7da;
+            border-right: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .success {
+            background-color: #d4edda;
+            border-right: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .metadata {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            text-align: right;
+        }
+        
+        .example {
+            background-color: #f9f9f9;
+            border-right: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        page-break {
+            display: block;
+            page-break-after: always;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #bdc3c7;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="metadata">
+    <h1>🎓 راهنمای جامع یادگیری JavaScript</h1>
+    <p><strong>نویسنده:</strong> دیکتاتور (Dictator)</p>
+    <p><strong>تاریخ:</strong> نوامبر 2025</p>
+    <p><strong>موضوع:</strong> یادگیری کامل اصول JavaScript</p>
+</div>
+
+<hr>
+
+<h2>📋 فهرست مطالب</h2>
+<ol>
+    <li><a href="#section1">مبانی JavaScript و متغیرها</a></li>
+    <li><a href="#section2">انواع داده‌ها</a></li>
+    <li><a href="#section3">عملگرها</a></li>
+    <li><a href="#section4">رشته‌های کاراکتری</a></li>
+    <li><a href="#section5">آرایه‌ها</a></li>
+    <li><a href="#section6">شرط‌های منطقی</a></li>
+    <li><a href="#section7">حلقه‌ها</a></li>
+    <li><a href="#section8">توابع</a></li>
+    <li><a href="#section9">شیء‌ها</a></li>
+    <li><a href="#section10">DOM Manipulation</a></li>
+    <li><a href="#section11">Event Handling</a></li>
+    <li><a href="#section12">Asynchronous Programming</a></li>
+</ol>
+
+<hr>
+
+<h1 id="section1">1. مبانی JavaScript و متغیرها</h1>
+
+<h2>تعریف متغیر</h2>
+
+<p>متغیر یک ظرف برای ذخیره داده است. در JavaScript، سه روش برای تعریف متغیر داریم:</p>
+
+<table>
+    <tr>
+        <th>روش</th>
+        <th>توضیح</th>
+        <th>مثال</th>
+    </tr>
+    <tr>
+        <td><code>const</code></td>
+        <td>ثابت (نمی‌تواند تغییر کند)</td>
+        <td><code>const age = 26;</code></td>
+    </tr>
+    <tr>
+        <td><code>let</code></td>
+        <td>متغیر (می‌تواند تغییر کند)</td>
+        <td><code>let name = "علی";</code></td>
+    </tr>
+    <tr>
+        <td><code>var</code></td>
+        <td>روش قدیمی (تجنب کنید)</td>
+        <td><code>var city = "تهران";</code></td>
+    </tr>
+</table>
+
+<h3>نکات مهم</h3>
+
+<div class="success">
+    <p><span class="checkmark">✓</span> از <code>const</code> به طور پیش‌فرض استفاده کنید</p>
+    <p><span class="checkmark">✓</span> از <code>let</code> استفاده کنید هنگامی که نیاز به تغییر دارید</p>
+    <p><span class="checkmark">✓</span> از <code>var</code> استفاده نکنید (روش قدیمی است)</p>
+    <p><span class="checkmark">✓</span> نام متغیرها باید معنی‌دار باشند</p>
+</div>
+
+<h3>مثال</h3>
+
+<pre><code>const name = "علی";        // ثابت
+let age = 26;              // متغیر (می‌تواند تغییر کند)
+console.log(name, age);</code></pre>
+
+<hr>
+
+<h1 id="section2">2. انواع داده‌ها</h1>
+
+<h2>اقسام داده در JavaScript</h2>
+
+<table>
+    <tr>
+        <th>نوع</th>
+        <th>توضیح</th>
+        <th>مثال</th>
+    </tr>
+    <tr>
+        <td>String</td>
+        <td>متن</td>
+        <td><code>"سلام"</code> یا <code>'سلام'</code></td>
+    </tr>
+    <tr>
+        <td>Number</td>
+        <td>عدد صحیح یا اعشاری</td>
+        <td><code>42</code> یا <code>3.14</code></td>
+    </tr>
+    <tr>
+        <td>Boolean</td>
+        <td>true یا false</td>
+        <td><code>true</code> یا <code>false</code></td>
+    </tr>
+    <tr>
+        <td>undefined</td>
+        <td>مقدار نامعریف‌شده</td>
+        <td><code>undefined</code></td>
+    </tr>
+    <tr>
+        <td>null</td>
+        <td>بدون مقدار</td>
+        <td><code>null</code></td>
+    </tr>
+    <tr>
+        <td>Object</td>
+        <td>شیء</td>
+        <td><code>{ name: "علی" }</code></td>
+    </tr>
+    <tr>
+        <td>Array</td>
+        <td>آرایه</td>
+        <td><code>[1, 2, 3]</code></td>
+    </tr>
+</table>
+
+<h3>مثال‌ها</h3>
+
+<pre><code>const text = "سلام";           // String
+const number = 42;              // Number
+const isActive = true;          // Boolean
+const empty = null;             // Null
+let undefValue;                 // Undefined (خودکار)
+
+// بررسی نوع:
+console.log(typeof text);       // "string"
+console.log(typeof number);     // "number"
+console.log(typeof isActive);   // "boolean"</code></pre>
+
+<h3>Type Coercion (تبدیل نوع خودکار)</h3>
+
+<pre><code>console.log("5" + 3);      // "53" (String concatenation)
+console.log(5 + 3);        // 8 (Numeric addition)
+console.log("5" - 3);      // 2 (تبدیل خودکار به عدد)</code></pre>
+
+<hr>
+
+<h1 id="section3">3. عملگرها</h1>
+
+<h2>عملگرهای ریاضی</h2>
+
+<table>
+    <tr>
+        <th>عملگر</th>
+        <th>توضیح</th>
+        <th>مثال</th>
+    </tr>
+    <tr>
+        <td>+</td>
+        <td>جمع</td>
+        <td><code>10 + 5</code> = 15</td>
+    </tr>
+    <tr>
+        <td>-</td>
+        <td>تفریق</td>
+        <td><code>10 - 5</code> = 5</td>
+    </tr>
+    <tr>
+        <td>*</td>
+        <td>ضرب</td>
+        <td><code>10 * 5</code> = 50</td>
+    </tr>
+    <tr>
+        <td>/</td>
+        <td>تقسیم</td>
+        <td><code>10 / 5</code> = 2</td>
+    </tr>
+    <tr>
+        <td>%</td>
+        <td>باقی‌مانده</td>
+        <td><code>10 % 3</code> = 1</td>
+    </tr>
+    <tr>
+        <td>**</td>
+        <td>توان</td>
+        <td><code>2 ** 3</code> = 8</td>
+    </tr>
+</table>
+
+<h2>عملگرهای مقایسه</h2>
+
+<table>
+    <tr>
+        <th>عملگر</th>
+        <th>توضیح</th>
+    </tr>
+    <tr>
+        <td>&gt;</td>
+        <td>بزرگ‌تر از</td>
+    </tr>
+    <tr>
+        <td>&lt;</td>
+        <td>کوچک‌تر از</td>
+    </tr>
+    <tr>
+        <td>&gt;=</td>
+        <td>بزرگ‌تر یا مساوی</td>
+    </tr>
+    <tr>
+        <td>&lt;=</td>
+        <td>کوچک‌تر یا مساوی</td>
+    </tr>
+    <tr>
+        <td>===</td>
+        <td>مساوی دقیق (strict)</td>
+    </tr>
+    <tr>
+        <td>!==</td>
+        <td>نامساوی دقیق</td>
+    </tr>
+</table>
+
+<h2>عملگرهای منطقی</h2>
+
+<pre><code>true && false       // AND - false
+true || false       // OR - true
+!true              // NOT - false</code></pre>
+
+<h2>عملگرهای انتساب</h2>
+
+<pre><code>let x = 10;
+x += 5;    // x = x + 5   → 15
+x -= 3;    // x = x - 3   → 12
+x *= 2;    // x = x * 2   → 24
+x /= 2;    // x = x / 2   → 12</code></pre>
+
+<hr>
+
+<h1 id="section4">4. رشته‌های کاراکتری</h1>
+
+<h2>خصوصیات String</h2>
+
+<pre><code>const text = "سلام، نام من علی است";
+
+console.log(text.length);        // طول رشته: 22
+console.log(text[0]);            // حرف اول: س
+console.log(text[text.length-1]); // حرف آخر: ت</code></pre>
+
+<h2>متدهای مهم String</h2>
+
+<table>
+    <tr>
+        <th>متد</th>
+        <th>توضیح</th>
+        <th>مثال</th>
+    </tr>
+    <tr>
+        <td><code>toUpperCase()</code></td>
+        <td>تبدیل به بزرگ</td>
+        <td><code>"hello".toUpperCase()</code> → "HELLO"</td>
+    </tr>
+    <tr>
+        <td><code>toLowerCase()</code></td>
+        <td>تبدیل به کوچک</td>
+        <td><code>"HELLO".toLowerCase()</code> → "hello"</td>
+    </tr>
+    <tr>
+        <td><code>charAt(i)</code></td>
+        <td>حرف در شاخص</td>
+        <td><code>"hello".charAt(0)</code> → "h"</td>
+    </tr>
+    <tr>
+        <td><code>indexOf(str)</code></td>
+        <td>شاخص شروع</td>
+        <td><code>"hello".indexOf("ll")</code> → 2</td>
+    </tr>
+    <tr>
+        <td><code>includes(str)</code></td>
+        <td>آیا شامل است</td>
+        <td><code>"hello".includes("ell")</code> → true</td>
+    </tr>
+    <tr>
+        <td><code>slice(start, end)</code></td>
+        <td>برش</td>
+        <td><code>"hello".slice(0, 3)</code> → "hel"</td>
+    </tr>
+    <tr>
+        <td><code>split(sep)</code></td>
+        <td>تقسیم</td>
+        <td><code>"a,b,c".split(",")</code> → ["a", "b", "c"]</td>
+    </tr>
+    <tr>
+        <td><code>replace(old, new)</code></td>
+        <td>جایگزین</td>
+        <td><code>"hello".replace("h", "H")</code> → "Hello"</td>
+    </tr>
+</table>
+
+<h2>Template Literals (رشته‌های الگو)</h2>
+
+<pre><code>const name = "علی";
+const age = 26;
+
+// روش قدیمی:
+const msg1 = "سلام " + name + " شما " + age + " ساله‌اید";
+
+// روش جدید (Template Literal):
+const msg2 = `سلام ${name} شما ${age} ساله‌اید`;
+
+console.log(msg2);</code></pre>
+
+<hr>
+
+<h1 id="section5">5. آرایه‌ها</h1>
+
+<h2>ایجاد آرایه</h2>
+
+<pre><code>const fruits = ["سیب", "موز", "نارنجی"];
+const numbers = [1, 2, 3, 4, 5];
+const mixed = ["متن", 42, true, null];
+
+console.log(fruits[0]);        // "سیب" (اولین عنصر)
+console.log(fruits.length);    // 3 (تعداد عناصر)</code></pre>
+
+<h2>متدهای آرایه</h2>
+
+<h3>متدهای تغییردهنده:</h3>
+
+<table>
+    <tr>
+        <th>متد</th>
+        <th>توضیح</th>
+    </tr>
+    <tr>
+        <td><code>push(item)</code></td>
+        <td>اضافه کردن به انتهای آرایه</td>
+    </tr>
+    <tr>
+        <td><code>pop()</code></td>
+        <td>حذف از انتهای آرایه</td>
+    </tr>
+    <tr>
+        <td><code>unshift(item)</code></td>
+        <td>اضافه کردن به ابتدای آرایه</td>
+    </tr>
+    <tr>
+        <td><code>shift()</code></td>
+        <td>حذف از ابتدای آرایه</td>
+    </tr>
+</table>
+
+<h3>متدهای غیرتغییردهنده:</h3>
+
+<pre><code>const numbers = [1, 2, 3, 4, 5];
+
+// map: تبدیل عناصر
+const doubled = numbers.map(num => num * 2);
+// [2, 4, 6, 8, 10]
+
+// filter: فیلتر کردن عناصر
+const evens = numbers.filter(num => num % 2 === 0);
+// [2, 4]
+
+// reduce: کاهش به یک مقدار
+const sum = numbers.reduce((total, num) => total + num, 0);
+// 15
+
+// forEach: تکرار روی عناصر
+numbers.forEach((num, index) => {
+  console.log(`${index}: ${num}`);
+});
+
+// includes: بررسی وجود عنصر
+console.log(numbers.includes(3));  // true
+
+// indexOf: شاخص عنصر
+console.log(numbers.indexOf(3));   // 2
+
+// slice: برش آرایه
+console.log(numbers.slice(0, 3));  // [1, 2, 3]
+
+// join: ترکیب با جدا‌کننده
+console.log(numbers.join("-"));    // "1-2-3-4-5"
+
+// concat: ترکیب دو آرایه
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+console.log(arr1.concat(arr2));    // [1, 2, 3, 4]</code></pre>
+
+<hr>
+
+<h1 id="section6">6. شرط‌های منطقی</h1>
+
+<h2>if/else if/else</h2>
+
+<pre><code>const age = 20;
+
+if (age < 18) {
+  console.log("زیر‌سن");
+} else if (age < 65) {
+  console.log("بالغ");
+} else {
+  console.log("بازنشسته");
+}</code></pre>
+
+<h2>Ternary Operator (عملگر سه‌تایی)</h2>
+
+<pre><code>const status = age >= 18 ? "بالغ" : "زیر‌سن";
+console.log(status);</code></pre>
+
+<h2>switch statement</h2>
+
+<pre><code>const day = 3;
+let dayName;
+
+switch (day) {
+  case 1:
+    dayName = "شنبه";
+    break;
+  case 2:
+    dayName = "یک‌شنبه";
+    break;
+  case 3:
+    dayName = "دوشنبه";
+    break;
+  default:
+    dayName = "نامعلوم";
+}</code></pre>
+
+<hr>
+
+<h1 id="section7">7. حلقه‌ها</h1>
+
+<h2>حلقه for</h2>
+
+<pre><code>for (let i = 0; i < 5; i++) {
+  console.log(i);  // 0, 1, 2, 3, 4
+}</code></pre>
+
+<h2>حلقه while</h2>
+
+<pre><code>let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}</code></pre>
+
+<h2>حلقه do...while</h2>
+
+<pre><code>let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);</code></pre>
+
+<h2>حلقه for...of (برای آرایه‌ها)</h2>
+
+<pre><code>const colors = ["قرمز", "سبز", "آبی"];
+
+for (const color of colors) {
+  console.log(color);
+}</code></pre>
+
+<h2>حلقه for...in (برای شیء‌ها)</h2>
+
+<pre><code>const person = { name: "علی", age: 26, city: "تهران" };
+
+for (const key in person) {
+  console.log(`${key}: ${person[key]}`);
+}</code></pre>
+
+<h2>break و continue</h2>
+
+<pre><code>for (let i = 1; i <= 5; i++) {
+  if (i === 2) continue;  // از 2 بگذر
+  if (i === 4) break;     // توقف در 4
+  console.log(i);         // 1, 3
+}</code></pre>
+
+<hr>
+
+<h1 id="section8">8. توابع</h1>
+
+<h2>تعریف تابع - روش‌های مختلف</h2>
+
+<h3>1. Function Declaration (اعلان تابع)</h3>
+
+<pre><code>function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3));  // 5</code></pre>
+
+<h3>2. Function Expression (عبارت تابع)</h3>
+
+<pre><code>const multiply = function(a, b) {
+  return a * b;
+};
+
+console.log(multiply(4, 5));  // 20</code></pre>
+
+<h3>3. Arrow Function (تابع پیکان‌دار)</h3>
+
+<pre><code>// فرم کوتاه (یک خط):
+const square = x => x * x;
+console.log(square(5));  // 25
+
+// فرم بلند (چندین خط):
+const divide = (a, b) => {
+  if (b === 0) return 0;
+  return a / b;
+};</code></pre>
+
+<h2>پارامترهای پیش‌فرض</h2>
+
+<pre><code>function greet(name = "دوست", age = 25) {
+  console.log(`سلام ${name}, ${age} ساله‌ای`);
+}
+
+greet();                  // سلام دوست, 25 ساله‌ای
+greet("علی", 30);        // سلام علی, 30 ساله‌ای</code></pre>
+
+<h2>Rest Parameters (پارامترهای باقی‌مانده)</h2>
+
+<pre><code>function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4, 5));  // 15</code></pre>
+
+<h2>Higher Order Functions (توابع مرتبه‌بالا)</h2>
+
+<pre><code>const numbers = [1, 2, 3, 4, 5];
+
+const evens = numbers.filter(n => n % 2 === 0);
+const doubled = numbers.map(n => n * 2);
+const total = numbers.reduce((acc, n) => acc + n, 0);
+
+console.log("فیلتر:", evens);      // [2, 4]
+console.log("نقشه:", doubled);     // [2, 4, 6, 8, 10]
+console.log("تقلیل:", total);      // 15</code></pre>
+
+<hr>
+
+<h1 id="section9">9. شیء‌ها</h1>
+
+<h2>ایجاد شیء</h2>
+
+<pre><code>const person = {
+  name: "علی احمدی",
+  age: 26,
+  city: "تهران",
+  email: "ali@example.com",
+  
+  greet: function() {
+    return `سلام، من ${this.name} هستم`;
+  }
+};
+
+console.log(person.name);        // "علی احمدی"
+console.log(person["age"]);      // 26
+console.log(person.greet());     // "سلام، من علی احمدی هستم"</code></pre>
+
+<h2>Destructuring (تخریب)</h2>
+
+<pre><code>const { name, age, city } = person;
+console.log(name, age, city);  // علی احمدی 26 تهران</code></pre>
+
+<h2>Object Methods</h2>
+
+<pre><code>// Object.keys: تمام کلیدها
+console.log(Object.keys(person));    // ["name", "age", "city"]
+
+// Object.values: تمام مقادیر
+console.log(Object.values(person));  // ["علی احمدی", 26, "تهران"]
+
+// Object.entries: کلید-مقدار
+console.log(Object.entries(person)); // [["name", "علی احمدی"], ...]</code></pre>
+
+<hr>
+
+<h1 id="section10">10. DOM Manipulation</h1>
+
+<h2>انتخاب عناصر</h2>
+
+<pre><code>// توسط ID:
+const element = document.getElementById("myId");
+
+// توسط Selector:
+const element = document.querySelector(".myClass");
+const elements = document.querySelectorAll("p");
+
+// توسط Tag Name:
+const allDivs = document.getElementsByTagName("div");</code></pre>
+
+<h2>تغییر محتوا</h2>
+
+<pre><code>// تنها متن:
+element.textContent = "متن جدید";
+
+// شامل HTML:
+element.innerHTML = "&lt;b&gt;متن غلیظ&lt;/b&gt;";</code></pre>
+
+<h2>تغییر Styling</h2>
+
+<pre><code>element.style.color = "red";
+element.style.fontSize = "20px";
+element.style.display = "none";</code></pre>
+
+<h2>مدیریت کلاس‌ها</h2>
+
+<pre><code>element.classList.add("active");
+element.classList.remove("inactive");
+element.classList.toggle("highlight");</code></pre>
+
+<hr>
+
+<h1 id="section11">11. Event Handling</h1>
+
+<h2>رویدادگیری (Event Listening)</h2>
+
+<h3>روش 1: در HTML</h3>
+
+<pre><code>&lt;button onclick="handleClick()"&gt;کلیک کنید&lt;/button&gt;
+
+&lt;script&gt;
+function handleClick() {
+  console.log("دکمه کلیک شد!");
+}
+&lt;/script&gt;</code></pre>
+
+<h3>روش 2: با JavaScript</h3>
+
+<pre><code>const button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+  console.log("دکمه کلیک شد!");
+});</code></pre>
+
+<h3>روش 3: با Event Object</h3>
+
+<pre><code>button.addEventListener("click", (event) => {
+  console.log("کلیک کننده:", event.target);
+  console.log("نوع رویداد:", event.type);
+  event.preventDefault();
+  event.stopPropagation();
+});</code></pre>
+
+<hr>
+
+<h1 id="section12">12. Asynchronous Programming</h1>
+
+<h2>چرا Asynchronous؟</h2>
+
+<p>Asynchronous برنامه‌نویسی برای عملیات‌هایی است که وقت می‌برند:</p>
+<ul>
+    <li>درخواست‌های شبکه‌ای</li>
+    <li>خواندن/نوشتن فایل‌ها</li>
+    <li>پرس‌وجوهای پایگاه‌داده</li>
+    <li>محاسبات سنگین</li>
+</ul>
+
+<h2>Callback Functions</h2>
+
+<pre><code>function fetchData(callback) {
+  console.log("درحال بارگذاری...");
+  
+  setTimeout(() => {
+    const data = { id: 1, name: "علی" };
+    callback(data);
+  }, 2000);
+}
+
+fetchData((result) => {
+  console.log("داده‌ها دریافت شدند:", result);
+});</code></pre>
+
+<h2>Promise</h2>
+
+<pre><code>function fetchUser(userId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (userId > 0) {
+        resolve({ id: userId, name: "محمد" });
+      } else {
+        reject("شناسه نامعتبر");
+      }
+    }, 2000);
+  });
+}
+
+fetchUser(1)
+  .then(user => {
+    console.log("کاربر:", user);
+  })
+  .catch(error => {
+    console.error("خطا:", error);
+  });</code></pre>
+
+<h2>Async/Await</h2>
+
+<pre><code>async function getUserWithPosts(userId) {
+  try {
+    console.log("درحال بارگذاری...");
+    const user = await fetchUser(userId);
+    console.log("کاربر:", user);
+    return user;
+  } catch (error) {
+    console.error("خطا:", error);
+  }
+}
+
+getUserWithPosts(1)
+  .then(result => console.log("نتیجه:", result));</code></pre>
+
+<h2>Promise.all (اجرای موازی)</h2>
+
+<pre><code>Promise.all([task1(), task2(), task3()])
+  .then(results => {
+    console.log("نتایج:", results);
+  });</code></pre>
+
+<h2>Event Loop (ترتیب اجرا)</h2>
+
+<pre><code>console.log("1. شروع");
+
+setTimeout(() => {
+  console.log("4. Macro Task (setTimeout)");
+}, 0);
+
+Promise.resolve()
+  .then(() => {
+    console.log("3. Micro Task (Promise)");
+  });
+
+console.log("2. پایان");
+
+/*
+خروجی:
+1. شروع
+2. پایان
+3. Micro Task (Promise)
+4. Macro Task (setTimeout)
+*/</code></pre>
+
+<hr>
+
+<h2>📚 نکات و بهترین‌رویه‌ها</h2>
+
+<div class="success">
+    <h3>✓ نام‌گذاری</h3>
+    <p>استفاده از camelCase: myVariable</p>
+    <p>UPPER_CASE برای ثابت‌ها: PI = 3.14</p>
+    <p>نام‌های معنی‌دار انتخاب کنید</p>
+</div>
+
+<div class="success">
+    <h3>✓ متغیرها</h3>
+    <p>از const به طور پیش‌فرض استفاده کنید</p>
+    <p>از let هنگام نیاز به تغییر</p>
+    <p>از var استفاده نکنید</p>
+</div>
+
+<div class="success">
+    <h3>✓ Asynchronous</h3>
+    <p>async/await را ترجیح دهید</p>
+    <p>try/catch برای خطاگیری</p>
+    <p>Promise.all برای موازی‌سازی</p>
+</div>
+
+<hr>
+
+<div class="metadata">
+    <h3>خلاصه موضوعات</h3>
+    <p><strong>متغیرها:</strong> const، let، var، نام‌گذاری</p>
+    <p><strong>انواع داده:</strong> String، Number، Boolean، Object، Array</p>
+    <p><strong>عملگرها:</strong> ریاضی، مقایسه، منطقی</p>
+    <p><strong>رشته‌ها:</strong> length، slice، split، replace</p>
+    <p><strong>آرایه‌ها:</strong> push، map، filter، reduce</p>
+    <p><strong>شرط‌ها:</strong> if/else، switch، ternary</p>
+    <p><strong>حلقه‌ها:</strong> for، while، for...of</p>
+    <p><strong>توابع:</strong> declaration، expression، arrow</p>
+    <p><strong>شیء‌ها:</strong> properties، methods، destructuring</p>
+    <p><strong>DOM:</strong> querySelector، innerHTML، classList</p>
+    <p><strong>رویدادها:</strong> addEventListener، preventDefault</p>
+    <p><strong>Async:</strong> callback، Promise، async/await</p>
+</div>
+
+<hr>
+
+<div class="metadata">
+    <h2>پایان راهنمای یادگیری</h2>
+    <p>برای استفاده بهتر:</p>
+    <ol>
+        <li>تمام مثال‌ها را اجرا کنید و درک کنید</li>
+        <li>تمرین کنید و پروژه‌ای بسازید</li>
+        <li>مستندات MDN را برای جزئیات بیشتر بخوانید</li>
+        <li>کد دیگران را بخوانید و یاد بگیرید</li>
+        <li>خطاهایتان را درک کنید و از آن‌ها یاد بگیرید</li>
+    </ol>
+    
+    <p><strong>نویسنده:</strong> دیکتاتور (Dictator)</p>
+    <p><strong>تاریخ:</strong> نوامبر 2025</p>
+    <p><strong>ورژن:</strong> 1.0</p>
+</div>
+
+</body>
+</html>

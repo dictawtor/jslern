@@ -1,0 +1,97 @@
+راهنمای تبدیل فایل‌های کد JavaScript به Word
+═════════════════════════════════════════════════════════════════
+
+برای تبدیل فایل‌های مرتب‌شده به سند Word، اینجا گزینه‌های مختلف داریم:
+
+1️⃣ روش ساده (بدون نرم‌افزار اضافی):
+────────────────────────────────────────────────────────────────
+
+الف) استفاده از فایل Markdown:
+- فایل JAVASCRIPT_STUDY_GUIDE.md را باز کنید
+- کل محتوا را کپی کنید
+- در Pandoc (یک نرم‌افزار تبدیل کننده) استفاده کنید:
+  
+  pandoc JAVASCRIPT_STUDY_GUIDE.md -o JAVASCRIPT_STUDY_GUIDE.docx
+
+ب) استفاده از Google Docs:
+- به Google Docs بروید (docs.google.com)
+- سند جدید ایجاد کنید
+- File → Open → Upload
+- فایل Markdown را آپلود کنید
+- سپس File → Download → Microsoft Word
+
+ج) استفاده از Online Converters:
+- https://pandoc.org/try/
+- https://cloudconvert.com/
+- فایل Markdown را آپلود کنید
+- به DOCX تبدیل کنید
+
+2️⃣ روش حرفه‌ای (بهتر):
+────────────────────────────────────────────────────────────────
+
+الف) نصب Pandoc:
+   Windows:
+   - choco install pandoc
+   یا از: https://pandoc.org/installing.html دانلود کنید
+
+ب) اجرای دستور تبدیل:
+   pandoc JAVASCRIPT_STUDY_GUIDE.md -o JAVASCRIPT_STUDY_GUIDE.docx
+
+ج) باز کردن در Word و تنظیم:
+   - Font را به "XB Ziba" یا "B Nazanin" تغییر دهید (برای فارسی)
+   - Styling را حسب‌الحال تنظیم کنید
+
+3️⃣ روش مستقیم (بدون Pandoc):
+────────────────────────────────────────────────────────────────
+
+الف) در Microsoft Word:
+   - File → New Document
+   - Paste محتوا (کپی شده از Markdown)
+   - Format را تنظیم کنید
+
+ب) نکات فرمت‌بندی:
+   - عناوین اصلی: Heading 1
+   - عناوین فرعی: Heading 2
+   - متن معمولی: Normal
+   - کد: Monospace (Courier New)
+
+4️⃣ فایل‌های مورد نیاز:
+────────────────────────────────────────────────────────────────
+
+✓ JAVASCRIPT_STUDY_GUIDE.md - فایل Markdown (بهترین برای تبدیل)
+✓ JAVASCRIPT_STUDY_GUIDE.js - فایل JavaScript (برای کد عملی)
+✓ main.js - فایل اصلی با تمرین‌ها
+
+5️⃣ مراحل نهایی در Word:
+────────────────────────────────────────────────────────────────
+
+1. فایل DOCX را باز کنید
+2. Table of Contents را اضافه کنید (References → Table of Contents)
+3. صفحه‌بندی را تنظیم کنید
+4. رنگ‌ها و استایل را تنظیم کنید
+5. قاموس و بررسی املا را چک کنید
+6. Save as PDF اگر می‌خواهید نسخه‌ای نهایی
+
+نکات مهم برای فارسی:
+────────────────────────────────────────────────────────────────
+
+• Font: XB Ziba, B Nazanin, IRANSans, Segoe UI
+• Direction: Right-to-Left (RTL)
+• Paragraph: Align Right
+• استفاده از Bullet Points برای لیست‌ها
+
+دستور مختصر:
+────────────────────────────────────────────────────────────────
+
+# در Command Line:
+pandoc JAVASCRIPT_STUDY_GUIDE.md \
+  --to docx \
+  --from markdown \
+  --output JAVASCRIPT_STUDY_GUIDE.docx \
+  --wrap=none \
+  --highlight-style=tango
+
+این دستور:
+- از Markdown به DOCX تبدیل می‌کند
+- کد‌ها را highlight می‌کند
+- Formatting را حفظ می‌کند
