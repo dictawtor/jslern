@@ -1873,6 +1873,7 @@ const Input = document.querySelector("input");
 
 console.log("===== مثال 1: Synchronous vs Asynchronous =====");
 
+
 // مثال Synchronous (زمان‌بر و بلاکینگ):
 function slowTask() {
   console.log("شروع کار زمان‌بر...");
@@ -1881,6 +1882,7 @@ function slowTask() {
   }
   console.log("کار زمان‌بر تکمیل شد!");
 }
+
 
 console.log("1. قبل از شروع کار");
 // slowTask(); // این خط برنامه را کند می‌کند
@@ -2025,6 +2027,24 @@ fetchUserPromise(1)
     console.error("خطا در فرایند:", error);
   });
 */
+
+//resolve and reject in promise
+// const samplePromise = new Promise((resolve, reject) => {
+//   const condition = true; // تغییر این مقدار برای تست
+//   if (condition) {
+//     resolve("Promise resolved successfully!");
+//   } else {
+//     reject("Promise rejected with an error.");
+//   }
+// });
+// samplePromise
+//   .then((message) => {
+//     console.log(message);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
 
 // ====================================================================
 // 4. Async/Await:
@@ -2256,3 +2276,35 @@ console.log("\n===== خلاصه نکات مهم =====");
 console.log("پایان توضیح مبحث Asynchronous");
 
 
+// json , ajax ,api 
+// JSON (JavaScript Object Notation) یک فرمت سبک برای تبادل داده‌ها است که به راحتی توسط انسان قابل خواندن و نوشتن است و توسط ماشین‌ها نیز به راحتی قابل تجزیه و تولید است. JSON معمولاً برای ارسال داده‌ها بین سرورها و برنامه‌های وب استفاده می‌شود.
+
+// مثال از JSON:  
+// const jsonData = `{
+//   "name": "محمد",
+//   "age": 30,
+//   "isStudent": false,
+//   "courses": ["ریاضی", "فیزیک", "برنامه‌نویسی"],
+//   "address": {
+//     "city": "تهران",
+//     "country": "ایران"
+//   }
+// }`;
+// // تبدیل JSON به شیء جاوااسکریپت
+// const jsObject = JSON.parse(jsonData);
+// console.log("JavaScript Object:", jsObject);
+// // تبدیل شیء جاوااسکریپت به JSON
+// const jsonString = JSON.stringify(jsObject);
+// console.log("JSON String:", jsonString);
+// AJAX (Asynchronous JavaScript and XML) یک تکنیک در توسعه وب است که به برنامه‌های وب اجازه می‌دهد تا به صورت غیرهمزمان با سرورها ارتباط برقرار کنند و داده‌ها را بدون نیاز به بارگذاری مجدد صفحه دریافت یا ارسال کنند. AJAX معمولاً از XMLHttpRequest یا Fetch API برای انجام درخواست‌های HTTP استفاده می‌کند.
+
+// مثال از AJAX با استفاده از Fetch API:  
+// fetch("https://jsonplaceholder.typicode.com/posts/1")
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log("Fetched Data:", data);
+//   })
+//   .catch(error => {
+//     console.error("Error fetching data:", error);
+//   });
+// API (Application Programming Interface) یک رابط است که به برنامه‌ها اجازه می‌دهد تا با یکدیگر ارتباط برقرار کنند و از قابلیت‌ها و داده‌های یکدیگر استفاده کنند. APIها معمولاً شامل مجموعه‌ای از قوانین و پروتکل‌ها هستند که نحوه درخواست و پاسخ بین برنامه‌ها را تعریف می‌کنند. APIها می‌توانند به صورت محلی (local) یا از راه دور (remote) باشند و معمولاً از طریق پروتکل‌های HTTP/HTTPS برای برنامه‌های وب استفاده می‌شوند.
