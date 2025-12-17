@@ -1,2310 +1,2397 @@
-// ╔═══════════════════════════════════════════════════════════════════════════╗
-// ║                                                                           ║
-// ║                     راهنمای جامع یادگیری JavaScript                     ║
-// ║                                                                           ║
-// ║  نویسنده: دیکتاتور (Dictator)                                            ║
-// ║  تاریخ: نوامبر 2025                                                      ║
-// ║  موضوع: یادگیری کامل اصول JavaScript                                   ║
-// ║                                                                           ║
-// ╚═══════════════════════════════════════════════════════════════════════════╝
-
-// تمرین عملی 1: محاسبه قدرت خرید
-console.log("\n═══════════════════════════════════════════════════════════");
-console.log("تمرین 1: محاسبه قدرت خرید");
-console.log("═══════════════════════════════════════════════════════════");
-
-const price1 = 10;
-const price2 = 15;
-const price3 = 4000;
-const balance = 500;
-
-console.log("موجودی حساب:", balance);
-
-const totalPrice = price1 + price2 + price3 * 2;
-console.log("قیمت کل:", totalPrice);
-
-const averagePrice = totalPrice / 4;
-console.log("قیمت متوسط:", averagePrice);
-
-const finalPrice = totalPrice * 0.95;
-console.log("قیمت نهایی (95%):", finalPrice);
-
-const canBuy = balance >= finalPrice;
-const message = canBuy
-  ? "✓ شما می‌توانید خرید کنید!"
-  : "✗ موجودی حساب کافی نیست";
-console.log(message);
-
-// // متد های toFixde و toString
-// const number = 50;
-// console.log(number);
-// console.log(typeof number);
-
-// const mesal = number.toString();
-// console.log(mesal);
-// console.log(typeof mesal);
-// // متد toFixed
-// const number2 = 50.1354654464164;
-// console.log(number2.toFixed(3));
-
-// challange: Capitalize first letter of a text
-// const text = "hi, i am morteza and im a developer"
-// const firstLetter = text.charAt(0)
-// const upperCaseFirstLetter = firstLetter.toUpperCase()
-// const finaltext = text.replace(firstLetter, upperCaseFirstLetter)
-// console.log(finaltext);
-
-// chalange : replace a part op phone number
-// const phone = "09011546532"
-// const substring = phone.slice(3,7)
-// const signs = "****"
-// const finalPhone = phone.replace(substring ,signs)
-// console.log(finalPhone);
-
-// // template literals
-// const name = "morteza"
-// const age  = "26"
-// // const text = "Hello my name is morteza "
-// const introductionText = `Hello my name is ${name} and im ${age} years old`
-// console.log(text);
-
-// challange  Extract name an last name
-// const fullname = "Morteza Azami"
-// const spaceIndex = fullname.indexOf(" ")
-// const name = fullname.slice(0 , spaceIndex)
-// const lastName = fullname.slice(spaceIndex +1)
-// const nameDetailsText = `Your name is ${name } and your last name is ${lastName}`
-// console.log(text);
-// console.log(spaceIndex);
-
-// Array
-//   const myArray = ["morteza", "azami" ,26]
-// console.log(myArray);
-// console.log(myArray[1]);
-//  const string = myArray.join( )
-//  const string1 = myArray.join( " and ")
-//  const Array2 = [1,12,3]
-// const newArray = myArray.concat(Array2)
-// //concat ezaFE MIKONE be array asli
-// console.log(newArray);
-// const new1 = [[ "qwa" , "as"  , "aa"  ] , [ "df1" ,23 ,23, 2] ]
-// const finalarray = new1.flat ( )
-// console.log(finalarray);
-// console.log(typeof finalarray);
-
-// includes / index of
-// console.log(myArray.indexOf(26));
-// console.log(myArray.includes(26));
-// ba include mitunim befahmim ye array vjod dare ya na  va ba index makanesho peyda mikonim
-
-// conditional statement
-// const age = 20
-// if (age >= 20) {
-//   console.log("you are an adult");
-// }
-// else if (age >= 18) {
-//   console.log("you are adult");
-// }
-// else if (age >= 13) {
-//   console.log("you are a teenager");
-// }
-
-// check triangle // challange
-// const side1 = 5
-// const side2 = 5
-// const side3 = 5
-// if (side1 === side2 && side2 === side3){
-//   console.log("this is mosalas motesavi azlaah");
-// }else if (side1 === side2 || side1 === side3 || side2 ===side3){
-//   console.log("this is mosalas motesavi sagein");
-// }else {
-//   console.log("this is mosalas gheyre motesavi azlaah");
-// }
-
-// // check number is positive or negative
-
-// const number = -5
-// if (number > 0) {
-//   console.log("this is positive number");
-// } else if (number < 0) {
-//   console.log("this is negative number");
-// } else {
-//   console.log("this is zero");
-// }
-
-// Switch case
-// const day = 5
-// switch (day) {
-//   case 1:
-//     console.log("saturday");
-//     break;
-//   case 2:
-//     console.log("sunday");
-//     break;
-//   case 3:
-//     console.log("monday");
-//     break;
-//   case 4:
-//     console.log("tuesday");
-//     break;
-//   case 5:
-//     console.log("wednesday");
-
-//     break;
-//   case 6:
-//     console.log("thursday");
-//     break;
-//   case 7:
-//     console.log("friday");
-//     break;
-
-//   default:
-//     console.log("this is not a valid day");
-//     break;
-// }
-
-// for loop
-
-// for (let i = 10; i > 1; i--) {
-//   console.log(i);
-
-// }
-// const myArray = [2,4,6,8,10]
-// for (let i = myArray.length; i > 0; i) {
-// for (let i = myArray.length; i > 0; i--) {
-// }
-
-// for of loop
-// const array = [2,4,6,8]
-// for (const i of array) {
-//     console.log(i +2 );
-
-// }
-// for in loop
-// const object = {
-//   name: "morteza",
-//   age: 26,
-//   job: "developer"
-// }
-// for (const key in object) {
-//   console.log(`${key} : ${object[key]}`);
-// }
-// const keys = Object.keys(object)
-// for (let i =0 ; i < keys.length; i++){
-//     console.log(object[keys[i]]);
-// }
-
-//while
-// let i = 1
-// while (i < 10){
-//     console.log(i);
-//     i++
-// }
-
-//do while
-// let i = 11
-// do{
-//      console.log(i);
-//      i++
-// }while (i < 10)
-
-// challenge write a js code to print even numbers in given array
-// const numbers = [13,23 , 12 ,45 , 22, 48, 66, 100]
-// const evenNumbers = []
-// for ( let i = 0  ; i < numbers.length ; i++) {
-//   if (numbers[i] % 2 === 0) {
-//     evenNumbers.push(numbers[i])
-
-//   }
-// }
-// console.log(evenNumbers);
-//challenge star
-// in male mane
-// let star = []
-// for(let i = 1 ; i <= 5 ; i++){
-//     if (i <= 5) {
-//         // const star = i
-//         star.push(i)
-//         console.log(...star);
-
-//     }
-
-// }
-// inm male ostad
-// for (let i = 1 ; i <= 5 ;i++){
-//     let string = " "
-//     for (let j = 1 ; j <= i ; j++){
-//         string += j + " " ;
-//     }
-//     console.log(string);
-// }
-
-// const array = [ 4, 12 , 2, 34 , 4, 1, 12, 1, 4, 4 ]
-// const newArray = []
-// for (let i = 0; i < array.length; i++) {
-//     let current = array[i];
-//   // اگر عنصر بیشتر از یک بار در آرایه وجود داره و هنوز توی duplicates اضافه نشده
-//   if (
-//     array.indexOf(current) !== array.lastIndexOf(current) &&
-//     newArray.indexOf(current) === -1
-//   ) {
-//     newArray.push(current);
-//   }
-
-// }
-// console.log(newArray);
-
-// function
-// function showMessage() {
-//   console.log("hello");
-// }
-// showMessage(); // calling function
-
-// function duplicates(number) { //number dar inja vorodiye (parameter)
-//     const result = number * 2;
-//     console.log(result);
-// }
-// duplicates(2);
-
-// فانکشن میتونه چند تا ورودی داشته باشه
-// function sum(a, b) {
-//   const result = a + b;
-//   console.log(result);
-// }
-// sum(2, 3);
-
-//مبحث return  در فانکشن
-
-/**
- * مبحث return در فانکشن:
- *
- * در جاوااسکریپت، کلمه کلیدی `return` برای بازگرداندن مقدار از یک تابع استفاده می‌شود.
- * زمانی که تابعی به دستور `return` می‌رسد، اجرای تابع متوقف شده و مقدار مشخص‌شده به جایی که تابع فراخوانی شده بازگردانده می‌شود.
- * اگر در تابع از `return` استفاده نشود، مقدار بازگشتی تابع به طور پیش‌فرض `undefined` خواهد بود.
- *
- * مثال:
- *
- * function sum(a, b) {
- *   return a + b;
- * }
- *
- * const result = sum(2, 3); // مقدار result برابر با 5 خواهد بود
- *
- * نکته: بعد از اجرای دستور `return`، هیچ کدی در ادامه‌ی تابع اجرا نخواهد شد.
- */
-
-// function sum(a, b) {
-//     // return a + b; // مقدار حاصل جمع را باز می‌گرداند
-//     // console.log("This line will not be executed"); // این خط هرگز اجرا نخواهد شد
-// }
-// const result = sum(2, 3);
-// console.log(result);
-
-/**
- * مبحث Scope (دامنه متغیرها) در جاوااسکریپت:
- *
- * در جاوااسکریپت، Scope به محدوده‌ای گفته می‌شود که یک متغیر یا تابع در آن قابل دسترسی است.
- * به طور کلی سه نوع Scope وجود دارد:
- *
- * 1. Global Scope (دامنه سراسری):
- *    متغیرهایی که خارج از هر تابع یا بلاک تعریف می‌شوند، در کل برنامه قابل دسترسی هستند.
- *
- * 2. Function Scope (دامنه تابع):
- *    متغیرهایی که با کلیدواژه var درون یک تابع تعریف می‌شوند، فقط در همان تابع قابل دسترسی هستند.
- *
- * 3. Block Scope (دامنه بلاک):
- *    متغیرهایی که با let یا const درون یک بلاک ({ ... }) تعریف می‌شوند، فقط در همان بلاک قابل دسترسی هستند.
- *
- * مثال:
- *
- * let a = 10; // Global Scope
- * function test() {
- *   let b = 20; // Function Scope
- *   if (true) {
- *     let c = 30; // Block Scope
- *   }
- *   // متغیر c اینجا قابل دسترسی نیست
- * }
- * // متغیر b و c اینجا قابل دسترسی نیستند
- *
- * نکته: استفاده صحیح از Scope باعث جلوگیری از تداخل متغیرها و افزایش خوانایی و امنیت کد می‌شود.
- */
-
-/**
- * مفهوم Hoisting (بالا بردن) در جاوااسکریپت:
- *
- * Hoisting به این معناست که اعلان متغیرها و توابع در زمان اجرای برنامه به بالای Scope مربوطه منتقل می‌شوند.
- * به عبارت دیگر، جاوااسکریپت قبل از اجرای کد، ابتدا متغیرها (با var) و توابع را در حافظه ثبت می‌کند.
- *
- * نکات مهم:
- * - فقط اعلان متغیرها (نه مقداردهی اولیه) با var و اعلان توابع (Function Declaration) Hoist می‌شوند.
- * - متغیرهای تعریف‌شده با let و const Hoist می‌شوند اما مقداردهی اولیه ندارند و قبل از مقداردهی قابل استفاده نیستند (Temporal Dead Zone).
- * - Function Expressionها (تخصیص تابع به متغیر) مانند متغیرها رفتار می‌کنند و فقط اعلان متغیر Hoist می‌شود.
- *
- * مثال:
- *
- * console.log(a); // undefined
- * var a = 5;
- *
- * foo(); // "Hello"
- * function foo() {
- *   console.log("Hello");
- * }
- *
- * // اما:
- * bar(); // TypeError: bar is not a function
- * var bar = function() {
- *   console.log("Hi");
- * }
- *
- * استفاده صحیح از Hoisting باعث جلوگیری از خطاهای رایج و افزایش خوانایی کد می‌شود.
- */
-
-// "use strict"; // فعال کردن حالت سختگیرانه
-
-// در strict mode:
-// 1. متغیرها حتما باید با let, const یا var تعریف شوند
-// 2. حذف متغیرها و توابع ممنوع است
-// 3. استفاده از this در سطح global به undefined اشاره می‌کند
-// 4. تکرار نام پارامتر در تابع مجاز نیست
-// 5. استفاده از کلمات رزرو شده برای نام متغیر ممنوع است
-
-// function example() {
-//     let x = 10;
-//     console.log(x);
-// }
-
-// example();
-
-// strict mode یک مکانیزم برای نوشتن کد تمیزتر و امن تر در JavaScript است
-
-//function expression چیه
-// function expression یک نوع تعریف تابع است که در آن تابع به یک متغیر نسبت داده می‌شود.
-// این نوع تعریف تابع به ما اجازه می‌دهد که تابع را به عنوان یک مقدار به متغیرها، آرایه‌ها یا اشیاء نسبت دهیم.
-// function expression به دو صورت تعریف می‌شود:
-// 1. با استفاده از کلمه کلیدی `function` و نام تابع (Function Declaration)
-// 2. بدون نام (Anonymous Function) که به یک متغیر نسبت داده می‌شود
-// function expression به ما اجازه می‌دهد که توابع را به عنوان مقادیر در جاوااسکریپت استفاده کنیم.
-
-//function declaration چیه
-// function declaration یک نوع تعریف تابع است که در آن تابع با استفاده از کلمه کلیدی `function` و نام تابع تعریف می‌شود.
-// این نوع تعریف تابع به ما اجازه می‌دهد که تابع را به عنوان یک مقدار به متغیرها، آرایه‌ها یا اشیاء نسبت دهیم.
-// function declaration به ما اجازه می‌دهد که توابع را به عنوان مقادیر در جاوااسکریپت استفاده کنیم.
-
-//IIFE (Immediately Invoked Function Expression)
-// یک الگوی طراحی در جاوااسکریپت است که به ما اجازه می‌دهد که یک تابع را بلافاصله پس از تعریف آن اجرا کنیم.
-//مثال
-// (function() {
-//     console.log("This is an IIFE");
-// })(); // بلافاصله اجرا می‌شود
-
-// arrow function
-// یک نوع تعریف تابع در جاوااسکریپت است که با استفاده از علامت `=>` تعریف می‌شود.
-// این نوع تعریف تابع به ما اجازه می‌دهد که توابع را به صورت مختصرتر و با سینتکس ساده‌تری تعریف کنیم.
-// example
-// const add = (a, b) => a + b;
-// const result = add(2, 3);
-// console.log(result); // 5
-
-//callback function
-// یک تابع است که به عنوان آرگومان به یک تابع دیگر ارسال می‌شود و در آن تابع اجرا می‌شود.
-// این الگو به ما اجازه می‌دهد که توابع را به صورت غیرهمزمان اجرا کنیم و از نتایج آن‌ها در زمان مناسب استفاده کنیم.
-// مثال
-// function greet(name, callback) {
-//     console.log(`Hello, ${name}!`);
-//     callback(); // اجرای تابع callback
-// }
-// function sayGoodbye() {
-//     console.log("Goodbye!");
-// }
-// greet("Morteza", sayGoodbye); // خروجی: Hello, Morteza! \n Goodbye!
-// //example 2
-// function fetchData(callback) {
-//     setTimeout(() => {
-//         const data = { id: 1, name: "Morteza" };
-//         callback(data); // اجرای تابع callback با داده‌های دریافتی
-//     }, 2000);
-// }
-// fetchData((data) => {
-//     console.log("Data received:", data); // خروجی: Data received: { id: 1, name: "Morteza" }
-// });
-// // example 3
-// function processData(data, callback) {
-//     const processedData = data.map(item => item * 2); // پردازش داده‌ها
-//     callback(processedData); // اجرای تابع callback با داده‌های پردازش‌شده
-// }
-// const numbers = [1, 2, 3, 4, 5];
-// processData(numbers, (result) => {
-//     console.log("Processed data:", result); // خروجی: Processed data: [2, 4, 6, 8, 10]
-// });
-
-//Challange :Write a functhion to finde the count of a letter in string
-
-// function countLetter (str , Letter){
-//    let count = 0;
-//     for (let i = 0; i < str.length; i++) {
-//       if(str[i] === Letter) {
-//         count++
-//       }
-//     }
-//     return count
-// }
-//  const result = countLetter( "hi i am morteza" , "i")
-//  console.log(result); // 2
-
-//   for Each   چیه
-//   forEach یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بر روی هر عنصر آرایه یک تابع را اجرا کنیم.
-//   این متد به صورت زیر استفاده می‌شود:
-// array.forEach((element) => {
-//     // کد مورد نظر برای هر عنصر
-// });
-//example
-// const numbers = [1, 2, 3, 4, 5];
-// numbers.forEach((number) => {
-//     console.log(number);
-// });
-// // خروجی:
-// // 1
-// // 2
-// // 3
-// // 4
-// // 5
-// // این متد به ما اجازه می‌دهد که بر روی هر عنصر آرایه یک تابع را اجرا کنیم و از آن برای انجام عملیات مختلف بر روی عناصر آرایه استفاده کنیم.
-// // نکته: متد forEach هیچ مقداری را بازنمی‌گرداند و فقط برای اجرای یک تابع بر روی هر عنصر آرایه استفاده می‌شود.
-// // مثال دیگر
-// const fruits = ["apple", "banana", "orange"];
-// fruits.forEach((fruit) => {
-//     console.log(fruit);
-// });
-// // خروجی:
-// // apple
-// // banana
-// // orange
-
-// map
-// map یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بر روی هر عنصر آرایه یک تابع را اجرا کنیم و نتیجه آن را در یک آرایه جدید ذخیره کنیم.
-// این متد به صورت زیر استفاده می‌شود:
-// array.map((element) => {
-//     // کد مورد نظر برای هر عنصر
-//     return newValue; // مقدار جدید برای عنصر
-// });
-// example
-// const numbers = [1, 2, 3, 4, 5];
-// const doubledNumbers = numbers.map((number) => {
-//     return number * 2; // ضرب هر عدد در 2
-// });
-// console.log(doubledNumbers); // خروجی: [2, 4, 6, 8, 10]
-// // این متد به ما اجازه می‌دهد که بر روی هر عنصر آرایه یک تابع را اجرا کنیم و نتیجه آن را در یک آرایه جدید ذخیره کنیم.
-// نکته: متد map یک آرایه جدید با مقادیر جدید بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد.
-// مثال دیگر
-// const fruits = ["apple", "banana", "orange"];
-// const fruitLengths = fruits.map((fruit) => {
-//     return fruit.length; // طول هر میوه
-// });
-// console.log(fruitLengths); // خروجی: [5, 6, 6]
-// // این متد به ما اجازه می‌دهد که بر روی هر عنصر آرایه یک تابع را اجرا کنیم و نتیجه آن را در یک آرایه جدید ذخیره کنیم.
-// نکته: متد map یک آرایه جدید با مقادیر جدید بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد.
-
-//find
-// find یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
-// این متد به صورت زیر استفاده می‌شود:
-// array.find((element) => {
-//     // شرط مورد نظر برای پیدا کردن عنصر
-//     return condition; // اگر شرط برقرار باشد، عنصر را برمی‌گرداند
-// });
-// example
-// const numbers = [1, 2, 3, 4, 5];
-// const foundNumber = numbers.find((number) => {
-//     return number > 3; // پیدا کردن اولین عدد بزرگتر از 3
-// });
-// console.log(foundNumber); // خروجی: 4
-// // این متد به ما اجازه می‌دهد که اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
-// نکته: اگر هیچ عنصری با شرط مشخص شده مطابقت نداشته باشد، متد find مقدار undefined را برمی‌گرداند.
-//findIndex
-// findIndex یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا ایندکس اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
-// این متد به صورت زیر استفاده می‌شود:
-// array.findIndex((element) => {
-//     // شرط مورد نظر برای پیدا کردن عنصر
-//     return condition; // اگر شرط برقرار باشد، ایندکس عنصر را برمی‌گرداند
-// });
-// example
-// const numbers = [1, 2, 3, 4, 5];
-// const foundIndex = numbers.findIndex((number) => {
-//     return number > 3; // پیدا کردن ایندکس اولین عدد بزرگتر از 3
-// });
-// console.log(foundIndex); // خروجی: 3
-// // این متد به ما اجازه می‌دهد که ایندکس اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
-// نکته: اگر هیچ عنصری با شرط مشخص شده مطابقت نداشته باشد، متد findIndex مقدار -1 را برمی‌گرداند.
-
-//filter
-// filter یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا عناصری را که با شرط مشخص شده مطابقت دارند، پیدا کنیم و در یک آرایه جدید ذخیره کنیم.
-// این متد به صورت زیر استفاده می‌شود:
-// array.filter((element) => {
-//     // شرط مورد نظر برای پیدا کردن عناصر
-//     return condition; // اگر شرط برقرار باشد، عنصر را در آرایه جدید قرار می‌دهد
-// });
-// example
-// const numbers = [1, 2, 3, 4, 5];
-// const filteredNumbers = numbers.filter((number) => {
-//     return number > 3; // پیدا کردن اعداد بزرگتر از 3
-// });
-// console.log(filteredNumbers); // خروجی: [4, 5]
-// // این متد به ما اجازه می‌دهد که عناصری را که با شرط مشخص شده مطابقت دارند، پیدا کنیم و در یک آرایه جدید ذخیره کنیم.
-
-// نکته: متد filter یک آرایه جدید با عناصری که با شرط مشخص شده مطابقت دارند، بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد.
-
-//reduce
-// reduce یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا یک مقدار واحد را از آرایه محاسبه کنیم.
-// این متد به صورت زیر استفاده می‌شود:
-// array.reduce((accumulator, currentValue) => {
-//     // کد مورد نظر برای محاسبه مقدار جدید
-//     return newValue; // مقدار جدید برای accumulator
-// }, initialValue);
-// example
-// const numbers = [1, 2, 3, 4, 5];
-// const sum = numbers.reduce((accumulator, currentValue) => {
-//     return accumulator + currentValue; // جمع کردن مقادیر
-// }, 0);
-// console.log(sum); // خروجی: 15
-// // این متد به ما اجازه می‌دهد که یک مقدار واحد را از آرایه محاسبه کنیم.
-
-// some & every
-// some یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بررسی کنیم آیا حداقل یک عنصر در آرایه با شرط مشخص شده مطابقت دارد یا خیر.
-// این متد به صورت زیر استفاده می‌شود:
-// array.some((element) => {
-//     // شرط مورد نظر برای بررسی عنصر
-//     return condition; // اگر شرط برقرار باشد، true برمی‌گرداند
-// });
-// example
-// const numbers = [1, 2, 3, 4, 5];
-// const hasEvenNumber = numbers.some((number) => {
-//     return number % 2 === 0; // بررسی وجود عدد زوج
-// });
-// console.log(hasEvenNumber); // خروجی: true
-// // این متد به ما اجازه می‌دهد تا بررسی کنیم آیا حداقل یک عنصر در آرایه با شرط مشخص شده مطابقت دارد یا خیر.
-
-// every یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بررسی کنیم آیا همه عناصر در آرایه با شرط مشخص شده مطابقت دارند یا خیر.
-// این متد به صورت زیر استفاده می‌شود:
-// array.every((element) => {
-//     // شرط مورد نظر برای بررسی عنصر
-//     return condition; // اگر شرط برقرار باشد، true برمی‌گرداند
-// });
-// example
-// const numbers = [1, 2, 3, 4, 5];
-// const allPositive = numbers.every((number) => {
-//     return number > 0; // بررسی مثبت بودن همه اعداد
-// });
-// console.log(allPositive); // خروجی: true
-// // این متد به ما اجازه می‌دهد تا بررسی کنیم آیا همه عناصر در آرایه با شرط مشخص شده مطابقت دارند یا خیر.
-// نکته: متد some اگر حداقل یک عنصر با شرط مشخص شده مطابقت داشته باشد، مقدار true برمی‌گرداند و در غیر این صورت مقدار false. متد every نیز اگر همه عناصر با شرط مشخص شده مطابقت داشته باشند، مقدار true برمی‌گرداند و در غیر این صورت مقدار false.
-
-// Challenge 1. Find customers with age>60 and age<10
-// Challenge 2. Build customer data with title and full name
-
-// const customers = [
-//   {
-//     id: 1,
-//     f_name: "Abby",
-//     l_name: "Thomas",
-//     gender: "M",
-//     married: true,
-//     age: 32,
-//     expense: 500,
-//     purchased: ["Shampoo", "Toys", "Book"],
-//   },
-//   {
-//     id: 2,
-//     f_name: "Jerry",
-//     l_name: "Tom",
-//     gender: "M",
-//     married: true,
-//     age: 64,
-//     expense: 100,
-//     purchased: ["Stick", "Blade"],
-//   },
-//   {
-//     id: 3,
-//     f_name: "Dianna",
-//     l_name: "Cherry",
-//     gender: "F",
-//     married: true,
-//     age: 22,
-//     expense: 1500,
-//     purchased: ["Lipstik", "Nail Polish", "Bag", "Book"],
-//   },
-//   {
-//     id: 4,
-//     f_name: "Dev",
-//     l_name: "Currian",
-//     gender: "M",
-//     married: true,
-//     age: 82,
-//     expense: 90,
-//     purchased: ["Book"],
-//   },
-//   {
-//     id: 5,
-//     f_name: "Maria",
-//     l_name: "Gomes",
-//     gender: "F",
-//     married: false,
-//     age: 7,
-//     expense: 300,
-//     purchased: ["Toys"],
-//   },
-// ];
-// console.log("ok");
-// Challenge 1: Find customers with age > 60 and age < 10
-// const filteredCustomers = customers.filter ( (customers ) => {
-//     return customers.age > 40 || customers.age < 10;
-// })
-// console.log(filteredCustomers);
-// Challenge 2: Build customer data with title and full name
-// const customerData = customers.map((customer) => {
-//   if (customer.gender === "M") {
-//     console.log("hi mr", `${customer.f_name} ${customer.l_name}`);
-//   } else if (customer.married === true) {
-//     console.log("hi mrs", `${customer.f_name} ${customer.l_name}`);
-//   } else {
-//     console.log("hi miss", `${customer.f_name} ${customer.l_name}`);
-//   }
-//   //     return {
-//   //         title: "hi",
-//   //         // f_name: customer.f_name,
-//   //         // l_name: customer.l_name,
-//   //         full_name: `${customer.f_name} ${customer.l_name}`
-//   //     };
-// });
-
-//111
-//this  در جاوااسکریپت
-// this یک کلمه کلیدی در جاوااسکریپت است که به شیء فعلی اشاره می‌کند که در آن کد اجرا می‌شود.
-// در محیط‌های مختلف، this می‌تواند به اشیاء مختلف اشاره کند. در اینجا چند مثال از نحوه استفاده از this در جاوااسکریپت آورده شده است:
-// 1. در تابع معمولی:
-// function showThis() {
-//     console.log(this); // در اینجا this به شیء global اشاره می‌کند
-// }
-// showThis(); // خروجی: Window یا global در محیط Node.js
-// 2. در یک شیء:
-// const person = {
-//     name: "Morteza",
-//     showName: function() {
-//         console.log(this.name); // در اینجا this به شیء person اشاره می‌کند
-//     }
-// };
-// person.showName(); // خروجی: Morteza
-// 3. در کلاس‌ها:
-// class Person {
-//     constructor(name) {
-//         this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
-//     }
-//     showName() {
-//         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
-//     }
-// }
-// }
-// const person1 = new Person("Morteza");
-// person1.showName(); // خروجی: Morteza
-// 4. در رویدادها:
-// const button = document.querySelector("button");
-// button.addEventListener("click", function() {
-//     console.log(this); // در اینجا this به عنصر button اشاره می‌کند
-// });
-// 5. در تابع‌های arrow:
-// const person = {
-//     name: "Morteza",
-//     showName: () => {
-//         console.log(this.name); // در اینجا this به شیء global اشاره می‌کند، زیرا arrow function از this محیط بیرونی خود استفاده می‌کند
-//     }
-// };
-// person.showName(); // خروجی: undefined (اگر در محیط global اجرا شود)
-// 6. در متدهای شیء:
-// const Car = {
-//     brand: "Toyota",
-//     showBrand: function() {
-//         console.log(this.brand); // در اینجا this به شیء car اشاره می‌کند
-//     }
-// };
-// car.showBrand(); // خروجی: Toyota
-// 7. در تابع‌های constructor:
-// function Car(brand) {
-//     this.brand = brand; // در اینجا this به شیء جدید اشاره می‌کند
-// }
-//     this.showBrand = function() {
-//         console.log(this.brand); // در اینجا this به شیء فعلی اشاره می‌کند
-//     };
-// }
-// const myCar = new Car("Honda");
-// myCar.showBrand(); // خروجی: Honda
-// 8. در متدهای prototype:
-// function Car(brand) {
-//     this.brand = brand; // در اینجا this به شیء جدید اشاره می‌کند
-// }
-// }
-// Car.prototype.showBrand = function() {
-//     console.log(this.brand); // در اینجا this به شیء فعلی اشاره می‌کند
-// };
-// const myCar = new Car("Honda");
-// myCar.showBrand(); // خروجی: Honda
-// 9. در تابع‌های callback:
-// function greet(name) {
-//     console.log(`Hello, ${name}!`);
-// }
-// setTimeout(greet, 1000, "Alice"); // خروجی: Hello, Alice!
-// 10. در تابع‌های constructor با استفاده از bind:
-// function Person(name) {
-//     this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
-// }
-//     this.showName = function() {
-//         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
-//     };
-
-// const person1 = new Person("Morteza");
-// const boundShowName = person1.showName.bind(person1);
-// boundShowName(); // خروجی: Morteza
-// 11. در تابع‌های constructor با استفاده از call و apply:
-// function Person(name) {
-//     this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
-// }
-//     this.showName = function() {
-//         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
-//     };
-// }
-// const person1 = new Person("Morteza");
-// const person2 = new Person("Ali");
-// person1.showName.call(person2); // خروجی: Ali
-// person1.showName.apply(person2); // خروجی: Ali
-// 12. در تابع‌های constructor با استفاده از bind:
-// function Person(name) {
-//     this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
-// }
-//     this.showName = function() {
-//         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
-//     };
-// }
-
-//bind
-// bind یک متد در جاوااسکریپت است که به ما اجازه می‌دهد تا this را به یک شیء خاص متصل کنیم و یک تابع جدید ایجاد کنیم که در آن this همیشه به آن شیء اشاره می‌کند.
-// این متد به صورت زیر استفاده می‌شود:
-// functionName.bind(thisArg, arg1, arg2, ...);
-// example
-// const person = {
-//     name: "Morteza",
-//     showName: function() {
-//         console.log(this.name);
-//     }
-// };
-
-// const boundShowName = person.showName.bind(person);
-// boundShowName(); // خروجی: Morteza
-// نکته: متد bind یک تابع جدید ایجاد می‌کند که در آن this همیشه به شیء مشخص شده اشاره می‌کند. این متد همچنین می‌تواند آرگومان‌های اضافی را نیز بپذیرد که به تابع اصلی ارسال می‌شوند.
-// // const person = {
-//     name: "Morteza",
-//     showName: function(greeting) {
-//         console.log(`${greeting}, ${this.name}!`);
-//     }
-// };
-
-// const boundShowName = person.showName.bind(person, "Hello");
-// boundShowName(); // خروجی: Hello, Morteza!
-// نکته: متد bind به ما اجازه می‌دهد تا this را به یک شیء خاص متصل کنیم و یک تابع جدید ایجاد کنیم که در آن this همیشه به آن شیء اشاره می‌کند. این متد همچنین می‌تواند آرگومان‌های اضافی را نیز بپذیرد که به تابع اصلی ارسال می‌شوند.
-
-// call & apply
-// call و apply دو متد در جاوااسکریپت هستند که به ما اجازه می‌دهند تا this را به یک شیء خاص متصل کنیم و یک تابع را با آن شیء اجرا کنیم.
-// متد call به ما اجازه می‌دهد تا یک تابع را با یک شیء خاص به عنوان this اجرا کنیم و می‌توانیم آرگومان‌های جداگانه را نیز به آن ارسال کنیم.
-// مثال:
-// function greet() {
-//     console.log(`Hello, ${this.name}!`);
-// }
-// const person = { name: "Morteza" };
-// greet.call(person); // خروجی: Hello, Morteza!
-
-// // متد apply مشابه call است، با این تفاوت که آرگومان‌ها را به صورت یک آرایه دریافت می‌کند.
-// // مثال:
-// function introduce(greeting) {
-//     console.log(`${greeting}, I'm ${this.name}.`);
-// }
-// const person2 = { name: "Ali" };
-// introduce.apply(person2, ["Hi"]); // خروجی: Hi, I'm Ali.
-
-// نکته: هر دو متد call و apply به ما اجازه می‌دهند تا this را به یک شیء خاص متصل کنیم و یک تابع را با آن شیء اجرا کنیم. تفاوت اصلی بین این دو در نحوه ارسال آرگومان‌ها است: call آرگومان‌ها را به صورت جداگانه می‌پذیرد، در حالی که apply آرگومان‌ها را به صورت یک آرایه می‌پذیرد.function Person(name) {
-// this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
-
-// setter & getter  توی جاوااسکریپت
-// setter و getter دو مفهوم مهم در برنامه‌نویسی شیءگرا هستند که به ما اجازه می‌دهند تا به صورت کنترل‌شده به ویژگی‌های یک شیء دسترسی پیدا کنیم و آن‌ها را تغییر دهیم.
-// setter یک متد است که به ما اجازه می‌دهد تا مقدار یک ویژگی را تنظیم کنیم. این متد معمولاً با پیشوند "set" تعریف می‌شود و یک پارامتر می‌پذیرد که مقدار جدید برای ویژگی است.
-// getter یک متد است که به ما اجازه می‌دهد تا مقدار یک ویژگی را دریافت کنیم. این متد معمولاً با پیشوند "get" تعریف می‌شود و هیچ پارامتری نمی‌پذیرد.// مثال:function Person(name)
-//مثال ساده
-// class Person {
-//     constructor(name) {
-//         this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
-//         let age = 0; // ویژگی خصوصی
-
-//         // تعریف setter برای ویژگی age
-//         this.setAge = function (newAge) {
-//             if (newAge > 0) {
-//                 age = newAge;
-//             } else {
-//                 console.log("Please enter a valid age.");
-//             }
-//         };
-
-//         // تعریف getter برای ویژگی age
-//         this.getAge = function () {
-//             return age;
-//         };
-
-//         this.showName = function () {
-//             console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
-//         };
-
-//     }
-// }
-// const person1 = new Person("Morteza");
-// person1.setAge(1); // تنظیم سن با استفاده از setter
-// console.log(person1.getAge()); // دریافت سن با استفاده از getter
-// console.log(person1.name); // خروجی: Morteza
-// //  // نکته: استفاده از setter و getter به ما اجازه می‌دهد تا کنترل بیشتری بر روی دسترسی و تغییر ویژگی‌های یک شیء داشته باشیم. با استفاده از این متدها، می‌توانیم اعتبارسنجی و منطق خاصی را هنگام تنظیم یا دریافت مقادیر اعمال کنیم.
-
-// //// شیء user با مشخصات زیر:
-// const user = {
-//   firstName: 'مرتضی',
-//   lastName: 'س',
-//   age: 22,
-
-//   // یک getter که fullName رو برگردونه
-//   // یک setter که fullName بگیره و اسم و فامیل رو جدا کنه
-// };
-
-// // بعد یک تابع مستقل بساز که اطلاعات کامل کاربر رو چاپ کنه
-// // از call یا apply استفاده کن که اون تابع رو با user اجرا کنی
-// const fullName = `${user.firstName} ${user.lastName}`;
-// Setter: function(fullName) {
-//   const names = fullName.split(' ');
-//   this.firstName = names[0];
-//   this.lastName = names[1];
-// },
-// function printUserInfo() {
-//   console.log(`کاربر: ${this.fullName} | سن: ${this.age}`);
-// }
-
-// // با call این تابع رو روی user اجرا کن
-// printUserInfo.call(user);
-
-// closure
-// Closure یک مفهوم در برنامه‌نویسی است که به ما اجازه می‌دهد تا یک تابع داخلی به متغیرهای تابع خارجی دسترسی داشته باشد حتی زمانی که تابع خارجی اجرا شده است.
-// این مفهوم به ما اجازه می‌دهد تا داده‌ها را در یک محیط محصور شده نگه داریم و از آن‌ها در توابع داخلی استفاده کنیم.
-// مثال ساده از Closure:
-// function outerFunction() {
-//     let outerVariable = 'Hello, ';
-
-//     function innerFunction(name) {
-//         console.log(outerVariable + name); // دسترسی به متغیر outerVariable
-//     }
-
-//     return innerFunction; // بازگشت تابع داخلی
-// }
-
-// const closureFunction = outerFunction();
-// closureFunction('World'); // خروجی: Hello, World
-// // نکته: در این مثال، innerFunction به متغیر outerVariable دسترسی دارد حتی زمانی که outerFunction اجرا شده است. این به دلیل مفهوم Closure است که اجازه می‌دهد تابع داخلی به محیط خارجی خود دسترسی داشته باشد.
-// // مثال پیچیده‌تر از Closure:
-// function createCounter() {
-//     let count = 0;
-
-//     return {
-//         increment: function() {
-//             count++;
-//             console.log(count);
-//         },
-//         decrement: function() {
-//             count--;
-//             console.log(count);
-//         }
-//     };
-// }
-
-// const counter = createCounter();
-// counter.increment(); // خروجی: 1
-// counter.increment(); // خروجی: 2
-// counter.decrement(); // خروجی: 1
-// // نکته: در این مثال، createCounter یک Closure ایجاد می‌کند که به متغیر count دسترسی دارد. توابع increment و decrement می‌توانند به این متغیر دسترسی داشته باشند و آن را تغییر دهند، حتی زمانی که createCounter اجرا شده است. این مفهوم به ما اجازه می‌دهد تا داده‌ها را در یک محیط محصور شده نگه داریم و از آن‌ها در توابع داخلی استفاده کنیم.
-// // Challenge: Write a function that returns a closure to count the number of times it has been called
-// function createCallCounter() {
-//     let callCount = 0;
-
-//     return function() {
-//         callCount++;
-//         console.log(`Function has been called ${callCount} times.`);
-//     };
-// }
-
-// const callCounter = createCallCounter();
-// callCounter(); // خروجی: Function has been called 1 times.
-// callCounter(); // خروجی: Function has been called 2 times.
-// callCounter(); // خروجی: Function has been called 3 times.
-// // نکته: در این مثال، createCallCounter یک Closure ایجاد می‌کند که به متغیر callCount دسترسی دارد. تابع داخلی می‌تواند به این متغیر دسترسی داشته باشد و آن را تغییر دهد، حتی زمانی که createCallCounter اجرا شده است. این مفهوم به ما اجازه می‌دهد تا تعداد دفعاتی که تابع فراخوانی شده است را شمارش کنیم.
-// // Challenge: Write a function that returns a closure to create a private variable
-// function createPrivateVariable(initialValue) {
-//     let privateVariable = initialValue;
-
-//     return {
-//         getValue: function() {
-//             return privateVariable; // دسترسی به متغیر خصوصی
-//         },
-//         setValue: function(newValue) {
-//             privateVariable = newValue; // تغییر مقدار متغیر خصوصی
-//         }
-//     };
-// }
-
-// //privateVariable
-// const privateVar = createPrivateVariable(10);
-// console.log(privateVar.getValue()); // خروجی: 10
-// privateVar.setValue(20);
-// console.log(privateVar.getValue()); // خروجی: 20
-// // نکته: در این مثال، createPrivateVariable یک Closure ایجاد می‌کند که به متغیر privateVariable دسترسی دارد. توابع getValue و setValue می‌توانند به این متغیر دسترسی داشته باشند و آن را تغییر دهند، حتی زمانی که createPrivateVariable اجرا شده است. این مفهوم به ما اجازه می‌دهد تا یک متغیر خصوصی ایجاد کنیم که فقط از طریق توابع مشخص شده قابل دسترسی است.
-// // Challenge: Write a function that returns a closure to create a counter with increment and decrement methods
-// function createCounterWithMethods() {
-//     let count = 0;
-
-//     return {
-//         increment: function() {
-//             count++;
-//             console.log(`Count incremented: ${count}`);
-//         },
-//         decrement: function() {
-//             count--;
-//             console.log(`Count decremented: ${count}`);
-//         },
-//         getCount: function() {
-//             return count; // دسترسی به مقدار شمارنده
-//         }
-//     };
-// }
-// const counterWithMethods = createCounterWithMethods();
-// counterWithMethods.increment(); // خروجی: Count incremented: 1
-// counterWithMethods.increment(); // خروجی: Count incremented: 2
-// counterWithMethods.decrement(); // خروجی: Count decremented: 1
-// console.log(`Current count: ${counterWithMethods.getCount()}`); // خروجی: Current count: 1
-// // نکته: در این مثال، createCounterWithMethods یک Closure ایجاد می‌کند که به متغیر count دسترسی دارد. توابع increment، decrement و getCount می‌توانند به این متغیر دسترسی داشته باشند و آن را تغییر دهند یا مقدار آن را دریافت کنند، حتی زمانی که createCounterWithMethods اجرا شده است. این مفهوم به ما اجازه می‌دهد تا یک شمارنده با متدهای افزایش و کاهش ایجاد کنیم که وضعیت آن در یک محیط محصور شده نگه داشته می‌شود.
-// // Challenge: Write a function that returns a closure to create a private object with methods to get and set properties
-// function createPrivateObject() {
-//     let privateObject = {};
-
-//     return {
-//         getProperty: function(key) {
-//             return privateObject[key]; // دسترسی به ویژگی خصوصی
-//         },
-//         setProperty: function(key, value) {
-//             privateObject[key] = value; // تغییر مقدار ویژگی خصوصی
-//         },
-//         getAllProperties: function() {
-//             return privateObject; // دریافت تمام ویژگی‌های خصوصی
-//         }
-//     };
-// }
-// const privateObj = createPrivateObject();
-// privateObj.setProperty('name', 'Morteza');
-// console.log(privateObj.getProperty('name')); // خروجی: Morteza
-// privateObj.setProperty('age', 22);
-// console.log(privateObj.getAllProperties()); // خروجی: { name: 'Morteza', age: 22 }
-// // نکته: در این مثال، createPrivateObject یک Closure ایجاد می‌کند که به متغیر privateObject دسترسی دارد. توابع getProperty، setProperty و getAllProperties می‌توانند به این متغیر دسترسی داشته باشند و آن را تغییر دهند یا ویژگی‌های آن را دریافت کنند، حتی زمانی که createPrivateObject اجرا شده است. این مفهوم به ما اجازه می‌دهد تا یک شیء خصوصی با متدهای مشخص شده ایجاد کنیم که فقط از طریق آن‌ها قابل دسترسی است.
-
-// // pure - impure function
-// // تابع خالص (Pure Function) تابعی است که برای هر ورودی مشخص، همیشه همان خروجی را تولید می‌کند و هیچ‌گونه عوارض جانبی ندارد. به عبارت دیگر، این تابع فقط بر اساس ورودی‌های خود عمل می‌کند و هیچ‌گونه تغییری در وضعیت خارجی یا متغیرهای جهانی ایجاد نمی‌کند.
-// // مثال از تابع خالص:
-// function add(a, b) {
-//     return a + b; // تابع خالص: برای هر ورودی مشخص، همیشه همان خروجی را تولید می‌کند
-// }
-// console.log(add(2, 3)); // خروجی: 5
-// // نکته: تابع add هیچ‌گونه عوارض جانبی ندارد و فقط بر اساس ورودی‌های خود عمل می‌کند. برای هر بار فراخوانی با همان ورودی‌ها، همیشه همان خروجی را تولید می‌کند.
-// // تابع غیرخالص (Impure Function) تابعی است که برای هر ورودی مشخص، ممکن است خروجی متفاوتی تولید کند یا عوارض جانبی داشته باشد. به عبارت دیگر، این تابع ممکن است بر اساس وضعیت خارجی یا متغیرهای جهانی عمل کند یا وضعیت خارجی را تغییر دهد.
-// // مثال از تابع غیرخالص:
-// let externalVariable = 10;
-// function addWithSideEffect(a, b) {
-//     externalVariable++;
-//     return a + b + externalVariable;
-// }
-// console.log(addWithSideEffect(2, 3)); // خروجی: 16
-// console.log(addWithSideEffect(2, 3)); // خروجی: 17
-// // نکته: تابع addWithSideEffect دارای عوارض جانبی است زیرا مقدار externalVariable را تغییر می‌دهد و برای هر بار فراخوانی با همان ورودی‌ها، خروجی متفاوتی تولید می‌کند. این تابع به وضعیت خارجی وابسته است و ممکن است در طول زمان تغییر کند.
-// // نکته: تابع خالص به ما اجازه می‌دهد تا کدهای قابل پیش‌بینی و تست‌پذیرتری بنویسیم، در حالی که تابع غیرخالص ممکن است باعث ایجاد مشکلاتی در تست و نگهداری کد شود. استفاده از توابع خالص معمولاً توصیه می‌شود زیرا باعث افزایش قابلیت اطمینان و خوانایی کد می‌شود.
-
-// challenge : generate a random integer
-// function generateRandomInteger(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-// console.log(generateRandomInteger(1, 10)); // خروجی: یک عدد تصادفی بین 1 و 10
-// console.log(generateRandomInteger(5, 15)); // خروجی: یک عدد تصادفی بین 5 و 15
-// // نکته: تابع generateRandomInteger یک عدد صحیح تصادفی بین min و max (شامل هر دو) تولید می‌کند. این تابع از Math.random() برای تولید یک عدد تصادفی در بازه [0, 1) استفاده می‌کند و سپس آن را به بازه مورد نظر مقیاس می‌دهد و با Math.floor() به عدد صحیح تبدیل می‌کند. این تابع غیرخالص است زیرا برای هر بار فراخوانی ممکن است خروجی متفاوتی تولید کند.
-
-// const randomnum = (min, max) => {
-//     if (!min , !max) {
-//         max = min;
-//         min = 0;
-//     }
-//     const result = Math.floor(Math.random() * (max - min + 1)) + min;
-//     return result
-
-// }
-// console.log(randomnum(50));
-
-// date
-// // date یک شیء در جاوااسکریپت است که به ما اجازه می‌دهد تا تاریخ و زمان را مدیریت کنیم. این شیء شامل متدها و ویژگی‌هایی است که به ما امکان می‌دهد تاریخ و زمان فعلی را دریافت کنیم، تاریخ‌های خاصی را ایجاد کنیم و با آن‌ها کار کنیم.
-// // // مثال ساده از استفاده از شیء date:
-// const currentDate = new Date(); // ایجاد یک شیء date با تاریخ و زمان فعلی
-// console.log(currentDate); // خروجی: تاریخ و زمان فعلی به صورت یک شیء date
-// // // نکته: شیء date به ما اجازه می‌دهد تا تاریخ و زمان را به صورت دقیق مدیریت کنیم. می‌توانیم از متدهای مختلف این شیء برای دریافت اطلاعات مختلف مانند سال، ماه، روز، ساعت و دقیقه استفاده کنیم.
-
-// // // مثال از دریافت سال، ماه و روز از یک شیء date:
-// const year = currentDate.getFullYear(); // دریافت سال
-// const month = currentDate.getMonth() + 1; // دریافت ماه (ماه‌ها از 0 شروع می‌شوند، بنابراین باید 1 اضافه کنیم)
-// const day = currentDate.getDate(); // دریافت روز
-// console.log(`Current Date: ${year}-${month}-${day}`); // خروجی: Current
-// // Date: 2023-10-1 (به عنوان مثال)
-// // // نکته: متدهای getFullYear، getMonth و getDate به ما
-// // اجازه می‌دهند تا سال، ماه و روز را از یک شیء date دریافت کنیم. ماه‌ها در جاوااسکریپت از 0 شروع می‌شوند، بنابراین برای دریافت ماه صحیح باید 1 به آن اضافه کنیم.
-// // // مثال از ایجاد یک شیء date با تاریخ خاص:
-// const specificDate = new Date(2023, 9, 1); // ایجاد یک شیء date با تاریخ 1 اکتبر 2023 (ماه‌ها از 0 شروع می‌شوند)
-// console.log(specificDate); // خروجی: تاریخ 1 اکتبر 2023
-// // // نکته: می‌توانیم یک شیء date را با تاریخ خاصی ایجاد کنیم. در این مثال، شیء date با تاریخ 1 اکتبر 2023 ایجاد شده است. ماه‌ها در جاوااسکریپت از 0 شروع می‌شوند، بنابراین ماه اکتبر برابر با 9 است.
-// // // مثال از تبدیل یک شیء date به رشته:
-// const dateString = specificDate.toISOString(); // تبدیل شیء date به رشته در قالب ISO
-// console.log(dateString); // خروجی: 2023-10-01T00:
-// //  00:00.000Z
-// // // نکته: می‌توانیم یک شیء date را به رشته تبدیل کنیم. در این مثال، شیء date به رشته‌ای در قالب ISO تبدیل شده است که شامل تاریخ و زمان است.
-// // // مثال از مقایسه دو شیء date:
-// const date1 = new Date(2023, 9, 1);
-// const date2 = new Date(2023, 9, 2); // ایجاد یک شیء date با تاریخ 2 اکتبر 2023
-// if (date1 < date2) {
-//   console.log("date1 is earlier than date2"); // خروجی: date1 is earlier than date2
-// } else if (date1 > date2) {
-//   console.log("date1 is later than date2");
-// } else {
-//   console.log("date1 is the same as date2");
-// }
-// // // نکته: می‌توانیم دو شیء date را با استفاده از عملگرهای مقایسه مقایسه کنیم. در این مثال، date1 قبل از date2 است و بنابراین پیام مربوطه چاپ می‌شود.
-
-// //setTimeout
-// // setTimeout یک تابع در جاوااسکریپت است که به ما اجازه می‌دهد تا یک تابع را پس از یک مدت زمان مشخص اجرا کنیم. این تابع معمولاً برای ایجاد تأخیر در اجرای یک کد یا برای اجرای یک کد در آینده استفاده می‌شود.
-// setTimeout(() => {
-//   console.log("This message is displayed after 2 11seconds");
-// }, 2000); // // نکته: در این مثال، تابعی که یک پیام را چاپ می‌کند، پس از 2 ثانیه اجرا می‌شود. مدت زمان تأخیر به میلی‌ثانیه مشخص شده است (2000 میلی‌ثانیه برابر با 2 ثانیه است).
-// //setInterval
-// // setInterval یک تابع در جاوااسکریپت است که به ما اجازه می‌دهد تا یک تابع را به صورت مکرر و با یک فاصله زمانی مشخص اجرا کنیم. این تابع معمولاً برای ایجاد تایمرها یا برای اجرای یک کد در فواصل زمانی منظم استفاده می‌شود.
-// // setInterval(() => {
-// //     console.log("This message is displayed every 2 seconds");
-// // }, 2000);  // // نکته: در این مثال، تابعی که یک پیام را چاپ می‌کند، هر 2 ثانیه اجرا می‌شود. مدت زمان بین هر بار اجرای تابع به میلی‌ثانیه مشخص شده است (2000 میلی‌ثانیه برابر با 2 ثانیه است).
-
-// //Challenge : Determine age based on day
-// // const DetermineAge = (birthdate) => {
-// //     const birthdateMs = new Date(birthdate).getTime();
-// //     const currentDateMs = Date.now();
-// //     const ageInMs = currentDateMs - birthdateMs;
-// //     const ageInYears = new Date(ageInMs).getUTCFullYear() - 1970;
-// //     return ageInYears;
-
+// // ╔═══════════════════════════════════════════════════════════════════════════╗
+// // ║                                                                           ║
+// // ║                     راهنمای جامع یادگیری JavaScript                     ║
+// // ║                                                                           ║
+// // ║  نویسنده: دیکتاتور (Dictator)                                            ║
+// // ║  تاریخ: نوامبر 2025                                                      ║
+// // ║  موضوع: یادگیری کامل اصول JavaScript                                   ║
+// // ║                                                                           ║
+// // ╚═══════════════════════════════════════════════════════════════════════════╝
+
+// // تمرین عملی 1: محاسبه قدرت خرید
+// console.log("\n═══════════════════════════════════════════════════════════");
+// console.log("تمرین 1: محاسبه قدرت خرید");
+// console.log("═══════════════════════════════════════════════════════════");
+
+// const price1 = 10;
+// const price2 = 15;
+// const price3 = 4000;
+// const balance = 500;
+
+// console.log("موجودی حساب:", balance);
+
+// const totalPrice = price1 + price2 + price3 * 2;
+// console.log("قیمت کل:", totalPrice);
+
+// const averagePrice = totalPrice / 4;
+// console.log("قیمت متوسط:", averagePrice);
+
+// const finalPrice = totalPrice * 0.95;
+// console.log("قیمت نهایی (95%):", finalPrice);
+
+// const canBuy = balance >= finalPrice;
+// const message = canBuy
+//   ? "✓ شما می‌توانید خرید کنید!"
+//   : "✗ موجودی حساب کافی نیست";
+// console.log(message);
+
+// // // متد های toFixde و toString
+// // const number = 50;
+// // console.log(number);
+// // console.log(typeof number);
+
+// // const mesal = number.toString();
+// // console.log(mesal);
+// // console.log(typeof mesal);
+// // // متد toFixed
+// // const number2 = 50.1354654464164;
+// // console.log(number2.toFixed(3));
+
+// // challange: Capitalize first letter of a text
+// // const text = "hi, i am morteza and im a developer"
+// // const firstLetter = text.charAt(0)
+// // const upperCaseFirstLetter = firstLetter.toUpperCase()
+// // const finaltext = text.replace(firstLetter, upperCaseFirstLetter)
+// // console.log(finaltext);
+
+// // chalange : replace a part op phone number
+// // const phone = "09011546532"
+// // const substring = phone.slice(3,7)
+// // const signs = "****"
+// // const finalPhone = phone.replace(substring ,signs)
+// // console.log(finalPhone);
+
+// // // template literals
+// // const name = "morteza"
+// // const age  = "26"
+// // // const text = "Hello my name is morteza "
+// // const introductionText = `Hello my name is ${name} and im ${age} years old`
+// // console.log(text);
+
+// // challange  Extract name an last name
+// // const fullname = "Morteza Azami"
+// // const spaceIndex = fullname.indexOf(" ")
+// // const name = fullname.slice(0 , spaceIndex)
+// // const lastName = fullname.slice(spaceIndex +1)
+// // const nameDetailsText = `Your name is ${name } and your last name is ${lastName}`
+// // console.log(text);
+// // console.log(spaceIndex);
+
+// // Array
+// //   const myArray = ["morteza", "azami" ,26]
+// // console.log(myArray);
+// // console.log(myArray[1]);
+// //  const string = myArray.join( )
+// //  const string1 = myArray.join( " and ")
+// //  const Array2 = [1,12,3]
+// // const newArray = myArray.concat(Array2)
+// // //concat ezaFE MIKONE be array asli
+// // console.log(newArray);
+// // const new1 = [[ "qwa" , "as"  , "aa"  ] , [ "df1" ,23 ,23, 2] ]
+// // const finalarray = new1.flat ( )
+// // console.log(finalarray);
+// // console.log(typeof finalarray);
+
+// // includes / index of
+// // console.log(myArray.indexOf(26));
+// // console.log(myArray.includes(26));
+// // ba include mitunim befahmim ye array vjod dare ya na  va ba index makanesho peyda mikonim
+
+// // conditional statement
+// // const age = 20
+// // if (age >= 20) {
+// //   console.log("you are an adult");
+// // }
+// // else if (age >= 18) {
+// //   console.log("you are adult");
+// // }
+// // else if (age >= 13) {
+// //   console.log("you are a teenager");
 // // }
 
-// // console.log(DetermineAge("1998-09-17"));
+// // check triangle // challange
+// // const side1 = 5
+// // const side2 = 5
+// // const side3 = 5
+// // if (side1 === side2 && side2 === side3){
+// //   console.log("this is mosalas motesavi azlaah");
+// // }else if (side1 === side2 || side1 === side3 || side2 ===side3){
+// //   console.log("this is mosalas motesavi sagein");
+// // }else {
+// //   console.log("this is mosalas gheyre motesavi azlaah");
+// // }
 
-// //trycatch
-// // try...catch یک ساختار در جاوااسکریپت است که به ما اجازه می‌دهد تا خطاها را مدیریت کنیم و از برنامه‌مان در برابر خطاهای غیرمنتظره محافظت کنیم. این ساختار شامل دو بخش اصلی است: بخش try که کدی را که ممکن است خطا ایجاد کند، در بر می‌گیرد و بخش catch که کدی را که در صورت بروز خطا اجرا می‌شود، در بر می‌گیرد.
-// // // مثال ساده از استفاده از try...catch:
-// try {
-//   // کدی که ممکن است خطا ایجاد کند
-//   console.log(DetermineAge("invalid-date"));
-// } catch (error) {
-//   // کدی که در صورت بروز خطا اجرا می‌شود
-//   console.error("Error occurred:", error);
-// }
-// // // نکته: در این مثال، تابع DetermineAge با یک تاریخ نامعتبر فراخوانی شده است که باعث ایجاد یک خطا می‌شود. بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا برنامه‌مان را در برابر خطاهای غیرمنتظره محافظت کنیم و از کرش کردن برنامه جلوگیری کنیم.
-// // // مثال از استفاده از try...catch برای مدیریت خطاهای شبکه:
-// try {
-//   // کدی که ممکن است خطا ایجاد کند
-//   fetch("https://api.example.com/data")
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error("Network response was not ok");
-//       }
-//       return response.json();
-//     })
-//     .then((data) => console.log(data))
-//     .catch((error) => {
-//       console.error("Error occurred:", error);
-//     });
-// } catch (error) {
-//   // کدی که در صورت بروز خطا اجرا می‌شود
-//   console.error("Error occurred:", error);
-// }
-// // // نکته: در این مثال، از fetch برای دریافت داده‌ها از یک API استفاده شده است. اگر پاسخ شبکه موفقیت‌آمیز نباشد، یک خطا ایجاد می‌شود که در بخش catch مدیریت می‌شود. این ساختار به ما اجازه می‌دهد تا خطاهای شبکه را مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
-// // // نکته: استفاده از try...catch به ما اجازه می‌دهد تا برنامه‌مان   را در برابر خطاهای غیرمنتظره محافظت کنیم و از کرش کردن برنامه جلوگیری کنیم. این ساختار به ما امکان می‌دهد تا خطاها را به صورت کنترل‌شده مدیریت کنیم و پیام‌های خطا را به کاربران نمایش دهیم یا اقدامات جایگزین انجام دهیم.
-// // // Challenge: Write a function that uses try...catch to handle JSON parsing errors
-// function parseJSON(jsonString) {
-//   try {
-//     const parsedData = JSON.parse(jsonString);
-//     return parsedData;
-//   } catch (error) {
-//     console.error("Error parsing JSON:", error);
-//     return null; // یا می‌توانید یک مقدار پیش‌فرض برگردانید
-//   }
-// }
-// console.log(parseJSON('{"name": "Morteza", "age": 22}')); // خروجی: { name: 'Morteza', age: 22 }
-// console.log(parseJSON("invalid-json")); // خروجی: Error parsing JSON: [SyntaxError: Unexpected token i in JSON at position 0]
-// // // نکته: در این مثال، تابع parseJSON یک رشته JSON را می‌پ
-// // ذیرد و سعی می‌کند آن را با استفاده از JSON.parse تجزیه کند. اگر رشته JSON نامعتبر باشد و باعث ایجاد یک خطا شود، بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا خطاهای تجزیه JSON را مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
-// // // Challenge: Write a function that uses try...catch to handle errors when accessing object properties
-// function getProperty(obj, key) {
-//   try {
-//     return obj[key];
-//   } catch (error) {
-//     console.error("Error accessing property:", error);
-//     return null; // یا می‌توانید یک مقدار پیش‌فرض برگردانید
-//   }
-// }
-// const simpleUser = { name: "Morteza", age: 22 };
-// console.log(getProperty(simpleUser, "name")); // خروجی: Morteza
-// console.log(getProperty(simpleUser, "invalidKey")); // خروجی: Error accessing property: [TypeError: Cannot read properties of undefined (reading 'invalidKey')]
-// // // نکته: در این مثال، تابع getProperty یک شیء و یک کلید را می‌پذیرد و سعی می‌کند مقدار مربوط به آن کلید را از شیء دریافت کند. اگر کلید نامعتبر باشد و باعث ایجاد یک خطا شود، بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا خطاهای دسترسی به ویژگی‌های شیء را مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
-// // finally
-// // finally یک بخش اختیاری در ساختار try...catch است که به ما اجازه می
-// // دهد تا کدی را که باید همیشه اجرا شود، صرف نظر از اینکه خطایی رخ داده است یا نه، در آن قرار دهیم. این بخش معمولاً برای انجام عملیات پاک‌سازی یا آزادسازی منابع استفاده می‌شود.
-// // // مثال ساده از استفاده از finally:
-// try {
-//   // کدی که ممکن است خطا ایجاد کند
-//   console.log(getProperty(user, "name"));
-// } catch (error) {
-//   // کدی که در صورت بروز خطا اجرا می‌شود
-//   console.error("Error occurred:", error);
-// } finally {
-//   // کدی که همیشه اجرا می‌شود
-//   console.log("Finally block executed");
-// }
-// // // نکته: در این مثال، بخش finally همیشه اجرا می‌شود، صرف نظر از اینکه خطایی رخ داده است یا نه. این بخش به ما اجازه می‌دهد تا عملیات پاک‌سازی یا آزادسازی منابع را انجام دهیم.
-// // // مثال از استفاده از finally برای بستن یک فایل:
-// import fs from "fs";
+// // // check number is positive or negative
 
-// let fileHandle;
-// try {
-//   fileHandle = fs.openSync("example.txt", "r");
-//   // کدی که ممکن است خطا ایجاد کند
-//   const data = fs.readFileSync(fileHandle, "utf8");
-//   console.log(data);
-// } catch (error) {
-//   // کدی که در صورت بروز خطا اجرا می‌شود
-//   console.error("Error occurred:", error);
-// } finally {
-//   // کدی که همیشه اجرا می‌شود
-//   if (fileHandle) {
-//     fs.closeSync(fileHandle);
-//     console.log("File closed");
-//   }
-// }
-// // // نکته: در این مثال، بخش finally همیشه اجرا می‌شود و فایل باز شده را می‌بندد، صرف نظر از اینکه خطایی رخ داده است یا نه. این بخش به ما اجازه می‌دهد تا منابع را آزاد کنیم و از نشت منابع جلوگیری کنیم.
-// // // نکته: استفاده از finally به ما اجازه می‌دهد تا کدی را که باید
-// // همیشه اجرا شود، صرف نظر از اینکه خطایی رخ داده است یا نه، در یک مکان مشخص قرار دهیم. این ساختار به ما امکان می‌دهد تا عملیات پاک‌سازی یا آزادسازی منابع را به صورت کنترل‌شده انجام دهیم و از نشت منابع جلوگیری کنیم.
-// // throw
-// // throw یک کلمه کلیدی در جاوااسکریپت است که به ما اجازه می‌دهد تا یک خطا را به صورت دستی پرتاب کنیم. این کار معمولاً زمانی انجام می‌شود که بخواهیم یک وضعیت خطا را شناسایی کنیم و آن را به بالاترین سطح کد (مثلاً یک تابع فراخوانی‌کننده) گزارش دهیم.
-// // // مثال ساده از استفاده از throw:
-// function divide(a, b) {
-//   if (b === 0) {
-//     throw new Error("Division by zero is not allowed");
-//   }
-//   return a / b;
-// }
-// try {
-//   console.log(divide(10, 2)); // خروجی: 5
-//   console.log(divide(10, 0)); // این خطا را پرتاب می‌کند
-// } catch (error) {
-//   console.error("Error occurred:", error);
-// }
-// // // نکته: در این مثال، تابع divide بررسی می‌کند که آیا مخرج برابر با صفر است یا نه. اگر مخرج صفر باشد، یک خطا با استفاده از throw پرتاب می‌شود. بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا خطاها را به صورت کنترل‌شده مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
-// // // مثال از استفاده از throw برای اعتبارسنجی ورودی:
-// function validateInput(input) {
-//   if (typeof input !== "number") {
-//     throw new Error("Invalid input: Input must be a number");
-//   }
-//   return true;
-// }
-// try {
-//   validateInput(42); // ورودی معتبر
-//   validateInput("not a number"); // این خطا را پرتاب می‌کند
-// } catch (error) {
-//   console.error("Error occurred:", error);
-// }
-// // // نکته: در این مثال، تابع validateInput بررسی می‌کند که آیا ورودی یک عدد است یا نه. اگر ورودی معتبر نباشد، یک خطا با استفاده از throw پرتاب می‌شود. بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا ورودی‌ها را اعتبارسنجی کنیم و خطاها را به صورت کنترل‌شده مدیریت کنیم.
+// // const number = -5
+// // if (number > 0) {
+// //   console.log("this is positive number");
+// // } else if (number < 0) {
+// //   console.log("this is negative number");
+// // } else {
+// //   console.log("this is zero");
+// // }
 
-// //134
-// // data structures
-// // ساختارهای داده، روش‌هایی برای سازماندهی و ذخیره‌سازی داده‌ها به گونه‌ای هستند که دسترسی و مدیریت آن‌ها آسان‌تر شود. ساختارهای داده می‌توانند به صورت خطی (مانند آرایه‌ها و لیست‌های پیوندی) یا غیرخطی (مانند درخت‌ها و گراف‌ها) باشند.
-// //Maps
-// // این مپ با مپی که روی ارایه ها میزدیم فرق داره این با ام بزرگه اون با ام کوچک
+// // Switch case
+// // const day = 5
+// // switch (day) {
+// //   case 1:
+// //     console.log("saturday");
+// //     break;
+// //   case 2:
+// //     console.log("sunday");
+// //     break;
+// //   case 3:
+// //     console.log("monday");
+// //     break;
+// //   case 4:
+// //     console.log("tuesday");
+// //     break;
+// //   case 5:
+// //     console.log("wednesday");
 
-// const myMap = new Map();
-// myMap.set("key1", "value1");
-// myMap.set("key2", "value2");
-// console.log(myMap.get("key1")); // خروجی: value1
-// console.log(myMap.get("key2")); // خروجی: value2
+// //     break;
+// //   case 6:
+// //     console.log("thursday");
+// //     break;
+// //   case 7:
+// //     console.log("friday");
+// //     break;
 
-// // متد های Map
-// // Map دارای چندین متد مفید است که به ما در مدیریت داده‌ها کمک می‌کند:
+// //   default:
+// //     console.log("this is not a valid day");
+// //     break;
+// // }
 
-// // 1. set(key, value): برای اضافه کردن یک جفت کلید-مقدار به Map استفاده می‌شود.
-// myMap.set("key3", "value3");
+// // for loop
 
-// // 2. get(key): برای دریافت مقدار مربوط به یک کلید خاص استفاده می‌شود.
-// console.log(myMap.get("key3")); // خروجی: value3
+// // for (let i = 10; i > 1; i--) {
+// //   console.log(i);
 
-// // 3. has(key): برای بررسی وجود یک کلید در Map استفاده می‌شود.
-// console.log(myMap.has("key2")); // خروجی: true
-// console.log(myMap.has("key4")); // خروجی: false
+// // }
+// // const myArray = [2,4,6,8,10]
+// // for (let i = myArray.length; i > 0; i) {
+// // for (let i = myArray.length; i > 0; i--) {
+// // }
 
-// // 4. delete(key): برای حذف یک جفت کلید-مقدار از Map استفاده می‌شود.
-// myMap.delete("key1");
-// console.log(myMap.has("key1")); // خروجی: false
+// // for of loop
+// // const array = [2,4,6,8]
+// // for (const i of array) {
+// //     console.log(i +2 );
 
-// // 5. clear(): برای حذف تمام جفت‌های کلید-مقدار از Map استفاده می‌شود.
-// myMap.clear();
+// // }
+// // for in loop
+// // const object = {
+// //   name: "morteza",
+// //   age: 26,
+// //   job: "developer"
+// // }
+// // for (const key in object) {
+// //   console.log(`${key} : ${object[key]}`);
+// // }
+// // const keys = Object.keys(object)
+// // for (let i =0 ; i < keys.length; i++){
+// //     console.log(object[keys[i]]);
+// // }
 
-// console.log(myMap.size); // خروجی: 0
+// //while
+// // let i = 1
+// // while (i < 10){
+// //     console.log(i);
+// //     i++
+// // }
 
-// // 6. size: برای دریافت تعداد جفت‌های کلید-مقدار در Map استفاده می‌شود.
-// console.log(myMap.size); // خروجی: 0
+// //do while
+// // let i = 11
+// // do{
+// //      console.log(i);
+// //      i++
+// // }while (i < 10)
 
-// // 7. keys(): برای دریافت یک iterator از کلیدهای Map استفاده می‌شود.
-// const keysIterator = myMap.keys();
-// for (const key of keysIterator) {
-//   console.log("Key:", key);
-// }
-// // 8. values(): برای دریافت یک iterator از مقادیر Map استفاده می‌شود.
-// const valuesIterator = myMap.values();
-// for (const value of valuesIterator) {
-//   console.log("Value:", value);
-// }
-// // iteration in Map
-// // 9. entries(): برای دریافت یک iterator از جفت‌های کلید-مقدار Map استفاده می‌شود.
-// const entriesIterator = myMap.entries();
-// for (const [key, value] of entriesIterator) {
-//   console.log(`Key: ${key}, Value: ${value}`);
-// }
-// // 10. forEach(callback): برای اجرای یک تابع بر روی هر جفت کلید-مقدار در Map استفاده می‌شود.
-// myMap.forEach((value, key) => {
-//   console.log(`Key: ${key}, Value: ${value}`);
-// });
-// // نکته: Map یک ساختار داده بسیار مفید است که به ما اجازه می‌دهد تا داده‌ها را به صورت کلید-مقدار ذخیره کنیم و به راحتی به آن‌ها دسترسی پیدا کنیم. این ساختار داده به ما امکان می‌دهد تا داده‌ها را به صورت غیرترتیبی ذخیره کنیم و از مزایای عملکردی بالایی برخوردار است.
-// // Challenge: Create a Map to store user information (name, age, email) and implement methods to add, get, and delete users
-// class UserMap {
-//   constructor() {
-//     this.users = new Map();
-//   }
+// // challenge write a js code to print even numbers in given array
+// // const numbers = [13,23 , 12 ,45 , 22, 48, 66, 100]
+// // const evenNumbers = []
+// // for ( let i = 0  ; i < numbers.length ; i++) {
+// //   if (numbers[i] % 2 === 0) {
+// //     evenNumbers.push(numbers[i])
 
-//   addUser(name, age, email) {
-//     this.users.set(email, { name, age });
-//   }
+// //   }
+// // }
+// // console.log(evenNumbers);
+// //challenge star
+// // in male mane
+// // let star = []
+// // for(let i = 1 ; i <= 5 ; i++){
+// //     if (i <= 5) {
+// //         // const star = i
+// //         star.push(i)
+// //         console.log(...star);
 
-//   getUser(email) {
-//     return this.users.get(email);
-//   }
+// //     }
 
-//   deleteUser(email) {
-//     this.users.delete(email);
-//   }
+// // }
+// // inm male ostad
+// // for (let i = 1 ; i <= 5 ;i++){
+// //     let string = " "
+// //     for (let j = 1 ; j <= i ; j++){
+// //         string += j + " " ;
+// //     }
+// //     console.log(string);
+// // }
 
-//   displayUsers() {
-//     this.users.forEach((user, email) => {
-//       console.log(`Email: ${email}, Name: ${user.name}, Age: ${user.age}`);
-//     });
-//   }
-// }
-// const userMap = new UserMap();
-// userMap.addUser("Morteza", 22, "morteza@example.com");
-// userMap.addUser("Ali", 25, "ali@example.com");
-// userMap.addUser("Sara", 30, "sara@example.com");
-// userMap.displayUsers();
-// userMap.deleteUser("sara@example.com");
-// userMap.displayUsers(); // خروجی: Email: ali@example.com, Name: Ali, Age: 25
-// // نکته: در این مثال، کلاس UserMap یک Map برای ذخیره اطلاعات کاربران ایجاد می‌کند. متدهای addUser، getUser و deleteUser برای اضافه کردن، دریافت و حذف کاربران استفاده می‌شوند. همچنین متد displayUsers برای نمایش تمام کاربران در Map استفاده می‌شود. این ساختار داده به ما اجازه می‌دهد تا اطلاعات کاربران را به صورت کلید-مقدار ذخیره کنیم و به راحتی به آن‌ها دسترسی پیدا کنیم.
+// // const array = [ 4, 12 , 2, 34 , 4, 1, 12, 1, 4, 4 ]
+// // const newArray = []
+// // for (let i = 0; i < array.length; i++) {
+// //     let current = array[i];
+// //   // اگر عنصر بیشتر از یک بار در آرایه وجود داره و هنوز توی duplicates اضافه نشده
+// //   if (
+// //     array.indexOf(current) !== array.lastIndexOf(current) &&
+// //     newArray.indexOf(current) === -1
+// //   ) {
+// //     newArray.push(current);
+// //   }
 
-// //Sets
-// // Set یک ساختار داده در جاوااسکریپت است که به ما اجازه می  ‌دهد تا مجموعه‌ای از مقادیر منحصر به فرد را ذخیره کنیم. این ساختار داده به ما امکان می‌دهد تا مقادیر تکراری را حذف کنیم و به راحتی به مقادیر دسترسی پیدا کنیم.
-// const mySet = new Set();
-// mySet.add("value1");
-// mySet.add("value2");
-// mySet.add("value3");
-// console.log(mySet.has("value1")); // خروجی: true
-// console.log(mySet.has("value4")); // خروجی: false
-// mySet.delete("value2");
-// console.log(mySet.size); // خروجی: 2
-// mySet.clear();
-// console.log(mySet.size); // خروجی: 0
-// // متد های Set
-// // Set دارای چندین متد مفید است که به ما در مدیریت داده‌ها کمک می‌کند:
-// // 1. add(value): برای اضافه کردن یک مقدار به Set استفاده می‌شود.
-// mySet.add("value4");
-// // 2. has(value): برای بررسی وجود یک مقدار در Set استفاده می‌شود.
-// console.log(mySet.has("value4")); // خروجی: true
-// // 3. delete(value): برای حذف یک مقدار از Set استفاده می‌شود.
-// mySet.delete("value4");
-// console.log(mySet.has("value4")); // خروجی: false
+// // }
+// // console.log(newArray);
 
-// // 4. clear(): برای حذف تمام مقادیر از Set استفاده می‌شود.
-// mySet.clear();
-// console.log(mySet.size); // خروجی: 0
-// // 5. size: برای دریافت تعداد مقادیر در Set استفاده می‌شود.
-// console.log(mySet.size); // خروجی: 0
-// // 6. values(): برای دریافت یک iterator از مقادیر Set استفاده می‌شود.
-// const setValuesIterator = mySet.values();
-// for (const value of setValuesIterator) {
-//   console.log("Value:", value);
-// }
-// // 7. forEach(callback): برای اجرای یک تابع بر روی هر مقدار در Set استفاده می‌شود.
-// mySet.forEach((value) => {
-//   console.log("Value:", value);
-// });
-// // نکته: Set یک ساختار داده بسیار مفید است که به ما اجازه می‌دهد تا مجموعه‌ای از مقادیر منحصر به فرد را ذخیره کنیم و به راحتی به مقادیر دسترسی پیدا کنیم.
+// // function
+// // function showMessage() {
+// //   console.log("hello");
+// // }
+// // showMessage(); // calling function
 
-// // این ساختار داده به ما امکان می‌دهد تا مقادیر تکراری را حذف کنیم و از مزایای عملکردی بالایی برخوردار است.
+// // function duplicates(number) { //number dar inja vorodiye (parameter)
+// //     const result = number * 2;
+// //     console.log(result);
+// // }
+// // duplicates(2);
 
-// // Symbols// Symbol یک نوع داده در جاوااسکریپت است که به ما اجازه می‌دهد تا یک مقدار منحصر به فرد و غیرقابل تغییر ایجاد کنیم. این نوع داده معمولاً برای ایجاد کلیدهای منحصر به فرد در اشیاء یا برای شناسایی ویژگی‌های خاص در اشیاء استفاده می‌شود.
-// const mySymbol = Symbol("description");
-// console.log(mySymbol); // خروجی: Symbol(description)
-// console.log(typeof mySymbol); // خروجی: symbol
-// // نکته: Symbol یک نوع داده منحصر به فرد است که می‌تواند برای ایجاد کلیدهای منحصر به فرد در اشیاء استفاده شود. این نوع داده به ما اجازه می‌دهد تا ویژگی‌های خاصی را در اشیاء تعریف کنیم که با سایر ویژگی‌ها تداخل نداشته باشند.
-// // مثال از استفاده از Symbol به عنوان کلید در یک شیء:
-// const myObject = {
-//   [mySymbol]: "value1",
-//   anotherKey: "value2",
-// };
-// console.log(myObject[mySymbol]); // خروجی: value1
-// console.log(myObject.anotherKey); // خروجی: value2
-// // نکته: در این مثال، از Symbol به عنوان یک کلید منحصر به فرد در شیء myObject استفاده شده است. این کلید می‌تواند برای شناسایی ویژگی‌های خاص در شیء استفاده شود و با سایر کلیدها تداخل نخواهد داشت.
+// // فانکشن میتونه چند تا ورودی داشته باشه
+// // function sum(a, b) {
+// //   const result = a + b;
+// //   console.log(result);
+// // }
+// // sum(2, 3);
 
-// // shared symbols
-// // Symbol.for(key) یک متد است که به ما اجازه می‌دهد تا یک Symbol را  با یک کلید مشخص ایجاد کنیم یا به یک Symbol موجود با آن کلید دسترسی پیدا کنیم. این متد به ما اجازه می‌دهد تا Symbols را در سراسر برنامه به اشتراک بگذاریم و از آن‌ها در بخش‌های مختلف کد استفاده کنیم.
-// const sharedSymbol = Symbol.for("sharedKey");
-// console.log(sharedSymbol); // خروجی: Symbol(sharedKey)
-// console.log(Symbol.keyFor(sharedSymbol)); // خروجی: sharedKey
-// // نکته: در این مثال، از Symbol.for برای ایجاد یک Symbol با کلید "sharedKey" استفاده شده است. اگر یک Symbol با این کلید قبلاً وجود داشته باشد، این متد به آن دسترسی پیدا می‌کند و در غیر این صورت یک Symbol جدید ایجاد می‌کند.
-// // مثال از استفاده از Symbol.for برای ایجاد یک Symbol مشترک:
-// const anotherSharedSymbol = Symbol.for("sharedKey");
-// console.log(anotherSharedSymbol === sharedSymbol); // خروجی: true
-// // نکته: در این مثال، anotherSharedSymbol به همان Symbol که با کلید "sharedKey" ایجاد شده است، اشاره می‌کند. این به ما اجازه می‌دهد تا Symbols را در سراسر برنامه به اشتراک بگذاریم و از آن‌ها در بخش‌های مختلف کد استفاده کنیم.
-// // نکته: استفاده از Symbol.for به ما اجازه می‌دهد تا Symbols را در سراسر برنامه به اشتراک بگذاریم و از آن‌ها در بخش‌های مختلف کد استفاده کنیم. این نوع داده به ما امکان می‌دهد تا ویژگی‌های خاصی را در اشیاء تعریف کنیم که با سایر ویژگی‌ها تداخل نداشته باشند و از مزایای عملکردی بالایی برخوردار است.
-// // Challenge: Create a Symbol to represent a unique identifier for a user
-// const userIdSymbol = Symbol("userId");
-// const userObj = {
-//   [userIdSymbol]: 12345,
-//   name: "Morteza",
-//   age: 22,
-// };
-// console.log(userObj[userIdSymbol]); // خروجی: 12345
-// console.log(userObj.name); // خروجی: Morteza
-// console.log(userObj.age); // خروجی: 22
-// // // نکته: در این مثال، از Symbol به عنوان یک شناسه منحصر به فرد برای کاربر استفاده شده است. این شناسه می‌تواند برای شناسایی منحصر به فرد کاربر در برنامه استفاده شود و با سایر ویژگی‌ها تداخل نخواهد داشت.
+// //مبحث return  در فانکشن
 
-// promises
-// می‌تواند در یکی از سه حالت زیر باشد: Promise یک نوع داده در جاوااسکریپت است که به ما اجازه می‌دهد تا عملیات غیرهمزمان را مدیریت کنیم. یک // Promise
-// 1. Pending: حالت اولیه، در حال انتظار برای نتیجه
-// 2. Fulfilled: عملیات با موفقیت انجام شده و نتیجه در دسترس است
-// 3. Rejected: عملیات با خطا مواجه شده و دلیل خطا در دسترس است
+// /**
+//  * مبحث return در فانکشن:
+//  *
+//  * در جاوااسکریپت، کلمه کلیدی `return` برای بازگرداندن مقدار از یک تابع استفاده می‌شود.
+//  * زمانی که تابعی به دستور `return` می‌رسد، اجرای تابع متوقف شده و مقدار مشخص‌شده به جایی که تابع فراخوانی شده بازگردانده می‌شود.
+//  * اگر در تابع از `return` استفاده نشود، مقدار بازگشتی تابع به طور پیش‌فرض `undefined` خواهد بود.
+//  *
+//  * مثال:
+//  *
+//  * function sum(a, b) {
+//  *   return a + b;
+//  * }
+//  *
+//  * const result = sum(2, 3); // مقدار result برابر با 5 خواهد بود
+//  *
+//  * نکته: بعد از اجرای دستور `return`، هیچ کدی در ادامه‌ی تابع اجرا نخواهد شد.
+//  */
 
-// مثال از ایجاد یک Promise:
-// const myPromise = new Promise((resolve, reject) => {
-//   const success = true; // فرض کنید عملیات موفقیت‌آمیز بود
-//   if (success) {
-//     resolve("Operation successful");
-//   } else {
-//     reject("Operation failed");
-//   }
-// });
+// // function sum(a, b) {
+// //     // return a + b; // مقدار حاصل جمع را باز می‌گرداند
+// //     // console.log("This line will not be executed"); // این خط هرگز اجرا نخواهد شد
+// // }
+// // const result = sum(2, 3);
+// // console.log(result);
 
-// // // Promise برای مدیریت نتیجه catch و then استفاده از
-// myPromise
-//   .then((result) => {
-//     console.log(result); // خروجی: Operation successful
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
+// /**
+//  * مبحث Scope (دامنه متغیرها) در جاوااسکریپت:
+//  *
+//  * در جاوااسکریپت، Scope به محدوده‌ای گفته می‌شود که یک متغیر یا تابع در آن قابل دسترسی است.
+//  * به طور کلی سه نوع Scope وجود دارد:
+//  *
+//  * 1. Global Scope (دامنه سراسری):
+//  *    متغیرهایی که خارج از هر تابع یا بلاک تعریف می‌شوند، در کل برنامه قابل دسترسی هستند.
+//  *
+//  * 2. Function Scope (دامنه تابع):
+//  *    متغیرهایی که با کلیدواژه var درون یک تابع تعریف می‌شوند، فقط در همان تابع قابل دسترسی هستند.
+//  *
+//  * 3. Block Scope (دامنه بلاک):
+//  *    متغیرهایی که با let یا const درون یک بلاک ({ ... }) تعریف می‌شوند، فقط در همان بلاک قابل دسترسی هستند.
+//  *
+//  * مثال:
+//  *
+//  * let a = 10; // Global Scope
+//  * function test() {
+//  *   let b = 20; // Function Scope
+//  *   if (true) {
+//  *     let c = 30; // Block Scope
+//  *   }
+//  *   // متغیر c اینجا قابل دسترسی نیست
+//  * }
+//  * // متغیر b و c اینجا قابل دسترسی نیستند
+//  *
+//  * نکته: استفاده صحیح از Scope باعث جلوگیری از تداخل متغیرها و افزایش خوانایی و امنیت کد می‌شود.
+//  */
 
-//rock paper scissor game
-// const choices = ["rock", "paper", "scissor"];
-// let playerScore = 0;
-// let computerScore = 0;
+// /**
+//  * مفهوم Hoisting (بالا بردن) در جاوااسکریپت:
+//  *
+//  * Hoisting به این معناست که اعلان متغیرها و توابع در زمان اجرای برنامه به بالای Scope مربوطه منتقل می‌شوند.
+//  * به عبارت دیگر، جاوااسکریپت قبل از اجرای کد، ابتدا متغیرها (با var) و توابع را در حافظه ثبت می‌کند.
+//  *
+//  * نکات مهم:
+//  * - فقط اعلان متغیرها (نه مقداردهی اولیه) با var و اعلان توابع (Function Declaration) Hoist می‌شوند.
+//  * - متغیرهای تعریف‌شده با let و const Hoist می‌شوند اما مقداردهی اولیه ندارند و قبل از مقداردهی قابل استفاده نیستند (Temporal Dead Zone).
+//  * - Function Expressionها (تخصیص تابع به متغیر) مانند متغیرها رفتار می‌کنند و فقط اعلان متغیر Hoist می‌شود.
+//  *
+//  * مثال:
+//  *
+//  * console.log(a); // undefined
+//  * var a = 5;
+//  *
+//  * foo(); // "Hello"
+//  * function foo() {
+//  *   console.log("Hello");
+//  * }
+//  *
+//  * // اما:
+//  * bar(); // TypeError: bar is not a function
+//  * var bar = function() {
+//  *   console.log("Hi");
+//  * }
+//  *
+//  * استفاده صحیح از Hoisting باعث جلوگیری از خطاهای رایج و افزایش خوانایی کد می‌شود.
+//  */
 
-// const checkWinner = (player, computer) => {
-//   if (player === computer) {
-//     return "draw";
-//   } else if (player === "rock") {
-//     return computer === "scissor" ? "you win" : "you lose";
-//   } else if (player === "paper") {
-//     return computer === "rock" ? "you win" : "you lose";
-//   } else if (player === "scissor") {
-//     return computer === "paper" ? "you win" : "you lose";
-//   }
-// };
-// const showResult = (result) => {
-//   if (result === "you win") {
-//     console.log("win");
-//     playerScore++;
-//   } else if (result === "you lose") {
-//     console.log("loser");
-//     computerScore++;
-//   } else {
-//     console.log("its tie");
-//   }
-//   console.log(`your score is ${playerScore}`);
-//   console.log(`computer score is ${computerScore}`);
-//   console.log("--------------------------------------------------------");
-// };
-// const winCondition = () => {
-//   if (playerScore === 5) {
-//     console.log("you are the champion");
-//   } else if (computerScore === 5) {
-//     console.log("computer is the champion");
-//   }
-// };
+// // "use strict"; // فعال کردن حالت سختگیرانه
 
-// const play = () => {
-//   const playerchoice = prompt("choose rock paper scissor");
-//   if (choices.indexOf(playerchoice?.toLowerCase()) !== -1) {
-//     console.log(`you choose  ${playerchoice}`);
-//   } else {
-//     console.log("تغلب نکن عزیزم  :/");
-//     return;
-//   }
-//   const randomnum = Math.floor(Math.random() * choices.length);
-//   const computer = choices[randomnum];
-//   console.log(`computer choose ${computer}`);
-//   const gameresult = checkWinner(playerchoice, computer);
-//   showResult(gameresult);
-//   winCondition();
-//   if (playerScore === 5 || computerScore === 5) {
-//     return;
-//   } else {
-//     play();
-//   }
-// };
-// play();
+// // در strict mode:
+// // 1. متغیرها حتما باید با let, const یا var تعریف شوند
+// // 2. حذف متغیرها و توابع ممنوع است
+// // 3. استفاده از this در سطح global به undefined اشاره می‌کند
+// // 4. تکرار نام پارامتر در تابع مجاز نیست
+// // 5. استفاده از کلمات رزرو شده برای نام متغیر ممنوع است
+
+// // function example() {
+// //     let x = 10;
+// //     console.log(x);
+// // }
+
+// // example();
+
+// // strict mode یک مکانیزم برای نوشتن کد تمیزتر و امن تر در JavaScript است
+
+// //function expression چیه
+// // function expression یک نوع تعریف تابع است که در آن تابع به یک متغیر نسبت داده می‌شود.
+// // این نوع تعریف تابع به ما اجازه می‌دهد که تابع را به عنوان یک مقدار به متغیرها، آرایه‌ها یا اشیاء نسبت دهیم.
+// // function expression به دو صورت تعریف می‌شود:
+// // 1. با استفاده از کلمه کلیدی `function` و نام تابع (Function Declaration)
+// // 2. بدون نام (Anonymous Function) که به یک متغیر نسبت داده می‌شود
+// // function expression به ما اجازه می‌دهد که توابع را به عنوان مقادیر در جاوااسکریپت استفاده کنیم.
+
+// //function declaration چیه
+// // function declaration یک نوع تعریف تابع است که در آن تابع با استفاده از کلمه کلیدی `function` و نام تابع تعریف می‌شود.
+// // این نوع تعریف تابع به ما اجازه می‌دهد که تابع را به عنوان یک مقدار به متغیرها، آرایه‌ها یا اشیاء نسبت دهیم.
+// // function declaration به ما اجازه می‌دهد که توابع را به عنوان مقادیر در جاوااسکریپت استفاده کنیم.
+
+// //IIFE (Immediately Invoked Function Expression)
+// // یک الگوی طراحی در جاوااسکریپت است که به ما اجازه می‌دهد که یک تابع را بلافاصله پس از تعریف آن اجرا کنیم.
+// //مثال
+// // (function() {
+// //     console.log("This is an IIFE");
+// // })(); // بلافاصله اجرا می‌شود
+
+// // arrow function
+// // یک نوع تعریف تابع در جاوااسکریپت است که با استفاده از علامت `=>` تعریف می‌شود.
+// // این نوع تعریف تابع به ما اجازه می‌دهد که توابع را به صورت مختصرتر و با سینتکس ساده‌تری تعریف کنیم.
+// // example
+// // const add = (a, b) => a + b;
+// // const result = add(2, 3);
+// // console.log(result); // 5
+
+// //callback function
+// // یک تابع است که به عنوان آرگومان به یک تابع دیگر ارسال می‌شود و در آن تابع اجرا می‌شود.
+// // این الگو به ما اجازه می‌دهد که توابع را به صورت غیرهمزمان اجرا کنیم و از نتایج آن‌ها در زمان مناسب استفاده کنیم.
+// // مثال
+// // function greet(name, callback) {
+// //     console.log(`Hello, ${name}!`);
+// //     callback(); // اجرای تابع callback
+// // }
+// // function sayGoodbye() {
+// //     console.log("Goodbye!");
+// // }
+// // greet("Morteza", sayGoodbye); // خروجی: Hello, Morteza! \n Goodbye!
+// // //example 2
+// // function fetchData(callback) {
+// //     setTimeout(() => {
+// //         const data = { id: 1, name: "Morteza" };
+// //         callback(data); // اجرای تابع callback با داده‌های دریافتی
+// //     }, 2000);
+// // }
+// // fetchData((data) => {
+// //     console.log("Data received:", data); // خروجی: Data received: { id: 1, name: "Morteza" }
+// // });
+// // // example 3
+// // function processData(data, callback) {
+// //     const processedData = data.map(item => item * 2); // پردازش داده‌ها
+// //     callback(processedData); // اجرای تابع callback با داده‌های پردازش‌شده
+// // }
+// // const numbers = [1, 2, 3, 4, 5];
+// // processData(numbers, (result) => {
+// //     console.log("Processed data:", result); // خروجی: Processed data: [2, 4, 6, 8, 10]
+// // });
+
+// //Challange :Write a functhion to finde the count of a letter in string
+
+// // function countLetter (str , Letter){
+// //    let count = 0;
+// //     for (let i = 0; i < str.length; i++) {
+// //       if(str[i] === Letter) {
+// //         count++
+// //       }
+// //     }
+// //     return count
+// // }
+// //  const result = countLetter( "hi i am morteza" , "i")
+// //  console.log(result); // 2
+
+// //   for Each   چیه
+// //   forEach یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بر روی هر عنصر آرایه یک تابع را اجرا کنیم.
+// //   این متد به صورت زیر استفاده می‌شود:
+// // array.forEach((element) => {
+// //     // کد مورد نظر برای هر عنصر
+// // });
+// //example
+// // const numbers = [1, 2, 3, 4, 5];
+// // numbers.forEach((number) => {
+// //     console.log(number);
+// // });
+// // // خروجی:
+// // // 1
+// // // 2
+// // // 3
+// // // 4
+// // // 5
+// // // این متد به ما اجازه می‌دهد که بر روی هر عنصر آرایه یک تابع را اجرا کنیم و از آن برای انجام عملیات مختلف بر روی عناصر آرایه استفاده کنیم.
+// // // نکته: متد forEach هیچ مقداری را بازنمی‌گرداند و فقط برای اجرای یک تابع بر روی هر عنصر آرایه استفاده می‌شود.
+// // // مثال دیگر
+// // const fruits = ["apple", "banana", "orange"];
+// // fruits.forEach((fruit) => {
+// //     console.log(fruit);
+// // });
+// // // خروجی:
+// // // apple
+// // // banana
+// // // orange
+
+// // map
+// // map یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بر روی هر عنصر آرایه یک تابع را اجرا کنیم و نتیجه آن را در یک آرایه جدید ذخیره کنیم.
+// // این متد به صورت زیر استفاده می‌شود:
+// // array.map((element) => {
+// //     // کد مورد نظر برای هر عنصر
+// //     return newValue; // مقدار جدید برای عنصر
+// // });
+// // example
+// // const numbers = [1, 2, 3, 4, 5];
+// // const doubledNumbers = numbers.map((number) => {
+// //     return number * 2; // ضرب هر عدد در 2
+// // });
+// // console.log(doubledNumbers); // خروجی: [2, 4, 6, 8, 10]
+// // // این متد به ما اجازه می‌دهد که بر روی هر عنصر آرایه یک تابع را اجرا کنیم و نتیجه آن را در یک آرایه جدید ذخیره کنیم.
+// // نکته: متد map یک آرایه جدید با مقادیر جدید بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد.
+// // مثال دیگر
+// // const fruits = ["apple", "banana", "orange"];
+// // const fruitLengths = fruits.map((fruit) => {
+// //     return fruit.length; // طول هر میوه
+// // });
+// // console.log(fruitLengths); // خروجی: [5, 6, 6]
+// // // این متد به ما اجازه می‌دهد که بر روی هر عنصر آرایه یک تابع را اجرا کنیم و نتیجه آن را در یک آرایه جدید ذخیره کنیم.
+// // نکته: متد map یک آرایه جدید با مقادیر جدید بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد.
+
+// //find
+// // find یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
+// // این متد به صورت زیر استفاده می‌شود:
+// // array.find((element) => {
+// //     // شرط مورد نظر برای پیدا کردن عنصر
+// //     return condition; // اگر شرط برقرار باشد، عنصر را برمی‌گرداند
+// // });
+// // example
+// // const numbers = [1, 2, 3, 4, 5];
+// // const foundNumber = numbers.find((number) => {
+// //     return number > 3; // پیدا کردن اولین عدد بزرگتر از 3
+// // });
+// // console.log(foundNumber); // خروجی: 4
+// // // این متد به ما اجازه می‌دهد که اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
+// // نکته: اگر هیچ عنصری با شرط مشخص شده مطابقت نداشته باشد، متد find مقدار undefined را برمی‌گرداند.
+// //findIndex
+// // findIndex یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا ایندکس اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
+// // این متد به صورت زیر استفاده می‌شود:
+// // array.findIndex((element) => {
+// //     // شرط مورد نظر برای پیدا کردن عنصر
+// //     return condition; // اگر شرط برقرار باشد، ایندکس عنصر را برمی‌گرداند
+// // });
+// // example
+// // const numbers = [1, 2, 3, 4, 5];
+// // const foundIndex = numbers.findIndex((number) => {
+// //     return number > 3; // پیدا کردن ایندکس اولین عدد بزرگتر از 3
+// // });
+// // console.log(foundIndex); // خروجی: 3
+// // // این متد به ما اجازه می‌دهد که ایندکس اولین عنصری را که با شرط مشخص شده مطابقت دارد، پیدا کنیم.
+// // نکته: اگر هیچ عنصری با شرط مشخص شده مطابقت نداشته باشد، متد findIndex مقدار -1 را برمی‌گرداند.
+
+// //filter
+// // filter یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا عناصری را که با شرط مشخص شده مطابقت دارند، پیدا کنیم و در یک آرایه جدید ذخیره کنیم.
+// // این متد به صورت زیر استفاده می‌شود:
+// // array.filter((element) => {
+// //     // شرط مورد نظر برای پیدا کردن عناصر
+// //     return condition; // اگر شرط برقرار باشد، عنصر را در آرایه جدید قرار می‌دهد
+// // });
+// // example
+// // const numbers = [1, 2, 3, 4, 5];
+// // const filteredNumbers = numbers.filter((number) => {
+// //     return number > 3; // پیدا کردن اعداد بزرگتر از 3
+// // });
+// // console.log(filteredNumbers); // خروجی: [4, 5]
+// // // این متد به ما اجازه می‌دهد که عناصری را که با شرط مشخص شده مطابقت دارند، پیدا کنیم و در یک آرایه جدید ذخیره کنیم.
+
+// // نکته: متد filter یک آرایه جدید با عناصری که با شرط مشخص شده مطابقت دارند، بازمی‌گرداند و آرایه اصلی را تغییر نمی‌دهد.
+
+// //reduce
+// // reduce یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا یک مقدار واحد را از آرایه محاسبه کنیم.
+// // این متد به صورت زیر استفاده می‌شود:
+// // array.reduce((accumulator, currentValue) => {
+// //     // کد مورد نظر برای محاسبه مقدار جدید
+// //     return newValue; // مقدار جدید برای accumulator
+// // }, initialValue);
+// // example
+// // const numbers = [1, 2, 3, 4, 5];
+// // const sum = numbers.reduce((accumulator, currentValue) => {
+// //     return accumulator + currentValue; // جمع کردن مقادیر
+// // }, 0);
+// // console.log(sum); // خروجی: 15
+// // // این متد به ما اجازه می‌دهد که یک مقدار واحد را از آرایه محاسبه کنیم.
+
+// // some & every
+// // some یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بررسی کنیم آیا حداقل یک عنصر در آرایه با شرط مشخص شده مطابقت دارد یا خیر.
+// // این متد به صورت زیر استفاده می‌شود:
+// // array.some((element) => {
+// //     // شرط مورد نظر برای بررسی عنصر
+// //     return condition; // اگر شرط برقرار باشد، true برمی‌گرداند
+// // });
+// // example
+// // const numbers = [1, 2, 3, 4, 5];
+// // const hasEvenNumber = numbers.some((number) => {
+// //     return number % 2 === 0; // بررسی وجود عدد زوج
+// // });
+// // console.log(hasEvenNumber); // خروجی: true
+// // // این متد به ما اجازه می‌دهد تا بررسی کنیم آیا حداقل یک عنصر در آرایه با شرط مشخص شده مطابقت دارد یا خیر.
+
+// // every یک متد در آرایه‌ها است که به ما اجازه می‌دهد تا بررسی کنیم آیا همه عناصر در آرایه با شرط مشخص شده مطابقت دارند یا خیر.
+// // این متد به صورت زیر استفاده می‌شود:
+// // array.every((element) => {
+// //     // شرط مورد نظر برای بررسی عنصر
+// //     return condition; // اگر شرط برقرار باشد، true برمی‌گرداند
+// // });
+// // example
+// // const numbers = [1, 2, 3, 4, 5];
+// // const allPositive = numbers.every((number) => {
+// //     return number > 0; // بررسی مثبت بودن همه اعداد
+// // });
+// // console.log(allPositive); // خروجی: true
+// // // این متد به ما اجازه می‌دهد تا بررسی کنیم آیا همه عناصر در آرایه با شرط مشخص شده مطابقت دارند یا خیر.
+// // نکته: متد some اگر حداقل یک عنصر با شرط مشخص شده مطابقت داشته باشد، مقدار true برمی‌گرداند و در غیر این صورت مقدار false. متد every نیز اگر همه عناصر با شرط مشخص شده مطابقت داشته باشند، مقدار true برمی‌گرداند و در غیر این صورت مقدار false.
+
+// // Challenge 1. Find customers with age>60 and age<10
+// // Challenge 2. Build customer data with title and full name
+
+// // const customers = [
+// //   {
+// //     id: 1,
+// //     f_name: "Abby",
+// //     l_name: "Thomas",
+// //     gender: "M",
+// //     married: true,
+// //     age: 32,
+// //     expense: 500,
+// //     purchased: ["Shampoo", "Toys", "Book"],
+// //   },
+// //   {
+// //     id: 2,
+// //     f_name: "Jerry",
+// //     l_name: "Tom",
+// //     gender: "M",
+// //     married: true,
+// //     age: 64,
+// //     expense: 100,
+// //     purchased: ["Stick", "Blade"],
+// //   },
+// //   {
+// //     id: 3,
+// //     f_name: "Dianna",
+// //     l_name: "Cherry",
+// //     gender: "F",
+// //     married: true,
+// //     age: 22,
+// //     expense: 1500,
+// //     purchased: ["Lipstik", "Nail Polish", "Bag", "Book"],
+// //   },
+// //   {
+// //     id: 4,
+// //     f_name: "Dev",
+// //     l_name: "Currian",
+// //     gender: "M",
+// //     married: true,
+// //     age: 82,
+// //     expense: 90,
+// //     purchased: ["Book"],
+// //   },
+// //   {
+// //     id: 5,
+// //     f_name: "Maria",
+// //     l_name: "Gomes",
+// //     gender: "F",
+// //     married: false,
+// //     age: 7,
+// //     expense: 300,
+// //     purchased: ["Toys"],
+// //   },
+// // ];
+// // console.log("ok");
+// // Challenge 1: Find customers with age > 60 and age < 10
+// // const filteredCustomers = customers.filter ( (customers ) => {
+// //     return customers.age > 40 || customers.age < 10;
+// // })
+// // console.log(filteredCustomers);
+// // Challenge 2: Build customer data with title and full name
+// // const customerData = customers.map((customer) => {
+// //   if (customer.gender === "M") {
+// //     console.log("hi mr", `${customer.f_name} ${customer.l_name}`);
+// //   } else if (customer.married === true) {
+// //     console.log("hi mrs", `${customer.f_name} ${customer.l_name}`);
+// //   } else {
+// //     console.log("hi miss", `${customer.f_name} ${customer.l_name}`);
+// //   }
+// //   //     return {
+// //   //         title: "hi",
+// //   //         // f_name: customer.f_name,
+// //   //         // l_name: customer.l_name,
+// //   //         full_name: `${customer.f_name} ${customer.l_name}`
+// //   //     };
+// // });
+
+// //111
+// //this  در جاوااسکریپت
+// // this یک کلمه کلیدی در جاوااسکریپت است که به شیء فعلی اشاره می‌کند که در آن کد اجرا می‌شود.
+// // در محیط‌های مختلف، this می‌تواند به اشیاء مختلف اشاره کند. در اینجا چند مثال از نحوه استفاده از this در جاوااسکریپت آورده شده است:
+// // 1. در تابع معمولی:
+// // function showThis() {
+// //     console.log(this); // در اینجا this به شیء global اشاره می‌کند
+// // }
+// // showThis(); // خروجی: Window یا global در محیط Node.js
+// // 2. در یک شیء:
+// // const person = {
+// //     name: "Morteza",
+// //     showName: function() {
+// //         console.log(this.name); // در اینجا this به شیء person اشاره می‌کند
+// //     }
+// // };
+// // person.showName(); // خروجی: Morteza
+// // 3. در کلاس‌ها:
+// // class Person {
+// //     constructor(name) {
+// //         this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
+// //     }
+// //     showName() {
+// //         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
+// //     }
+// // }
+// // }
+// // const person1 = new Person("Morteza");
+// // person1.showName(); // خروجی: Morteza
+// // 4. در رویدادها:
+// // const button = document.querySelector("button");
+// // button.addEventListener("click", function() {
+// //     console.log(this); // در اینجا this به عنصر button اشاره می‌کند
+// // });
+// // 5. در تابع‌های arrow:
+// // const person = {
+// //     name: "Morteza",
+// //     showName: () => {
+// //         console.log(this.name); // در اینجا this به شیء global اشاره می‌کند، زیرا arrow function از this محیط بیرونی خود استفاده می‌کند
+// //     }
+// // };
+// // person.showName(); // خروجی: undefined (اگر در محیط global اجرا شود)
+// // 6. در متدهای شیء:
+// // const Car = {
+// //     brand: "Toyota",
+// //     showBrand: function() {
+// //         console.log(this.brand); // در اینجا this به شیء car اشاره می‌کند
+// //     }
+// // };
+// // car.showBrand(); // خروجی: Toyota
+// // 7. در تابع‌های constructor:
+// // function Car(brand) {
+// //     this.brand = brand; // در اینجا this به شیء جدید اشاره می‌کند
+// // }
+// //     this.showBrand = function() {
+// //         console.log(this.brand); // در اینجا this به شیء فعلی اشاره می‌کند
+// //     };
+// // }
+// // const myCar = new Car("Honda");
+// // myCar.showBrand(); // خروجی: Honda
+// // 8. در متدهای prototype:
+// // function Car(brand) {
+// //     this.brand = brand; // در اینجا this به شیء جدید اشاره می‌کند
+// // }
+// // }
+// // Car.prototype.showBrand = function() {
+// //     console.log(this.brand); // در اینجا this به شیء فعلی اشاره می‌کند
+// // };
+// // const myCar = new Car("Honda");
+// // myCar.showBrand(); // خروجی: Honda
+// // 9. در تابع‌های callback:
+// // function greet(name) {
+// //     console.log(`Hello, ${name}!`);
+// // }
+// // setTimeout(greet, 1000, "Alice"); // خروجی: Hello, Alice!
+// // 10. در تابع‌های constructor با استفاده از bind:
+// // function Person(name) {
+// //     this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
+// // }
+// //     this.showName = function() {
+// //         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
+// //     };
+
+// // const person1 = new Person("Morteza");
+// // const boundShowName = person1.showName.bind(person1);
+// // boundShowName(); // خروجی: Morteza
+// // 11. در تابع‌های constructor با استفاده از call و apply:
+// // function Person(name) {
+// //     this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
+// // }
+// //     this.showName = function() {
+// //         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
+// //     };
+// // }
+// // const person1 = new Person("Morteza");
+// // const person2 = new Person("Ali");
+// // person1.showName.call(person2); // خروجی: Ali
+// // person1.showName.apply(person2); // خروجی: Ali
+// // 12. در تابع‌های constructor با استفاده از bind:
+// // function Person(name) {
+// //     this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
+// // }
+// //     this.showName = function() {
+// //         console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
+// //     };
+// // }
+
+// //bind
+// // bind یک متد در جاوااسکریپت است که به ما اجازه می‌دهد تا this را به یک شیء خاص متصل کنیم و یک تابع جدید ایجاد کنیم که در آن this همیشه به آن شیء اشاره می‌کند.
+// // این متد به صورت زیر استفاده می‌شود:
+// // functionName.bind(thisArg, arg1, arg2, ...);
+// // example
+// // const person = {
+// //     name: "Morteza",
+// //     showName: function() {
+// //         console.log(this.name);
+// //     }
+// // };
+
+// // const boundShowName = person.showName.bind(person);
+// // boundShowName(); // خروجی: Morteza
+// // نکته: متد bind یک تابع جدید ایجاد می‌کند که در آن this همیشه به شیء مشخص شده اشاره می‌کند. این متد همچنین می‌تواند آرگومان‌های اضافی را نیز بپذیرد که به تابع اصلی ارسال می‌شوند.
+// // // const person = {
+// //     name: "Morteza",
+// //     showName: function(greeting) {
+// //         console.log(`${greeting}, ${this.name}!`);
+// //     }
+// // };
+
+// // const boundShowName = person.showName.bind(person, "Hello");
+// // boundShowName(); // خروجی: Hello, Morteza!
+// // نکته: متد bind به ما اجازه می‌دهد تا this را به یک شیء خاص متصل کنیم و یک تابع جدید ایجاد کنیم که در آن this همیشه به آن شیء اشاره می‌کند. این متد همچنین می‌تواند آرگومان‌های اضافی را نیز بپذیرد که به تابع اصلی ارسال می‌شوند.
+
+// // call & apply
+// // call و apply دو متد در جاوااسکریپت هستند که به ما اجازه می‌دهند تا this را به یک شیء خاص متصل کنیم و یک تابع را با آن شیء اجرا کنیم.
+// // متد call به ما اجازه می‌دهد تا یک تابع را با یک شیء خاص به عنوان this اجرا کنیم و می‌توانیم آرگومان‌های جداگانه را نیز به آن ارسال کنیم.
+// // مثال:
+// // function greet() {
+// //     console.log(`Hello, ${this.name}!`);
+// // }
+// // const person = { name: "Morteza" };
+// // greet.call(person); // خروجی: Hello, Morteza!
+
+// // // متد apply مشابه call است، با این تفاوت که آرگومان‌ها را به صورت یک آرایه دریافت می‌کند.
+// // // مثال:
+// // function introduce(greeting) {
+// //     console.log(`${greeting}, I'm ${this.name}.`);
+// // }
+// // const person2 = { name: "Ali" };
+// // introduce.apply(person2, ["Hi"]); // خروجی: Hi, I'm Ali.
+
+// // نکته: هر دو متد call و apply به ما اجازه می‌دهند تا this را به یک شیء خاص متصل کنیم و یک تابع را با آن شیء اجرا کنیم. تفاوت اصلی بین این دو در نحوه ارسال آرگومان‌ها است: call آرگومان‌ها را به صورت جداگانه می‌پذیرد، در حالی که apply آرگومان‌ها را به صورت یک آرایه می‌پذیرد.function Person(name) {
+// // this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
+
+// // setter & getter  توی جاوااسکریپت
+// // setter و getter دو مفهوم مهم در برنامه‌نویسی شیءگرا هستند که به ما اجازه می‌دهند تا به صورت کنترل‌شده به ویژگی‌های یک شیء دسترسی پیدا کنیم و آن‌ها را تغییر دهیم.
+// // setter یک متد است که به ما اجازه می‌دهد تا مقدار یک ویژگی را تنظیم کنیم. این متد معمولاً با پیشوند "set" تعریف می‌شود و یک پارامتر می‌پذیرد که مقدار جدید برای ویژگی است.
+// // getter یک متد است که به ما اجازه می‌دهد تا مقدار یک ویژگی را دریافت کنیم. این متد معمولاً با پیشوند "get" تعریف می‌شود و هیچ پارامتری نمی‌پذیرد.// مثال:function Person(name)
+// //مثال ساده
+// // class Person {
+// //     constructor(name) {
+// //         this.name = name; // در اینجا this به شیء جدید اشاره می‌کند
+// //         let age = 0; // ویژگی خصوصی
+
+// //         // تعریف setter برای ویژگی age
+// //         this.setAge = function (newAge) {
+// //             if (newAge > 0) {
+// //                 age = newAge;
+// //             } else {
+// //                 console.log("Please enter a valid age.");
+// //             }
+// //         };
+
+// //         // تعریف getter برای ویژگی age
+// //         this.getAge = function () {
+// //             return age;
+// //         };
+
+// //         this.showName = function () {
+// //             console.log(this.name); // در اینجا this به شیء فعلی اشاره می‌کند
+// //         };
+
+// //     }
+// // }
+// // const person1 = new Person("Morteza");
+// // person1.setAge(1); // تنظیم سن با استفاده از setter
+// // console.log(person1.getAge()); // دریافت سن با استفاده از getter
+// // console.log(person1.name); // خروجی: Morteza
+// // //  // نکته: استفاده از setter و getter به ما اجازه می‌دهد تا کنترل بیشتری بر روی دسترسی و تغییر ویژگی‌های یک شیء داشته باشیم. با استفاده از این متدها، می‌توانیم اعتبارسنجی و منطق خاصی را هنگام تنظیم یا دریافت مقادیر اعمال کنیم.
+
+// // //// شیء user با مشخصات زیر:
+// // const user = {
+// //   firstName: 'مرتضی',
+// //   lastName: 'س',
+// //   age: 22,
+
+// //   // یک getter که fullName رو برگردونه
+// //   // یک setter که fullName بگیره و اسم و فامیل رو جدا کنه
+// // };
+
+// // // بعد یک تابع مستقل بساز که اطلاعات کامل کاربر رو چاپ کنه
+// // // از call یا apply استفاده کن که اون تابع رو با user اجرا کنی
+// // const fullName = `${user.firstName} ${user.lastName}`;
+// // Setter: function(fullName) {
+// //   const names = fullName.split(' ');
+// //   this.firstName = names[0];
+// //   this.lastName = names[1];
+// // },
+// // function printUserInfo() {
+// //   console.log(`کاربر: ${this.fullName} | سن: ${this.age}`);
+// // }
+
+// // // با call این تابع رو روی user اجرا کن
+// // printUserInfo.call(user);
+
+// // closure
+// // Closure یک مفهوم در برنامه‌نویسی است که به ما اجازه می‌دهد تا یک تابع داخلی به متغیرهای تابع خارجی دسترسی داشته باشد حتی زمانی که تابع خارجی اجرا شده است.
+// // این مفهوم به ما اجازه می‌دهد تا داده‌ها را در یک محیط محصور شده نگه داریم و از آن‌ها در توابع داخلی استفاده کنیم.
+// // مثال ساده از Closure:
+// // function outerFunction() {
+// //     let outerVariable = 'Hello, ';
+
+// //     function innerFunction(name) {
+// //         console.log(outerVariable + name); // دسترسی به متغیر outerVariable
+// //     }
+
+// //     return innerFunction; // بازگشت تابع داخلی
+// // }
+
+// // const closureFunction = outerFunction();
+// // closureFunction('World'); // خروجی: Hello, World
+// // // نکته: در این مثال، innerFunction به متغیر outerVariable دسترسی دارد حتی زمانی که outerFunction اجرا شده است. این به دلیل مفهوم Closure است که اجازه می‌دهد تابع داخلی به محیط خارجی خود دسترسی داشته باشد.
+// // // مثال پیچیده‌تر از Closure:
+// // function createCounter() {
+// //     let count = 0;
+
+// //     return {
+// //         increment: function() {
+// //             count++;
+// //             console.log(count);
+// //         },
+// //         decrement: function() {
+// //             count--;
+// //             console.log(count);
+// //         }
+// //     };
+// // }
+
+// // const counter = createCounter();
+// // counter.increment(); // خروجی: 1
+// // counter.increment(); // خروجی: 2
+// // counter.decrement(); // خروجی: 1
+// // // نکته: در این مثال، createCounter یک Closure ایجاد می‌کند که به متغیر count دسترسی دارد. توابع increment و decrement می‌توانند به این متغیر دسترسی داشته باشند و آن را تغییر دهند، حتی زمانی که createCounter اجرا شده است. این مفهوم به ما اجازه می‌دهد تا داده‌ها را در یک محیط محصور شده نگه داریم و از آن‌ها در توابع داخلی استفاده کنیم.
+// // // Challenge: Write a function that returns a closure to count the number of times it has been called
+// // function createCallCounter() {
+// //     let callCount = 0;
+
+// //     return function() {
+// //         callCount++;
+// //         console.log(`Function has been called ${callCount} times.`);
+// //     };
+// // }
+
+// // const callCounter = createCallCounter();
+// // callCounter(); // خروجی: Function has been called 1 times.
+// // callCounter(); // خروجی: Function has been called 2 times.
+// // callCounter(); // خروجی: Function has been called 3 times.
+// // // نکته: در این مثال، createCallCounter یک Closure ایجاد می‌کند که به متغیر callCount دسترسی دارد. تابع داخلی می‌تواند به این متغیر دسترسی داشته باشد و آن را تغییر دهد، حتی زمانی که createCallCounter اجرا شده است. این مفهوم به ما اجازه می‌دهد تا تعداد دفعاتی که تابع فراخوانی شده است را شمارش کنیم.
+// // // Challenge: Write a function that returns a closure to create a private variable
+// // function createPrivateVariable(initialValue) {
+// //     let privateVariable = initialValue;
+
+// //     return {
+// //         getValue: function() {
+// //             return privateVariable; // دسترسی به متغیر خصوصی
+// //         },
+// //         setValue: function(newValue) {
+// //             privateVariable = newValue; // تغییر مقدار متغیر خصوصی
+// //         }
+// //     };
+// // }
+
+// // //privateVariable
+// // const privateVar = createPrivateVariable(10);
+// // console.log(privateVar.getValue()); // خروجی: 10
+// // privateVar.setValue(20);
+// // console.log(privateVar.getValue()); // خروجی: 20
+// // // نکته: در این مثال، createPrivateVariable یک Closure ایجاد می‌کند که به متغیر privateVariable دسترسی دارد. توابع getValue و setValue می‌توانند به این متغیر دسترسی داشته باشند و آن را تغییر دهند، حتی زمانی که createPrivateVariable اجرا شده است. این مفهوم به ما اجازه می‌دهد تا یک متغیر خصوصی ایجاد کنیم که فقط از طریق توابع مشخص شده قابل دسترسی است.
+// // // Challenge: Write a function that returns a closure to create a counter with increment and decrement methods
+// // function createCounterWithMethods() {
+// //     let count = 0;
+
+// //     return {
+// //         increment: function() {
+// //             count++;
+// //             console.log(`Count incremented: ${count}`);
+// //         },
+// //         decrement: function() {
+// //             count--;
+// //             console.log(`Count decremented: ${count}`);
+// //         },
+// //         getCount: function() {
+// //             return count; // دسترسی به مقدار شمارنده
+// //         }
+// //     };
+// // }
+// // const counterWithMethods = createCounterWithMethods();
+// // counterWithMethods.increment(); // خروجی: Count incremented: 1
+// // counterWithMethods.increment(); // خروجی: Count incremented: 2
+// // counterWithMethods.decrement(); // خروجی: Count decremented: 1
+// // console.log(`Current count: ${counterWithMethods.getCount()}`); // خروجی: Current count: 1
+// // // نکته: در این مثال، createCounterWithMethods یک Closure ایجاد می‌کند که به متغیر count دسترسی دارد. توابع increment، decrement و getCount می‌توانند به این متغیر دسترسی داشته باشند و آن را تغییر دهند یا مقدار آن را دریافت کنند، حتی زمانی که createCounterWithMethods اجرا شده است. این مفهوم به ما اجازه می‌دهد تا یک شمارنده با متدهای افزایش و کاهش ایجاد کنیم که وضعیت آن در یک محیط محصور شده نگه داشته می‌شود.
+// // // Challenge: Write a function that returns a closure to create a private object with methods to get and set properties
+// // function createPrivateObject() {
+// //     let privateObject = {};
+
+// //     return {
+// //         getProperty: function(key) {
+// //             return privateObject[key]; // دسترسی به ویژگی خصوصی
+// //         },
+// //         setProperty: function(key, value) {
+// //             privateObject[key] = value; // تغییر مقدار ویژگی خصوصی
+// //         },
+// //         getAllProperties: function() {
+// //             return privateObject; // دریافت تمام ویژگی‌های خصوصی
+// //         }
+// //     };
+// // }
+// // const privateObj = createPrivateObject();
+// // privateObj.setProperty('name', 'Morteza');
+// // console.log(privateObj.getProperty('name')); // خروجی: Morteza
+// // privateObj.setProperty('age', 22);
+// // console.log(privateObj.getAllProperties()); // خروجی: { name: 'Morteza', age: 22 }
+// // // نکته: در این مثال، createPrivateObject یک Closure ایجاد می‌کند که به متغیر privateObject دسترسی دارد. توابع getProperty، setProperty و getAllProperties می‌توانند به این متغیر دسترسی داشته باشند و آن را تغییر دهند یا ویژگی‌های آن را دریافت کنند، حتی زمانی که createPrivateObject اجرا شده است. این مفهوم به ما اجازه می‌دهد تا یک شیء خصوصی با متدهای مشخص شده ایجاد کنیم که فقط از طریق آن‌ها قابل دسترسی است.
+
+// // // pure - impure function
+// // // تابع خالص (Pure Function) تابعی است که برای هر ورودی مشخص، همیشه همان خروجی را تولید می‌کند و هیچ‌گونه عوارض جانبی ندارد. به عبارت دیگر، این تابع فقط بر اساس ورودی‌های خود عمل می‌کند و هیچ‌گونه تغییری در وضعیت خارجی یا متغیرهای جهانی ایجاد نمی‌کند.
+// // // مثال از تابع خالص:
+// // function add(a, b) {
+// //     return a + b; // تابع خالص: برای هر ورودی مشخص، همیشه همان خروجی را تولید می‌کند
+// // }
+// // console.log(add(2, 3)); // خروجی: 5
+// // // نکته: تابع add هیچ‌گونه عوارض جانبی ندارد و فقط بر اساس ورودی‌های خود عمل می‌کند. برای هر بار فراخوانی با همان ورودی‌ها، همیشه همان خروجی را تولید می‌کند.
+// // // تابع غیرخالص (Impure Function) تابعی است که برای هر ورودی مشخص، ممکن است خروجی متفاوتی تولید کند یا عوارض جانبی داشته باشد. به عبارت دیگر، این تابع ممکن است بر اساس وضعیت خارجی یا متغیرهای جهانی عمل کند یا وضعیت خارجی را تغییر دهد.
+// // // مثال از تابع غیرخالص:
+// // let externalVariable = 10;
+// // function addWithSideEffect(a, b) {
+// //     externalVariable++;
+// //     return a + b + externalVariable;
+// // }
+// // console.log(addWithSideEffect(2, 3)); // خروجی: 16
+// // console.log(addWithSideEffect(2, 3)); // خروجی: 17
+// // // نکته: تابع addWithSideEffect دارای عوارض جانبی است زیرا مقدار externalVariable را تغییر می‌دهد و برای هر بار فراخوانی با همان ورودی‌ها، خروجی متفاوتی تولید می‌کند. این تابع به وضعیت خارجی وابسته است و ممکن است در طول زمان تغییر کند.
+// // // نکته: تابع خالص به ما اجازه می‌دهد تا کدهای قابل پیش‌بینی و تست‌پذیرتری بنویسیم، در حالی که تابع غیرخالص ممکن است باعث ایجاد مشکلاتی در تست و نگهداری کد شود. استفاده از توابع خالص معمولاً توصیه می‌شود زیرا باعث افزایش قابلیت اطمینان و خوانایی کد می‌شود.
+
+// // challenge : generate a random integer
+// // function generateRandomInteger(min, max) {
+// //     return Math.floor(Math.random() * (max - min + 1)) + min;
+// // }
+// // console.log(generateRandomInteger(1, 10)); // خروجی: یک عدد تصادفی بین 1 و 10
+// // console.log(generateRandomInteger(5, 15)); // خروجی: یک عدد تصادفی بین 5 و 15
+// // // نکته: تابع generateRandomInteger یک عدد صحیح تصادفی بین min و max (شامل هر دو) تولید می‌کند. این تابع از Math.random() برای تولید یک عدد تصادفی در بازه [0, 1) استفاده می‌کند و سپس آن را به بازه مورد نظر مقیاس می‌دهد و با Math.floor() به عدد صحیح تبدیل می‌کند. این تابع غیرخالص است زیرا برای هر بار فراخوانی ممکن است خروجی متفاوتی تولید کند.
+
+// // const randomnum = (min, max) => {
+// //     if (!min , !max) {
+// //         max = min;
+// //         min = 0;
+// //     }
+// //     const result = Math.floor(Math.random() * (max - min + 1)) + min;
+// //     return result
+
+// // }
+// // console.log(randomnum(50));
+
+// // date
+// // // date یک شیء در جاوااسکریپت است که به ما اجازه می‌دهد تا تاریخ و زمان را مدیریت کنیم. این شیء شامل متدها و ویژگی‌هایی است که به ما امکان می‌دهد تاریخ و زمان فعلی را دریافت کنیم، تاریخ‌های خاصی را ایجاد کنیم و با آن‌ها کار کنیم.
+// // // // مثال ساده از استفاده از شیء date:
+// // const currentDate = new Date(); // ایجاد یک شیء date با تاریخ و زمان فعلی
+// // console.log(currentDate); // خروجی: تاریخ و زمان فعلی به صورت یک شیء date
+// // // // نکته: شیء date به ما اجازه می‌دهد تا تاریخ و زمان را به صورت دقیق مدیریت کنیم. می‌توانیم از متدهای مختلف این شیء برای دریافت اطلاعات مختلف مانند سال، ماه، روز، ساعت و دقیقه استفاده کنیم.
+
+// // // // مثال از دریافت سال، ماه و روز از یک شیء date:
+// // const year = currentDate.getFullYear(); // دریافت سال
+// // const month = currentDate.getMonth() + 1; // دریافت ماه (ماه‌ها از 0 شروع می‌شوند، بنابراین باید 1 اضافه کنیم)
+// // const day = currentDate.getDate(); // دریافت روز
+// // console.log(`Current Date: ${year}-${month}-${day}`); // خروجی: Current
+// // // Date: 2023-10-1 (به عنوان مثال)
+// // // // نکته: متدهای getFullYear، getMonth و getDate به ما
+// // // اجازه می‌دهند تا سال، ماه و روز را از یک شیء date دریافت کنیم. ماه‌ها در جاوااسکریپت از 0 شروع می‌شوند، بنابراین برای دریافت ماه صحیح باید 1 به آن اضافه کنیم.
+// // // // مثال از ایجاد یک شیء date با تاریخ خاص:
+// // const specificDate = new Date(2023, 9, 1); // ایجاد یک شیء date با تاریخ 1 اکتبر 2023 (ماه‌ها از 0 شروع می‌شوند)
+// // console.log(specificDate); // خروجی: تاریخ 1 اکتبر 2023
+// // // // نکته: می‌توانیم یک شیء date را با تاریخ خاصی ایجاد کنیم. در این مثال، شیء date با تاریخ 1 اکتبر 2023 ایجاد شده است. ماه‌ها در جاوااسکریپت از 0 شروع می‌شوند، بنابراین ماه اکتبر برابر با 9 است.
+// // // // مثال از تبدیل یک شیء date به رشته:
+// // const dateString = specificDate.toISOString(); // تبدیل شیء date به رشته در قالب ISO
+// // console.log(dateString); // خروجی: 2023-10-01T00:
+// // //  00:00.000Z
+// // // // نکته: می‌توانیم یک شیء date را به رشته تبدیل کنیم. در این مثال، شیء date به رشته‌ای در قالب ISO تبدیل شده است که شامل تاریخ و زمان است.
+// // // // مثال از مقایسه دو شیء date:
+// // const date1 = new Date(2023, 9, 1);
+// // const date2 = new Date(2023, 9, 2); // ایجاد یک شیء date با تاریخ 2 اکتبر 2023
+// // if (date1 < date2) {
+// //   console.log("date1 is earlier than date2"); // خروجی: date1 is earlier than date2
+// // } else if (date1 > date2) {
+// //   console.log("date1 is later than date2");
+// // } else {
+// //   console.log("date1 is the same as date2");
+// // }
+// // // // نکته: می‌توانیم دو شیء date را با استفاده از عملگرهای مقایسه مقایسه کنیم. در این مثال، date1 قبل از date2 است و بنابراین پیام مربوطه چاپ می‌شود.
+
+// // //setTimeout
+// // // setTimeout یک تابع در جاوااسکریپت است که به ما اجازه می‌دهد تا یک تابع را پس از یک مدت زمان مشخص اجرا کنیم. این تابع معمولاً برای ایجاد تأخیر در اجرای یک کد یا برای اجرای یک کد در آینده استفاده می‌شود.
+// // setTimeout(() => {
+// //   console.log("This message is displayed after 2 11seconds");
+// // }, 2000); // // نکته: در این مثال، تابعی که یک پیام را چاپ می‌کند، پس از 2 ثانیه اجرا می‌شود. مدت زمان تأخیر به میلی‌ثانیه مشخص شده است (2000 میلی‌ثانیه برابر با 2 ثانیه است).
+// // //setInterval
+// // // setInterval یک تابع در جاوااسکریپت است که به ما اجازه می‌دهد تا یک تابع را به صورت مکرر و با یک فاصله زمانی مشخص اجرا کنیم. این تابع معمولاً برای ایجاد تایمرها یا برای اجرای یک کد در فواصل زمانی منظم استفاده می‌شود.
+// // // setInterval(() => {
+// // //     console.log("This message is displayed every 2 seconds");
+// // // }, 2000);  // // نکته: در این مثال، تابعی که یک پیام را چاپ می‌کند، هر 2 ثانیه اجرا می‌شود. مدت زمان بین هر بار اجرای تابع به میلی‌ثانیه مشخص شده است (2000 میلی‌ثانیه برابر با 2 ثانیه است).
+
+// // //Challenge : Determine age based on day
+// // // const DetermineAge = (birthdate) => {
+// // //     const birthdateMs = new Date(birthdate).getTime();
+// // //     const currentDateMs = Date.now();
+// // //     const ageInMs = currentDateMs - birthdateMs;
+// // //     const ageInYears = new Date(ageInMs).getUTCFullYear() - 1970;
+// // //     return ageInYears;
+
+// // // }
+
+// // // console.log(DetermineAge("1998-09-17"));
+
+// // //trycatch
+// // // try...catch یک ساختار در جاوااسکریپت است که به ما اجازه می‌دهد تا خطاها را مدیریت کنیم و از برنامه‌مان در برابر خطاهای غیرمنتظره محافظت کنیم. این ساختار شامل دو بخش اصلی است: بخش try که کدی را که ممکن است خطا ایجاد کند، در بر می‌گیرد و بخش catch که کدی را که در صورت بروز خطا اجرا می‌شود، در بر می‌گیرد.
+// // // // مثال ساده از استفاده از try...catch:
+// // try {
+// //   // کدی که ممکن است خطا ایجاد کند
+// //   console.log(DetermineAge("invalid-date"));
+// // } catch (error) {
+// //   // کدی که در صورت بروز خطا اجرا می‌شود
+// //   console.error("Error occurred:", error);
+// // }
+// // // // نکته: در این مثال، تابع DetermineAge با یک تاریخ نامعتبر فراخوانی شده است که باعث ایجاد یک خطا می‌شود. بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا برنامه‌مان را در برابر خطاهای غیرمنتظره محافظت کنیم و از کرش کردن برنامه جلوگیری کنیم.
+// // // // مثال از استفاده از try...catch برای مدیریت خطاهای شبکه:
+// // try {
+// //   // کدی که ممکن است خطا ایجاد کند
+// //   fetch("https://api.example.com/data")
+// //     .then((response) => {
+// //       if (!response.ok) {
+// //         throw new Error("Network response was not ok");
+// //       }
+// //       return response.json();
+// //     })
+// //     .then((data) => console.log(data))
+// //     .catch((error) => {
+// //       console.error("Error occurred:", error);
+// //     });
+// // } catch (error) {
+// //   // کدی که در صورت بروز خطا اجرا می‌شود
+// //   console.error("Error occurred:", error);
+// // }
+// // // // نکته: در این مثال، از fetch برای دریافت داده‌ها از یک API استفاده شده است. اگر پاسخ شبکه موفقیت‌آمیز نباشد، یک خطا ایجاد می‌شود که در بخش catch مدیریت می‌شود. این ساختار به ما اجازه می‌دهد تا خطاهای شبکه را مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
+// // // // نکته: استفاده از try...catch به ما اجازه می‌دهد تا برنامه‌مان   را در برابر خطاهای غیرمنتظره محافظت کنیم و از کرش کردن برنامه جلوگیری کنیم. این ساختار به ما امکان می‌دهد تا خطاها را به صورت کنترل‌شده مدیریت کنیم و پیام‌های خطا را به کاربران نمایش دهیم یا اقدامات جایگزین انجام دهیم.
+// // // // Challenge: Write a function that uses try...catch to handle JSON parsing errors
+// // function parseJSON(jsonString) {
+// //   try {
+// //     const parsedData = JSON.parse(jsonString);
+// //     return parsedData;
+// //   } catch (error) {
+// //     console.error("Error parsing JSON:", error);
+// //     return null; // یا می‌توانید یک مقدار پیش‌فرض برگردانید
+// //   }
+// // }
+// // console.log(parseJSON('{"name": "Morteza", "age": 22}')); // خروجی: { name: 'Morteza', age: 22 }
+// // console.log(parseJSON("invalid-json")); // خروجی: Error parsing JSON: [SyntaxError: Unexpected token i in JSON at position 0]
+// // // // نکته: در این مثال، تابع parseJSON یک رشته JSON را می‌پ
+// // // ذیرد و سعی می‌کند آن را با استفاده از JSON.parse تجزیه کند. اگر رشته JSON نامعتبر باشد و باعث ایجاد یک خطا شود، بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا خطاهای تجزیه JSON را مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
+// // // // Challenge: Write a function that uses try...catch to handle errors when accessing object properties
+// // function getProperty(obj, key) {
+// //   try {
+// //     return obj[key];
+// //   } catch (error) {
+// //     console.error("Error accessing property:", error);
+// //     return null; // یا می‌توانید یک مقدار پیش‌فرض برگردانید
+// //   }
+// // }
+// // const simpleUser = { name: "Morteza", age: 22 };
+// // console.log(getProperty(simpleUser, "name")); // خروجی: Morteza
+// // console.log(getProperty(simpleUser, "invalidKey")); // خروجی: Error accessing property: [TypeError: Cannot read properties of undefined (reading 'invalidKey')]
+// // // // نکته: در این مثال، تابع getProperty یک شیء و یک کلید را می‌پذیرد و سعی می‌کند مقدار مربوط به آن کلید را از شیء دریافت کند. اگر کلید نامعتبر باشد و باعث ایجاد یک خطا شود، بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا خطاهای دسترسی به ویژگی‌های شیء را مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
+// // // finally
+// // // finally یک بخش اختیاری در ساختار try...catch است که به ما اجازه می
+// // // دهد تا کدی را که باید همیشه اجرا شود، صرف نظر از اینکه خطایی رخ داده است یا نه، در آن قرار دهیم. این بخش معمولاً برای انجام عملیات پاک‌سازی یا آزادسازی منابع استفاده می‌شود.
+// // // // مثال ساده از استفاده از finally:
+// // try {
+// //   // کدی که ممکن است خطا ایجاد کند
+// //   console.log(getProperty(user, "name"));
+// // } catch (error) {
+// //   // کدی که در صورت بروز خطا اجرا می‌شود
+// //   console.error("Error occurred:", error);
+// // } finally {
+// //   // کدی که همیشه اجرا می‌شود
+// //   console.log("Finally block executed");
+// // }
+// // // // نکته: در این مثال، بخش finally همیشه اجرا می‌شود، صرف نظر از اینکه خطایی رخ داده است یا نه. این بخش به ما اجازه می‌دهد تا عملیات پاک‌سازی یا آزادسازی منابع را انجام دهیم.
+// // // // مثال از استفاده از finally برای بستن یک فایل:
+// // import fs from "fs";
+
+// // let fileHandle;
+// // try {
+// //   fileHandle = fs.openSync("example.txt", "r");
+// //   // کدی که ممکن است خطا ایجاد کند
+// //   const data = fs.readFileSync(fileHandle, "utf8");
+// //   console.log(data);
+// // } catch (error) {
+// //   // کدی که در صورت بروز خطا اجرا می‌شود
+// //   console.error("Error occurred:", error);
+// // } finally {
+// //   // کدی که همیشه اجرا می‌شود
+// //   if (fileHandle) {
+// //     fs.closeSync(fileHandle);
+// //     console.log("File closed");
+// //   }
+// // }
+// // // // نکته: در این مثال، بخش finally همیشه اجرا می‌شود و فایل باز شده را می‌بندد، صرف نظر از اینکه خطایی رخ داده است یا نه. این بخش به ما اجازه می‌دهد تا منابع را آزاد کنیم و از نشت منابع جلوگیری کنیم.
+// // // // نکته: استفاده از finally به ما اجازه می‌دهد تا کدی را که باید
+// // // همیشه اجرا شود، صرف نظر از اینکه خطایی رخ داده است یا نه، در یک مکان مشخص قرار دهیم. این ساختار به ما امکان می‌دهد تا عملیات پاک‌سازی یا آزادسازی منابع را به صورت کنترل‌شده انجام دهیم و از نشت منابع جلوگیری کنیم.
+// // // throw
+// // // throw یک کلمه کلیدی در جاوااسکریپت است که به ما اجازه می‌دهد تا یک خطا را به صورت دستی پرتاب کنیم. این کار معمولاً زمانی انجام می‌شود که بخواهیم یک وضعیت خطا را شناسایی کنیم و آن را به بالاترین سطح کد (مثلاً یک تابع فراخوانی‌کننده) گزارش دهیم.
+// // // // مثال ساده از استفاده از throw:
+// // function divide(a, b) {
+// //   if (b === 0) {
+// //     throw new Error("Division by zero is not allowed");
+// //   }
+// //   return a / b;
+// // }
+// // try {
+// //   console.log(divide(10, 2)); // خروجی: 5
+// //   console.log(divide(10, 0)); // این خطا را پرتاب می‌کند
+// // } catch (error) {
+// //   console.error("Error occurred:", error);
+// // }
+// // // // نکته: در این مثال، تابع divide بررسی می‌کند که آیا مخرج برابر با صفر است یا نه. اگر مخرج صفر باشد، یک خطا با استفاده از throw پرتاب می‌شود. بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا خطاها را به صورت کنترل‌شده مدیریت کنیم و از کرش کردن برنامه جلوگیری کنیم.
+// // // // مثال از استفاده از throw برای اعتبارسنجی ورودی:
+// // function validateInput(input) {
+// //   if (typeof input !== "number") {
+// //     throw new Error("Invalid input: Input must be a number");
+// //   }
+// //   return true;
+// // }
+// // try {
+// //   validateInput(42); // ورودی معتبر
+// //   validateInput("not a number"); // این خطا را پرتاب می‌کند
+// // } catch (error) {
+// //   console.error("Error occurred:", error);
+// // }
+// // // // نکته: در این مثال، تابع validateInput بررسی می‌کند که آیا ورودی یک عدد است یا نه. اگر ورودی معتبر نباشد، یک خطا با استفاده از throw پرتاب می‌شود. بخش catch این خطا را می‌گیرد و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا ورودی‌ها را اعتبارسنجی کنیم و خطاها را به صورت کنترل‌شده مدیریت کنیم.
+
+// // //134
+// // // data structures
+// // // ساختارهای داده، روش‌هایی برای سازماندهی و ذخیره‌سازی داده‌ها به گونه‌ای هستند که دسترسی و مدیریت آن‌ها آسان‌تر شود. ساختارهای داده می‌توانند به صورت خطی (مانند آرایه‌ها و لیست‌های پیوندی) یا غیرخطی (مانند درخت‌ها و گراف‌ها) باشند.
+// // //Maps
+// // // این مپ با مپی که روی ارایه ها میزدیم فرق داره این با ام بزرگه اون با ام کوچک
+
+// // const myMap = new Map();
+// // myMap.set("key1", "value1");
+// // myMap.set("key2", "value2");
+// // console.log(myMap.get("key1")); // خروجی: value1
+// // console.log(myMap.get("key2")); // خروجی: value2
+
+// // // متد های Map
+// // // Map دارای چندین متد مفید است که به ما در مدیریت داده‌ها کمک می‌کند:
+
+// // // 1. set(key, value): برای اضافه کردن یک جفت کلید-مقدار به Map استفاده می‌شود.
+// // myMap.set("key3", "value3");
+
+// // // 2. get(key): برای دریافت مقدار مربوط به یک کلید خاص استفاده می‌شود.
+// // console.log(myMap.get("key3")); // خروجی: value3
+
+// // // 3. has(key): برای بررسی وجود یک کلید در Map استفاده می‌شود.
+// // console.log(myMap.has("key2")); // خروجی: true
+// // console.log(myMap.has("key4")); // خروجی: false
+
+// // // 4. delete(key): برای حذف یک جفت کلید-مقدار از Map استفاده می‌شود.
+// // myMap.delete("key1");
+// // console.log(myMap.has("key1")); // خروجی: false
+
+// // // 5. clear(): برای حذف تمام جفت‌های کلید-مقدار از Map استفاده می‌شود.
+// // myMap.clear();
+
+// // console.log(myMap.size); // خروجی: 0
+
+// // // 6. size: برای دریافت تعداد جفت‌های کلید-مقدار در Map استفاده می‌شود.
+// // console.log(myMap.size); // خروجی: 0
+
+// // // 7. keys(): برای دریافت یک iterator از کلیدهای Map استفاده می‌شود.
+// // const keysIterator = myMap.keys();
+// // for (const key of keysIterator) {
+// //   console.log("Key:", key);
+// // }
+// // // 8. values(): برای دریافت یک iterator از مقادیر Map استفاده می‌شود.
+// // const valuesIterator = myMap.values();
+// // for (const value of valuesIterator) {
+// //   console.log("Value:", value);
+// // }
+// // // iteration in Map
+// // // 9. entries(): برای دریافت یک iterator از جفت‌های کلید-مقدار Map استفاده می‌شود.
+// // const entriesIterator = myMap.entries();
+// // for (const [key, value] of entriesIterator) {
+// //   console.log(`Key: ${key}, Value: ${value}`);
+// // }
+// // // 10. forEach(callback): برای اجرای یک تابع بر روی هر جفت کلید-مقدار در Map استفاده می‌شود.
+// // myMap.forEach((value, key) => {
+// //   console.log(`Key: ${key}, Value: ${value}`);
+// // });
+// // // نکته: Map یک ساختار داده بسیار مفید است که به ما اجازه می‌دهد تا داده‌ها را به صورت کلید-مقدار ذخیره کنیم و به راحتی به آن‌ها دسترسی پیدا کنیم. این ساختار داده به ما امکان می‌دهد تا داده‌ها را به صورت غیرترتیبی ذخیره کنیم و از مزایای عملکردی بالایی برخوردار است.
+// // // Challenge: Create a Map to store user information (name, age, email) and implement methods to add, get, and delete users
+// // class UserMap {
+// //   constructor() {
+// //     this.users = new Map();
+// //   }
+
+// //   addUser(name, age, email) {
+// //     this.users.set(email, { name, age });
+// //   }
+
+// //   getUser(email) {
+// //     return this.users.get(email);
+// //   }
+
+// //   deleteUser(email) {
+// //     this.users.delete(email);
+// //   }
+
+// //   displayUsers() {
+// //     this.users.forEach((user, email) => {
+// //       console.log(`Email: ${email}, Name: ${user.name}, Age: ${user.age}`);
+// //     });
+// //   }
+// // }
+// // const userMap = new UserMap();
+// // userMap.addUser("Morteza", 22, "morteza@example.com");
+// // userMap.addUser("Ali", 25, "ali@example.com");
+// // userMap.addUser("Sara", 30, "sara@example.com");
+// // userMap.displayUsers();
+// // userMap.deleteUser("sara@example.com");
+// // userMap.displayUsers(); // خروجی: Email: ali@example.com, Name: Ali, Age: 25
+// // // نکته: در این مثال، کلاس UserMap یک Map برای ذخیره اطلاعات کاربران ایجاد می‌کند. متدهای addUser، getUser و deleteUser برای اضافه کردن، دریافت و حذف کاربران استفاده می‌شوند. همچنین متد displayUsers برای نمایش تمام کاربران در Map استفاده می‌شود. این ساختار داده به ما اجازه می‌دهد تا اطلاعات کاربران را به صورت کلید-مقدار ذخیره کنیم و به راحتی به آن‌ها دسترسی پیدا کنیم.
+
+// // //Sets
+// // // Set یک ساختار داده در جاوااسکریپت است که به ما اجازه می  ‌دهد تا مجموعه‌ای از مقادیر منحصر به فرد را ذخیره کنیم. این ساختار داده به ما امکان می‌دهد تا مقادیر تکراری را حذف کنیم و به راحتی به مقادیر دسترسی پیدا کنیم.
+// // const mySet = new Set();
+// // mySet.add("value1");
+// // mySet.add("value2");
+// // mySet.add("value3");
+// // console.log(mySet.has("value1")); // خروجی: true
+// // console.log(mySet.has("value4")); // خروجی: false
+// // mySet.delete("value2");
+// // console.log(mySet.size); // خروجی: 2
+// // mySet.clear();
+// // console.log(mySet.size); // خروجی: 0
+// // // متد های Set
+// // // Set دارای چندین متد مفید است که به ما در مدیریت داده‌ها کمک می‌کند:
+// // // 1. add(value): برای اضافه کردن یک مقدار به Set استفاده می‌شود.
+// // mySet.add("value4");
+// // // 2. has(value): برای بررسی وجود یک مقدار در Set استفاده می‌شود.
+// // console.log(mySet.has("value4")); // خروجی: true
+// // // 3. delete(value): برای حذف یک مقدار از Set استفاده می‌شود.
+// // mySet.delete("value4");
+// // console.log(mySet.has("value4")); // خروجی: false
+
+// // // 4. clear(): برای حذف تمام مقادیر از Set استفاده می‌شود.
+// // mySet.clear();
+// // console.log(mySet.size); // خروجی: 0
+// // // 5. size: برای دریافت تعداد مقادیر در Set استفاده می‌شود.
+// // console.log(mySet.size); // خروجی: 0
+// // // 6. values(): برای دریافت یک iterator از مقادیر Set استفاده می‌شود.
+// // const setValuesIterator = mySet.values();
+// // for (const value of setValuesIterator) {
+// //   console.log("Value:", value);
+// // }
+// // // 7. forEach(callback): برای اجرای یک تابع بر روی هر مقدار در Set استفاده می‌شود.
+// // mySet.forEach((value) => {
+// //   console.log("Value:", value);
+// // });
+// // // نکته: Set یک ساختار داده بسیار مفید است که به ما اجازه می‌دهد تا مجموعه‌ای از مقادیر منحصر به فرد را ذخیره کنیم و به راحتی به مقادیر دسترسی پیدا کنیم.
+
+// // // این ساختار داده به ما امکان می‌دهد تا مقادیر تکراری را حذف کنیم و از مزایای عملکردی بالایی برخوردار است.
+
+// // // Symbols// Symbol یک نوع داده در جاوااسکریپت است که به ما اجازه می‌دهد تا یک مقدار منحصر به فرد و غیرقابل تغییر ایجاد کنیم. این نوع داده معمولاً برای ایجاد کلیدهای منحصر به فرد در اشیاء یا برای شناسایی ویژگی‌های خاص در اشیاء استفاده می‌شود.
+// // const mySymbol = Symbol("description");
+// // console.log(mySymbol); // خروجی: Symbol(description)
+// // console.log(typeof mySymbol); // خروجی: symbol
+// // // نکته: Symbol یک نوع داده منحصر به فرد است که می‌تواند برای ایجاد کلیدهای منحصر به فرد در اشیاء استفاده شود. این نوع داده به ما اجازه می‌دهد تا ویژگی‌های خاصی را در اشیاء تعریف کنیم که با سایر ویژگی‌ها تداخل نداشته باشند.
+// // // مثال از استفاده از Symbol به عنوان کلید در یک شیء:
+// // const myObject = {
+// //   [mySymbol]: "value1",
+// //   anotherKey: "value2",
+// // };
+// // console.log(myObject[mySymbol]); // خروجی: value1
+// // console.log(myObject.anotherKey); // خروجی: value2
+// // // نکته: در این مثال، از Symbol به عنوان یک کلید منحصر به فرد در شیء myObject استفاده شده است. این کلید می‌تواند برای شناسایی ویژگی‌های خاص در شیء استفاده شود و با سایر کلیدها تداخل نخواهد داشت.
+
+// // // shared symbols
+// // // Symbol.for(key) یک متد است که به ما اجازه می‌دهد تا یک Symbol را  با یک کلید مشخص ایجاد کنیم یا به یک Symbol موجود با آن کلید دسترسی پیدا کنیم. این متد به ما اجازه می‌دهد تا Symbols را در سراسر برنامه به اشتراک بگذاریم و از آن‌ها در بخش‌های مختلف کد استفاده کنیم.
+// // const sharedSymbol = Symbol.for("sharedKey");
+// // console.log(sharedSymbol); // خروجی: Symbol(sharedKey)
+// // console.log(Symbol.keyFor(sharedSymbol)); // خروجی: sharedKey
+// // // نکته: در این مثال، از Symbol.for برای ایجاد یک Symbol با کلید "sharedKey" استفاده شده است. اگر یک Symbol با این کلید قبلاً وجود داشته باشد، این متد به آن دسترسی پیدا می‌کند و در غیر این صورت یک Symbol جدید ایجاد می‌کند.
+// // // مثال از استفاده از Symbol.for برای ایجاد یک Symbol مشترک:
+// // const anotherSharedSymbol = Symbol.for("sharedKey");
+// // console.log(anotherSharedSymbol === sharedSymbol); // خروجی: true
+// // // نکته: در این مثال، anotherSharedSymbol به همان Symbol که با کلید "sharedKey" ایجاد شده است، اشاره می‌کند. این به ما اجازه می‌دهد تا Symbols را در سراسر برنامه به اشتراک بگذاریم و از آن‌ها در بخش‌های مختلف کد استفاده کنیم.
+// // // نکته: استفاده از Symbol.for به ما اجازه می‌دهد تا Symbols را در سراسر برنامه به اشتراک بگذاریم و از آن‌ها در بخش‌های مختلف کد استفاده کنیم. این نوع داده به ما امکان می‌دهد تا ویژگی‌های خاصی را در اشیاء تعریف کنیم که با سایر ویژگی‌ها تداخل نداشته باشند و از مزایای عملکردی بالایی برخوردار است.
+// // // Challenge: Create a Symbol to represent a unique identifier for a user
+// // const userIdSymbol = Symbol("userId");
+// // const userObj = {
+// //   [userIdSymbol]: 12345,
+// //   name: "Morteza",
+// //   age: 22,
+// // };
+// // console.log(userObj[userIdSymbol]); // خروجی: 12345
+// // console.log(userObj.name); // خروجی: Morteza
+// // console.log(userObj.age); // خروجی: 22
+// // // // نکته: در این مثال، از Symbol به عنوان یک شناسه منحصر به فرد برای کاربر استفاده شده است. این شناسه می‌تواند برای شناسایی منحصر به فرد کاربر در برنامه استفاده شود و با سایر ویژگی‌ها تداخل نخواهد داشت.
+
+// // promises
+// // می‌تواند در یکی از سه حالت زیر باشد: Promise یک نوع داده در جاوااسکریپت است که به ما اجازه می‌دهد تا عملیات غیرهمزمان را مدیریت کنیم. یک // Promise
+// // 1. Pending: حالت اولیه، در حال انتظار برای نتیجه
+// // 2. Fulfilled: عملیات با موفقیت انجام شده و نتیجه در دسترس است
+// // 3. Rejected: عملیات با خطا مواجه شده و دلیل خطا در دسترس است
+
+// // مثال از ایجاد یک Promise:
+// // const myPromise = new Promise((resolve, reject) => {
+// //   const success = true; // فرض کنید عملیات موفقیت‌آمیز بود
+// //   if (success) {
+// //     resolve("Operation successful");
+// //   } else {
+// //     reject("Operation failed");
+// //   }
+// // });
+
+// // // // Promise برای مدیریت نتیجه catch و then استفاده از
+// // myPromise
+// //   .then((result) => {
+// //     console.log(result); // خروجی: Operation successful
+// //   })
+// //   .catch((error) => {
+// //     console.error(error);
+// //   });
+
+// //rock paper scissor game
+// // const choices = ["rock", "paper", "scissor"];
+// // let playerScore = 0;
+// // let computerScore = 0;
+
+// // const checkWinner = (player, computer) => {
+// //   if (player === computer) {
+// //     return "draw";
+// //   } else if (player === "rock") {
+// //     return computer === "scissor" ? "you win" : "you lose";
+// //   } else if (player === "paper") {
+// //     return computer === "rock" ? "you win" : "you lose";
+// //   } else if (player === "scissor") {
+// //     return computer === "paper" ? "you win" : "you lose";
+// //   }
+// // };
+// // const showResult = (result) => {
+// //   if (result === "you win") {
+// //     console.log("win");
+// //     playerScore++;
+// //   } else if (result === "you lose") {
+// //     console.log("loser");
+// //     computerScore++;
+// //   } else {
+// //     console.log("its tie");
+// //   }
+// //   console.log(`your score is ${playerScore}`);
+// //   console.log(`computer score is ${computerScore}`);
+// //   console.log("--------------------------------------------------------");
+// // };
+// // const winCondition = () => {
+// //   if (playerScore === 5) {
+// //     console.log("you are the champion");
+// //   } else if (computerScore === 5) {
+// //     console.log("computer is the champion");
+// //   }
+// // };
+
+// // const play = () => {
+// //   const playerchoice = prompt("choose rock paper scissor");
+// //   if (choices.indexOf(playerchoice?.toLowerCase()) !== -1) {
+// //     console.log(`you choose  ${playerchoice}`);
+// //   } else {
+// //     console.log("تغلب نکن عزیزم  :/");
+// //     return;
+// //   }
+// //   const randomnum = Math.floor(Math.random() * choices.length);
+// //   const computer = choices[randomnum];
+// //   console.log(`computer choose ${computer}`);
+// //   const gameresult = checkWinner(playerchoice, computer);
+// //   showResult(gameresult);
+// //   winCondition();
+// //   if (playerScore === 5 || computerScore === 5) {
+// //     return;
+// //   } else {
+// //     play();
+// //   }
+// // };
+// // play();
 
 
- // "Number guess game" //
+//  // "Number guess game" //
 
-// const randomNumber = Math.floor(Math.random() * 100);
+// // const randomNumber = Math.floor(Math.random() * 100);
 
-// let attempts = 1;
+// // let attempts = 1;
 
-// // console.log(`you win in ${attempts} attempts`);
+// // // console.log(`you win in ${attempts} attempts`);
 
-// const play = () => {
-//   let playerchoice = prompt("Guess a number between 0 and 99:");
-//   if (
-//     isNaN(Number(playerchoice)) ||
-//     playerchoice === null ||
-//     playerchoice.trim() === ""
-//   ) {
-//     console.log(`you lose in ${attempts} attempts. `);
-//     return;
-//   }else  if (Number(playerchoice) == randomNumber) {
-//     console.log("you win");
-//   } else if (Number(playerchoice) > randomNumber) {
-//     console.log("your guess is too high");
-//     play();
-//   } else {
-//     console.log("your guess is too low");
-//     play();
-//   }
+// // const play = () => {
+// //   let playerchoice = prompt("Guess a number between 0 and 99:");
+// //   if (
+// //     isNaN(Number(playerchoice)) ||
+// //     playerchoice === null ||
+// //     playerchoice.trim() === ""
+// //   ) {
+// //     console.log(`you lose in ${attempts} attempts. `);
+// //     return;
+// //   }else  if (Number(playerchoice) == randomNumber) {
+// //     console.log("you win");
+// //   } else if (Number(playerchoice) > randomNumber) {
+// //     console.log("your guess is too high");
+// //     play();
+// //   } else {
+// //     console.log("your guess is too low");
+// //     play();
+// //   }
 
-//   attempts++;
-// };
-// play();
+// //   attempts++;
+// // };
+// // play();
 
-//  DOM => document object model
-//  DOM یک ساختار درختی از عناصر HTML است که به ما اجازه می‌دهد تا به راحتی به عناصر صفحه وب دسترسی پیدا کنیم و آن‌ها را تغییر دهیم.
-//  با استفاده از DOM می‌توانیم:
-//  1. عناصر جدیدی به صفحه اضافه کنیم
-//  2. عناصر موجود را ویرایش کنیم
-//  3. عناصر را حذف کنیم
-//  4. رویدادها را مدیریت کنیم  
+// //  DOM => document object model
+// //  DOM یک ساختار درختی از عناصر HTML است که به ما اجازه می‌دهد تا به راحتی به عناصر صفحه وب دسترسی پیدا کنیم و آن‌ها را تغییر دهیم.
+// //  با استفاده از DOM می‌توانیم:
+// //  1. عناصر جدیدی به صفحه اضافه کنیم
+// //  2. عناصر موجود را ویرایش کنیم
+// //  3. عناصر را حذف کنیم
+// //  4. رویدادها را مدیریت کنیم  
 
-// Single Selectors 
-//توضیح
-// Single selectors به ما این امکان را می‌دهند که تنها یک عنصر خاص را در DOM انتخاب کنیم و به آن دسترسی پیدا کنیم. این کار معمولاً با استفاده از متدهایی مانند getElementById، querySelector و ... انجام می‌شود. 
+// // Single Selectors 
+// //توضیح
+// // Single selectors به ما این امکان را می‌دهند که تنها یک عنصر خاص را در DOM انتخاب کنیم و به آن دسترسی پیدا کنیم. این کار معمولاً با استفاده از متدهایی مانند getElementById، querySelector و ... انجام می‌شود. 
 
-// مثال:
-// const element = document.getElementById("myElement");
-
-
-// querySelector( ) فقط اولین عنصر را انتخاب می‌کند
-// querySelectorAll( ) تمام عناصر را انتخاب می‌کند       
-// const element = document.querySelector("#myElement"); // id عنصر با شناسه myElement 
-// const allElements = document.querySelectorAll(".myClass"); // class عنصر با کلاس myClass    
-// const secondElement = document.querySelector(".myClass:nth-of-type(2)"); // انتخاب عنصر دوم با کلاس myClass
-// const element = document.getElementById("myElement"); // id عنصر با شناسه myElement
-
- // multi selectors  
-// const allElements = document.querySelectorAll(".myClass"); // class عنصر با کلاس myClass
-// const element = document.getElementsByTagName("div"); // انتخاب تمام عناصر div  
-// const  element = document.getElementsByClassName("myClass"); // انتخاب تمام عناصر با کلاس myClass   
-
-//child elements
-// const parentElement = document.getElementById("parent");
-// const childElements = parentElement.children; // انتخاب تمام عناصر فرزند
-// // const firstChild = childElements[0]; // انتخاب اولین عنصر فرزند
-// // sibling elements
-// const secondChild = childElements[1]; // انتخاب دومین عنصر فرزند
-// const thirdChild = childElements[2]; // انتخاب سومین عنصر فرزند
-
-// firstParagraph.p = "متن جدید برای پاراگراف اول";
+// // مثال:
+// // const element = document.getElementById("myElement");
 
 
-// CSS styling
-// const element = document.querySelector(".matn1");
+// // querySelector( ) فقط اولین عنصر را انتخاب می‌کند
+// // querySelectorAll( ) تمام عناصر را انتخاب می‌کند       
+// // const element = document.querySelector("#myElement"); // id عنصر با شناسه myElement 
+// // const allElements = document.querySelectorAll(".myClass"); // class عنصر با کلاس myClass    
+// // const secondElement = document.querySelector(".myClass:nth-of-type(2)"); // انتخاب عنصر دوم با کلاس myClass
+// // const element = document.getElementById("myElement"); // id عنصر با شناسه myElement
 
-// element.style.color = "red";
+//  // multi selectors  
+// // const allElements = document.querySelectorAll(".myClass"); // class عنصر با کلاس myClass
+// // const element = document.getElementsByTagName("div"); // انتخاب تمام عناصر div  
+// // const  element = document.getElementsByClassName("myClass"); // انتخاب تمام عناصر با کلاس myClass   
 
-//Inserting elements to dom  all 
+// //child elements
+// // const parentElement = document.getElementById("parent");
+// // const childElements = parentElement.children; // انتخاب تمام عناصر فرزند
+// // // const firstChild = childElements[0]; // انتخاب اولین عنصر فرزند
+// // // sibling elements
+// // const secondChild = childElements[1]; // انتخاب دومین عنصر فرزند
+// // const thirdChild = childElements[2]; // انتخاب سومین عنصر فرزند
 
-
-// const newElement = document.createElement("p");
-// newElement.textContent = "متن جدید برای پاراگراف اول";
-// document.body.appendChild(newElement);
-// newElement.innerHTML = "متن جدید برای پاراگراف اول"; // به همراه کد HTML
-// document.body.removeChild(newElement);
-// ایجاد یک عنصر جدید
-// const newDiv = document.createElement("div");
-// // اضافه کردن متن به عنصر جدید
-// newDiv.textContent = "این یک div جدید است که به DOM اضافه شده است.";
-// // اضافه کردن کلاس یا ویژگی به عنصر جدید
-// newDiv.className = "new-div";
-// newDiv.style.backgroundColor = "#f0f0f0";
-// newDiv.style.padding = "10px";
-
-// // اضافه کردن عنصر جدید به انتهای body
-// document.body.appendChild(newDiv);
-
-// // اگر بخواهیم عنصر را قبل از یک عنصر خاص اضافه کنیم:
-// const referenceElement = document.querySelector(".matn1");
-// document.body.insertBefore(newDiv, referenceElement);
-
-// // حذف یک عنصر از DOM
-// // document.body.removeChild(newDiv);
-
-// // نکته: با استفاده از createElement می‌توانیم هر نوع عنصر HTML بسازیم (مانند p، div، span و ...).
-// // با appendChild عنصر را به انتهای والد اضافه می‌کنیم.
-// // با insertBefore عنصر را قبل از یک عنصر خاص قرار می‌دهیم.
-// // با removeChild عنصر را حذف می‌کنیم.
-
-// //ٍٍٍٍEvent توضیح کامل
-const button = document.querySelector(".my-button");
-// button.addEventListener("click", () => {
-//   alert("ماوس روی دکمه قرار گرفت!");
-// });
-// button.addEventListener("mouseover", () => {
-//   alert("ماوس روی دکمه قرار گرفت!");
-//   button.classList.toggle("active");
-// });
-
-// button.addEventListener("mouseleave", () => {
-//   alert("ماوس از روی دکمه خارج شد!");
-//   button.classList.toggle("active");
-// });
+// // firstParagraph.p = "متن جدید برای پاراگراف اول";
 
 
-// button.addEventListener("mousemove", () => {
-//   alert("ماوس روی دکمه قرار گرفت!");
-//   button.classList.toggle("active");
-// });
+// // CSS styling
+// // const element = document.querySelector(".matn1");
+
+// // element.style.color = "red";
+
+// //Inserting elements to dom  all 
 
 
-// button.addEventListener("keydown", () => {
-//   alert("کلید روی دکمه فشار داده شد!");
+// // const newElement = document.createElement("p");
+// // newElement.textContent = "متن جدید برای پاراگراف اول";
+// // document.body.appendChild(newElement);
+// // newElement.innerHTML = "متن جدید برای پاراگراف اول"; // به همراه کد HTML
+// // document.body.removeChild(newElement);
+// // ایجاد یک عنصر جدید
+// // const newDiv = document.createElement("div");
+// // // اضافه کردن متن به عنصر جدید
+// // newDiv.textContent = "این یک div جدید است که به DOM اضافه شده است.";
+// // // اضافه کردن کلاس یا ویژگی به عنصر جدید
+// // newDiv.className = "new-div";
+// // newDiv.style.backgroundColor = "#f0f0f0";
+// // newDiv.style.padding = "10px";
 
-// });.
+// // // اضافه کردن عنصر جدید به انتهای body
+// // document.body.appendChild(newDiv);
 
-const Input = document.querySelector("input");
-// Input.addEventListener("change", () => {
+// // // اگر بخواهیم عنصر را قبل از یک عنصر خاص اضافه کنیم:
+// // const referenceElement = document.querySelector(".matn1");
+// // document.body.insertBefore(newDiv, referenceElement);
+
+// // // حذف یک عنصر از DOM
+// // // document.body.removeChild(newDiv);
+
+// // // نکته: با استفاده از createElement می‌توانیم هر نوع عنصر HTML بسازیم (مانند p، div، span و ...).
+// // // با appendChild عنصر را به انتهای والد اضافه می‌کنیم.
+// // // با insertBefore عنصر را قبل از یک عنصر خاص قرار می‌دهیم.
+// // // با removeChild عنصر را حذف می‌کنیم.
+
+// // //ٍٍٍٍEvent توضیح کامل
+// const button = document.querySelector(".my-button");
+// // button.addEventListener("click", () => {
+// //   alert("ماوس روی دکمه قرار گرفت!");
+// // });
+// // button.addEventListener("mouseover", () => {
+// //   alert("ماوس روی دکمه قرار گرفت!");
+// //   button.classList.toggle("active");
+// // });
+
+// // button.addEventListener("mouseleave", () => {
+// //   alert("ماوس از روی دکمه خارج شد!");
+// //   button.classList.toggle("active");
+// // });
+
+
+// // button.addEventListener("mousemove", () => {
+// //   alert("ماوس روی دکمه قرار گرفت!");
+// //   button.classList.toggle("active");
+// // });
+
+
+// // button.addEventListener("keydown", () => {
+// //   alert("کلید روی دکمه فشار داده شد!");
+
+// // });.
+
+// const Input = document.querySelector("input");
+// // Input.addEventListener("change", () => {
   
 
-//   const value = Input.value;
-//   console.log("Input value:", value);
-// });
+// //   const value = Input.value;
+// //   console.log("Input value:", value);
+// // });
 
-// Input.addEventListener("focus", () => {
-//   console.log("Input field is focused");
-// });
+// // Input.addEventListener("focus", () => {
+// //   console.log("Input field is focused");
+// // });
 
-// Input.addEventListener("blur", () => {
-//   console.log("Input field is blurred");
-// });
+// // Input.addEventListener("blur", () => {
+// //   console.log("Input field is blurred");
+// // });
 
-// window.addEventListener("load", () => {
-//   console.log("Window is fully loaded");
-// });
+// // window.addEventListener("load", () => {
+// //   console.log("Window is fully loaded");
+// // });
 
-// window.addEventListener("resize", () => {
-//   console.log("Window is resized");
-// });
+// // window.addEventListener("resize", () => {
+// //   console.log("Window is resized");
+// // });
 
-// window.addEventListener("scroll", () => {
-//   console.log("Window is scrolled");
-// });
+// // window.addEventListener("scroll", () => {
+// //   console.log("Window is scrolled");
+// // });
 
-// window.addEventListener("unload", () => {
-//   console.log("Window is unloading");
-// });
-// //toggle
-// const toggleButton = document.querySelector(".toggle-button");
-// toggleButton.addEventListener("click", () => {
-//   const element = document.querySelector(".toggle-element");
-//   element.classList.toggle("hidden");
-// });
+// // window.addEventListener("unload", () => {
+// //   console.log("Window is unloading");
+// // });
+// // //toggle
+// // const toggleButton = document.querySelector(".toggle-button");
+// // toggleButton.addEventListener("click", () => {
+// //   const element = document.querySelector(".toggle-element");
+// //   element.classList.toggle("hidden");
+// // });
 
-//target 
-// const targetElement = document.querySelector(".target-element");
-
-
+// //target 
+// // const targetElement = document.querySelector(".target-element");
 
 
-//prevent default
-// const form = document.querySelector("form");
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   console.log("Form submitted!");
-// });
-
-//stop propagation
-// button.addEventListener("click", (event) => {
-//   event.stopPropagation();
-//   console.log("Button clicked!");
-// });
-
-//remove event listener
-// button.removeEventListener("click", (event) => {  
-//   event.stopPropagation();
-//   console.log("Button clicked!");
-// }); 
-
-//dataset
-// const datasetElement = document.querySelector(".dataset-element");
-// datasetElement.dataset.customProperty = "Custom Value";
-// console.log("Dataset property:", datasetElement.dataset.customProperty);
-//توضیح دیتا ست
-// دیتا ست (Dataset) یک ویژگی در HTML است که به ما این امکان را می‌دهد تا داده‌های سفارشی را به عناصر HTML اضافه کنیم.
-// این داده‌ها به صورت جفت کلید-مقدار ذخیره می‌شوند و می‌توانند از طریق JavaScript به راحتی خوانده و تغییر داده شوند.
-
-// console.log(window.innerHeight, window.innerWidth);
-
-//screen
-// console.log(window.screen.height, window.screen.width);
-// console.log(screen.availHeight, screen.availWidth);
-
-//location
-// console.log(window.location.href = "http://google.com");
-// console.log(window.location.hostname);
-// console.log(window.location.pathname);
-
-//history
-// console.log(window.history.length);
-// window.history.back();
-// window.history.forward();
-// window.history.go(-1);
-
-//navigator
-// console.log(navigator.userAgent);
-// console.log(navigator.platform);
-// console.log(navigator.language);
 
 
-//189 client-side storage
- // دیتا های  پرسیستنت (Persistent Data) توضیح
- // دیتا های پرسیستنت به داده هایی اطلاق می شود که پس از بسته شدن مرورگر یا بارگذاری مجدد صفحه، همچنان در دسترس باقی می مانند. این نوع داده ها معمولاً در ذخیره سازی محلی (Local Storage) یا ذخیره سازی سشن (Session Storage) مرورگر ذخیره می شوند.
- //دیتا های ولیدیت (Volatile Data) توضیح
- // دیتا های ولیدیت به داده هایی اطلاق می شود که تنها در طول یک جلسه کاربر (Session) در دسترس هستند و پس از بسته شدن مرورگر یا بارگذاری مجدد صفحه، از بین می روند. این نوع داده ها معمولاً در حافظه موقت (Memory) ذخیره می شوند و به سرعت قابل دسترسی هستند، اما پس از پایان جلسه کاربر، دیگر در دسترس نخواهند بود.  
+// //prevent default
+// // const form = document.querySelector("form");
+// // form.addEventListener("submit", (event) => {
+// //   event.preventDefault();
+// //   console.log("Form submitted!");
+// // });
+
+// //stop propagation
+// // button.addEventListener("click", (event) => {
+// //   event.stopPropagation();
+// //   console.log("Button clicked!");
+// // });
+
+// //remove event listener
+// // button.removeEventListener("click", (event) => {  
+// //   event.stopPropagation();
+// //   console.log("Button clicked!");
+// // }); 
+
+// //dataset
+// // const datasetElement = document.querySelector(".dataset-element");
+// // datasetElement.dataset.customProperty = "Custom Value";
+// // console.log("Dataset property:", datasetElement.dataset.customProperty);
+// //توضیح دیتا ست
+// // دیتا ست (Dataset) یک ویژگی در HTML است که به ما این امکان را می‌دهد تا داده‌های سفارشی را به عناصر HTML اضافه کنیم.
+// // این داده‌ها به صورت جفت کلید-مقدار ذخیره می‌شوند و می‌توانند از طریق JavaScript به راحتی خوانده و تغییر داده شوند.
+
+// // console.log(window.innerHeight, window.innerWidth);
+
+// //screen
+// // console.log(window.screen.height, window.screen.width);
+// // console.log(screen.availHeight, screen.availWidth);
+
+// //location
+// // console.log(window.location.href = "http://google.com");
+// // console.log(window.location.hostname);
+// // console.log(window.location.pathname);
+
+// //history
+// // console.log(window.history.length);
+// // window.history.back();
+// // window.history.forward();
+// // window.history.go(-1);
+
+// //navigator
+// // console.log(navigator.userAgent);
+// // console.log(navigator.platform);
+// // console.log(navigator.language);
 
 
- //local storage (توضیح)
- // ذخیره سازی محلی (Local Storage) یک مکان برای ذخیره داده ها در مرورگر است که پس از بسته شدن مرورگر یا بارگذاری مجدد صفحه، داده ها همچنان در دسترس باقی می مانند. این نوع ذخیره سازی به ما این امکان را می دهد تا داده ها را به صورت کلید-مقدار ذخیره کنیم و در هر زمان به آن ها دسترسی داشته باشیم.
-
-//  localStorage.setItem("name", "mohammad"); //تا پنج مگابایت
-//  const data = { name: "mohammad" };
-//  localStorage.setItem("data", JSON.stringify(data));
-
-//  const retrievedData = localStorage.getItem("data");
-//  const parsedData = JSON.parse(retrievedData);
-//  console.log("Retrieved data:", parsedData);
-
-//ویرایش و حذف دیتا
-//  localStorage.setItem("name", "ali");
-//  localStorage.removeItem("name");
-// console.log(localStorage.length);
-// console.log(localStorage.key(0));
-// localStorage.clear();
-
-//sessionStorage
-//  sessionStorage.setItem("name", "mohammad"); //تا پنج مگابایت
-//  const data = { name: "mohammad" };
-//  sessionStorage.setItem("data", JSON.stringify(data));
-
-//  const retrievedData = sessionStorage.getItem("data");
-//  const parsedData = JSON.parse(retrievedData);
-//  console.log("Retrieved data:", parsedData);
-
-//ویرایش و حذف دیتا
-//  sessionStorage.setItem("name", "ali"); 
-//  sessionStorage.removeItem("name");
-// console.log(sessionStorage.length);
-// console.log(sessionStorage.key(0));
-// sessionStorage.clear(); 
+// //189 client-side storage
+//  // دیتا های  پرسیستنت (Persistent Data) توضیح
+//  // دیتا های پرسیستنت به داده هایی اطلاق می شود که پس از بسته شدن مرورگر یا بارگذاری مجدد صفحه، همچنان در دسترس باقی می مانند. این نوع داده ها معمولاً در ذخیره سازی محلی (Local Storage) یا ذخیره سازی سشن (Session Storage) مرورگر ذخیره می شوند.
+//  //دیتا های ولیدیت (Volatile Data) توضیح
+//  // دیتا های ولیدیت به داده هایی اطلاق می شود که تنها در طول یک جلسه کاربر (Session) در دسترس هستند و پس از بسته شدن مرورگر یا بارگذاری مجدد صفحه، از بین می روند. این نوع داده ها معمولاً در حافظه موقت (Memory) ذخیره می شوند و به سرعت قابل دسترسی هستند، اما پس از پایان جلسه کاربر، دیگر در دسترس نخواهند بود.  
 
 
-// // cookies  تا ۸۰ کیلوبایت
-//  document.cookie = "name=mohammad; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; max-age=3";
+//  //local storage (توضیح)
+//  // ذخیره سازی محلی (Local Storage) یک مکان برای ذخیره داده ها در مرورگر است که پس از بسته شدن مرورگر یا بارگذاری مجدد صفحه، داده ها همچنان در دسترس باقی می مانند. این نوع ذخیره سازی به ما این امکان را می دهد تا داده ها را به صورت کلید-مقدار ذخیره کنیم و در هر زمان به آن ها دسترسی داشته باشیم.
 
-//module in js 
+// //  localStorage.setItem("name", "mohammad"); //تا پنج مگابایت
+// //  const data = { name: "mohammad" };
+// //  localStorage.setItem("data", JSON.stringify(data));
 
-// // ماژول‌ها در جاوااسکریپت به ما این امکان را می‌دهند که کدهای خود را به بخش‌های کوچکتر و قابل مدیریت تقسیم کنیم. این کار باعث می‌شود که کدها سازمان‌یافته‌تر و قابل استفاده مجدد باشند.   
-// // export
-// // با استفاده از کلمه کلیدی export می‌توانیم توابع، کلاس‌ها یا متغیرها را از یک ماژول صادر کنیم تا در ماژول‌های دیگر قابل استفاده باشند.
-// // مثال از استفاده از export:
-// // module1.js
-// export const pi = 3.14;
-// export function add(a, b) {
-//   return a + b;
-// }    
-// export class Circle {
-//   constructor(radius) {
-//     this.radius = radius;    
+// //  const retrievedData = localStorage.getItem("data");
+// //  const parsedData = JSON.parse(retrievedData);
+// //  console.log("Retrieved data:", parsedData);
+
+// //ویرایش و حذف دیتا
+// //  localStorage.setItem("name", "ali");
+// //  localStorage.removeItem("name");
+// // console.log(localStorage.length);
+// // console.log(localStorage.key(0));
+// // localStorage.clear();
+
+// //sessionStorage
+// //  sessionStorage.setItem("name", "mohammad"); //تا پنج مگابایت
+// //  const data = { name: "mohammad" };
+// //  sessionStorage.setItem("data", JSON.stringify(data));
+
+// //  const retrievedData = sessionStorage.getItem("data");
+// //  const parsedData = JSON.parse(retrievedData);
+// //  console.log("Retrieved data:", parsedData);
+
+// //ویرایش و حذف دیتا
+// //  sessionStorage.setItem("name", "ali"); 
+// //  sessionStorage.removeItem("name");
+// // console.log(sessionStorage.length);
+// // console.log(sessionStorage.key(0));
+// // sessionStorage.clear(); 
+
+
+// // // cookies  تا ۸۰ کیلوبایت
+// //  document.cookie = "name=mohammad; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/; max-age=3";
+
+// //module in js 
+
+// // // ماژول‌ها در جاوااسکریپت به ما این امکان را می‌دهند که کدهای خود را به بخش‌های کوچکتر و قابل مدیریت تقسیم کنیم. این کار باعث می‌شود که کدها سازمان‌یافته‌تر و قابل استفاده مجدد باشند.   
+// // // export
+// // // با استفاده از کلمه کلیدی export می‌توانیم توابع، کلاس‌ها یا متغیرها را از یک ماژول صادر کنیم تا در ماژول‌های دیگر قابل استفاده باشند.
+// // // مثال از استفاده از export:
+// // // module1.js
+// // export const pi = 3.14;
+// // export function add(a, b) {
+// //   return a + b;
+// // }    
+// // export class Circle {
+// //   constructor(radius) {
+// //     this.radius = radius;    
+// //   }
+// // named export
+// //   area() {
+// //     return pi * this.radius * this.radius;
+
+// //   }
+// //import
+// // // با استفاده از کلمه کلیدی import می‌توانیم توابع، کلاس‌ها یا متغیرهای صادر شده از یک ماژول دیگر را وارد کنیم و در ماژول فعلی استفاده کنیم.
+// // // مثال از استفاده از import:
+// // // main.js
+// // import { pi, add, Circle } from "./module1.js";
+// // console.log("Value of pi:", pi); // خروجی: Value of pi: 3.14
+// // console.log("Sum:", add(2, 3)); // خروجی: Sum: 5 
+
+// // const myCircle = new Circle(5);
+// // console.log("Area of circle:", myCircle.area()); // خروجی: Area of circle: 78.5  
+// // // نکته: در این مثال، ماژول module1.js شامل یک متغیر pi، یک تابع add و یک کلاس Circle است که با استفاده از export صادر شده‌اند. در ماژول main.js، این موارد با استفاده از import وارد شده‌اند و می‌توانیم از آن‌ها استفاده کنیم.
+// // // default export
+// // // با استفاده از کلمه کلیدی export default می‌توانیم یک تابع، کلاس یا متغیر را به عنوان صادر شده پیش‌فرض از یک ماژول تعریف کنیم. این به ما اجازه می‌دهد که هنگام وارد کردن آن ماژول، نیازی به استفاده از نام خاصی نداشته باشیم.         
+// // // مثال از استفاده از export default:
+// // // module2.js
+// // export default function multiply(a, b) { 
+// //   return a * b;
+// // } 
+// // // main2.js
+// // import multiply from "./module2.js"; 
+// // console.log("Product:", multiply(2, 3)); // خروجی: Product: 6
+// // // نکته: در این مثال، ماژول module2.js شامل یک تابع multiply است که با استفاده از export default صادر شده است. در ماژول main2.js، این تابع با استفاده از import وارد شده است و می‌توانیم از آن استفاده کنیم بدون اینکه نیازی به نام خاصی داشته باشیم.
+// // // Challenge: Create a module that exports a function to calculate the factorial of a number and import it in another file to use it
+// // // factorialModule.js
+// // export function factorial(n) {
+// //   if (n === 0 || n === 1) {
+// //     return 1;    
+// //   } else {
+// //     return n * factorial(n - 1);
+// //   }
+
+
+
+// // js is a single threaed language
+// //مفهوم single threaed
+// // جاوااسکریپت یک زبان تک‌ریسمانی (Single-threaded) است، به این معنی که تنها یک رشته (Thread) از اجرای کدها را در هر زمان مدیریت می‌کند. این ویژگی باعث می‌شود که جاوااسکریپت بتواند به صورت همزمان با مرورگر و رابط کاربری تعامل داشته باشد، اما همچنین محدودیت‌هایی نیز دارد، مانند عدم توانایی در اجرای چندین عملیات همزمان به صورت مستقیم.
+// // synchronous vs Asynchronous
+// // // در برنامه‌نویسی همزمان (Synchronous)، کدها به ترتیب اجرا می‌شوند و هر عملیات باید قبل از شروع عملیات بعدی کامل شود. این بدان معناست که اگر یک عملیات زمان‌بر باشد، کل برنامه باید منتظر بماند تا آن عملیات کامل شود قبل از اینکه به عملیات بعدی بپردازد.
+// // // در برنامه‌نویسی غیرهمزمان (Asynchronous)، کدها می‌توانند به صورت همزمان اجرا شوند و عملیات زمان‌بر می‌توانند در پس‌زمینه اجرا شوند بدون اینکه کل برنامه منتظر بماند. این به ما اجازه می‌دهد تا برنامه‌های واکنش‌پذیرتر و کارآمدتری بسازیم که بتوانند با رویدادها و ورودی‌های کاربر به صورت همزمان تعامل داشته باشند.       
+// // // مثال از برنامه‌نویسی همزمان:
+// // console.log("Start");
+// // const result = longRunningOperation(); // فرض کنید این عملیات زمان‌بر است
+// // console.log("Result:", result);
+// // console.log("End"); 
+// // // نکته: در این مثال، اگر longRunningOperation یک عملیات زمان‌بر باشد، کل برنامه باید منتظر بماند تا این عملیات کامل شود قبل از اینکه به عملیات بعدی بپردازد. این ممکن است باعث شود که برنامه واکنش‌پذیری کمتری داشته باشد و کاربر نتواند با آن تعامل داشته باشد تا زمانی که عملیات کامل شود.
+// // // مثال از برنامه‌نویسی غیرهمزمان با استفاده از Promise:
+// // console.log("Start");
+// // const asyncOperation = new Promise((resolve, reject) => {
+// //   setTimeout(() => {
+// //     resolve("Operation complete");
+// //   }, 2000); // فرض کنید این عملیات زمان‌بر است
+// // });
+// // asyncOperation.then((result) => {    
+
+// //   console.log("Result:", result);
+// // });
+// // console.log("End");
+// // // نکته: در این مثال، asyncOperation یک Promise است که یک عملیات زمان‌بر را شبیه‌سازی می‌کند. برنامه می‌تواند به عملیات بعدی بپردازد بدون اینکه منتظر بماند تا این عملیات کامل شود. هنگامی که عملیات کامل شد، تابع then اجرا می‌شود و نتیجه را چاپ می‌کند. این باعث می‌شود که برنامه واکنش‌پذیری بیشتری داشته باشد و کاربر بتواند با آن تعامل داشته باشد در حالی که عملیات در پس‌زمینه اجرا می‌شود.    
+// // // نکته: استفاده از برنامه‌نویسی غیرهمزمان به ما اجازه می‌دهد تا برنامه‌های واکنش‌پذیرتر و کارآمدتری بسازیم که بتوانند با رویدادها و ورودی‌های کاربر به صورت همزمان تعامل داشته باشند. این ویژگی به ویژه در برنامه‌های وب بسیار مهم است، جایی که کاربران انتظار دارند که برنامه‌ها به سرعت واکنش نشان دهند و بتوانند با آن‌ها تعامل داشته باشند بدون اینکه منتظر بمانند تا عملیات زمان‌بر کامل شود.
+// // // Challenge: Create an asynchronous function that fetches data from an API and logs the result to the console
+// // async function fetchData(url) {
+// //   try {
+// //     const response = await fetch(url);
+// //     const data = await response.json();
+// //     console.log("Fetched data:", data);
+// //   } catch (error) {
+// //     console.error("Error fetching data:", error);
+// //   }
+// // }
+// // fetchData("https://jsonplaceholder.typicode.com/posts/1");
+// // // نکته: در این مثال، تابع fetchData یک تابع غیرهمزمان است که از API داده‌ها را واکشی می‌کند. با استفاده از کلمات کلیدی async و await، ما می‌توانیم عملیات واکشی داده‌ها را به صورت غیرهمزمان انجام دهیم و منتظر بمانیم تا داده‌ها دریافت شوند قبل از اینکه آن‌ها را چاپ کنیم. اگر خطایی رخ دهد، بخش catch آن را مدیریت می‌کند و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا عملیات غیرهمزمان را به صورت ساده‌تر و قابل خواندن‌تر مدیریت کنیم.
+// // // نکته: استفاده از برنامه‌نویسی غیرهمزمان به ما اجازه می‌دهد تا برنامه‌های واکنش‌پذیرتر و کارآمدتری بسازیم که بتوانند با رویدادها و ورودی‌های کاربر به صورت همزمان تعامل داشته باشند. این ویژگی به ویژه در برنامه‌های وب بسیار مهم است، جایی که کاربران انتظار دارند که برنامه‌ها به سرعت واکنش نشان دهند و بتوانند با آن‌ها تعامل داشته باشند بدون اینکه منتظر بمانند تا عملیات زمان‌بر کامل شود.
+
+// // // در برنامه‌نویسی غیرهمزمان، کال‌بک‌ها (Callbacks) توابعی هستند که به عنوان آرگومان به یک تابع غیرهمزمان ارسال می‌شوند و زمانی که عملیات غیرهمزمان کامل شد، این توابع فراخوانی می‌شوند. کال‌بک‌ها به ما اجازه می‌دهند تا کدی را تعریف کنیم که باید پس از اتمام یک عملیات خاص اجرا شود، بدون اینکه برنامه منتظر بماند تا آن عملیات کامل شود.
+
+
+// // ====================================================================
+// // ================== مبحث Asynchronous (غیرهمزمان) ==================
+// // ====================================================================
+
+// // توضیح جامع و دقیق مبحث Asynchronous:
+
+// // 1. مقدمه و تعریف:
+// // Asynchronous برنامه‌نویسی (برنامه‌نویسی غیرهمزمان) به معنای انجام عملیات‌هایی است که
+// // سریع تکمیل نمی‌شوند و برنامه نباید منتظر بماند تا آن‌ها کامل شوند.
+// // در برنامه‌نویسی Synchronous (همزمان)، خطوط کد یکی‌یکی اجرا می‌شوند و اگر یک عملیات
+// // زمان‌بر باشد، برنامه کل متوقف می‌شود. اما در Asynchronous، برنامه می‌تواند کارهای دیگری
+// // را انجام دهد درحالی‌که منتظر است تا عملیات زمان‌بر تکمیل شود.
+
+// console.log("===== مثال 1: Synchronous vs Asynchronous =====");
+
+
+// // مثال Synchronous (زمان‌بر و بلاکینگ):
+// function slowTask() {
+//   console.log("شروع کار زمان‌بر...");
+//   for (let i = 0; i < 1000000000; i++) {
+//     // حلقه ای که وقت می‌برد
 //   }
-// named export
-//   area() {
-//     return pi * this.radius * this.radius;
-
-//   }
-//import
-// // با استفاده از کلمه کلیدی import می‌توانیم توابع، کلاس‌ها یا متغیرهای صادر شده از یک ماژول دیگر را وارد کنیم و در ماژول فعلی استفاده کنیم.
-// // مثال از استفاده از import:
-// // main.js
-// import { pi, add, Circle } from "./module1.js";
-// console.log("Value of pi:", pi); // خروجی: Value of pi: 3.14
-// console.log("Sum:", add(2, 3)); // خروجی: Sum: 5 
-
-// const myCircle = new Circle(5);
-// console.log("Area of circle:", myCircle.area()); // خروجی: Area of circle: 78.5  
-// // نکته: در این مثال، ماژول module1.js شامل یک متغیر pi، یک تابع add و یک کلاس Circle است که با استفاده از export صادر شده‌اند. در ماژول main.js، این موارد با استفاده از import وارد شده‌اند و می‌توانیم از آن‌ها استفاده کنیم.
-// // default export
-// // با استفاده از کلمه کلیدی export default می‌توانیم یک تابع، کلاس یا متغیر را به عنوان صادر شده پیش‌فرض از یک ماژول تعریف کنیم. این به ما اجازه می‌دهد که هنگام وارد کردن آن ماژول، نیازی به استفاده از نام خاصی نداشته باشیم.         
-// // مثال از استفاده از export default:
-// // module2.js
-// export default function multiply(a, b) { 
-//   return a * b;
-// } 
-// // main2.js
-// import multiply from "./module2.js"; 
-// console.log("Product:", multiply(2, 3)); // خروجی: Product: 6
-// // نکته: در این مثال، ماژول module2.js شامل یک تابع multiply است که با استفاده از export default صادر شده است. در ماژول main2.js، این تابع با استفاده از import وارد شده است و می‌توانیم از آن استفاده کنیم بدون اینکه نیازی به نام خاصی داشته باشیم.
-// // Challenge: Create a module that exports a function to calculate the factorial of a number and import it in another file to use it
-// // factorialModule.js
-// export function factorial(n) {
-//   if (n === 0 || n === 1) {
-//     return 1;    
-//   } else {
-//     return n * factorial(n - 1);
-//   }
+//   console.log("کار زمان‌بر تکمیل شد!");
+// }
 
 
+// console.log("1. قبل از شروع کار");
+// // slowTask(); // این خط برنامه را کند می‌کند
+// console.log("2. بعد از تعریف کار (توجه: کار هنوز شروع نشده)");
 
-// js is a single threaed language
-//مفهوم single threaed
-// جاوااسکریپت یک زبان تک‌ریسمانی (Single-threaded) است، به این معنی که تنها یک رشته (Thread) از اجرای کدها را در هر زمان مدیریت می‌کند. این ویژگی باعث می‌شود که جاوااسکریپت بتواند به صورت همزمان با مرورگر و رابط کاربری تعامل داشته باشد، اما همچنین محدودیت‌هایی نیز دارد، مانند عدم توانایی در اجرای چندین عملیات همزمان به صورت مستقیم.
-// synchronous vs Asynchronous
-// // در برنامه‌نویسی همزمان (Synchronous)، کدها به ترتیب اجرا می‌شوند و هر عملیات باید قبل از شروع عملیات بعدی کامل شود. این بدان معناست که اگر یک عملیات زمان‌بر باشد، کل برنامه باید منتظر بماند تا آن عملیات کامل شود قبل از اینکه به عملیات بعدی بپردازد.
-// // در برنامه‌نویسی غیرهمزمان (Asynchronous)، کدها می‌توانند به صورت همزمان اجرا شوند و عملیات زمان‌بر می‌توانند در پس‌زمینه اجرا شوند بدون اینکه کل برنامه منتظر بماند. این به ما اجازه می‌دهد تا برنامه‌های واکنش‌پذیرتر و کارآمدتری بسازیم که بتوانند با رویدادها و ورودی‌های کاربر به صورت همزمان تعامل داشته باشند.       
-// // مثال از برنامه‌نویسی همزمان:
-// console.log("Start");
-// const result = longRunningOperation(); // فرض کنید این عملیات زمان‌بر است
-// console.log("Result:", result);
-// console.log("End"); 
-// // نکته: در این مثال، اگر longRunningOperation یک عملیات زمان‌بر باشد، کل برنامه باید منتظر بماند تا این عملیات کامل شود قبل از اینکه به عملیات بعدی بپردازد. این ممکن است باعث شود که برنامه واکنش‌پذیری کمتری داشته باشد و کاربر نتواند با آن تعامل داشته باشد تا زمانی که عملیات کامل شود.
-// // مثال از برنامه‌نویسی غیرهمزمان با استفاده از Promise:
-// console.log("Start");
-// const asyncOperation = new Promise((resolve, reject) => {
+// // ====================================================================
+// // 2. Callback Functions (توابع بازخوانی):
+// // ====================================================================
+// // Callback یک تابع است که به عنوان آرگومان به تابع دیگری پاس داده می‌شود
+// // و بعد از اتمام یک عملیات غیرهمزمان فراخوانی می‌شود.
+
+// console.log("\n===== مثال 2: Callback Functions =====");
+
+// function fetchUserData(userId, callback) {
+//   console.log(`درحال واکشی داده‌های کاربر ${userId}...`);
+  
+//   // شبیه‌سازی یک درخواست شبکه‌ای که 2 ثانیه طول می‌کشد
 //   setTimeout(() => {
-//     resolve("Operation complete");
-//   }, 2000); // فرض کنید این عملیات زمان‌بر است
-// });
-// asyncOperation.then((result) => {    
+//     const userData = {
+//       id: userId,
+//       name: "علی احمدی",
+//       email: "ali@example.com"
+//     };
+//     // بعد از اتمام، callback را با داده‌ها فراخوانی کنید
+//     callback(userData);
+//   }, 2000);
+// }
 
-//   console.log("Result:", result);
+// // استفاده از callback:
+// // fetchUserData(1, function(data) {
+// //   console.log("داده‌های کاربر دریافت شد:", data);
+// // });
+
+// // مسئله Callback Hell (Pyramid of Doom):
+// // زمانی که چندین عملیات غیرهمزمان درون یکدیگر تودرتو شوند:
+
+// function fetchUser(userId, callback) {
+//   setTimeout(() => {
+//     const user = { id: userId, name: "علی" };
+//     callback(user);
+//   }, 1000);
+// }
+
+// function fetchPosts(userId, callback) {
+//   setTimeout(() => {
+//     const posts = [
+//       { id: 1, title: "پست اول" },
+//       { id: 2, title: "پست دوم" }
+//     ];
+//     callback(posts);
+//   }, 1000);
+// }
+
+// function fetchComments(postId, callback) {
+//   setTimeout(() => {
+//     const comments = [
+//       { id: 1, text: "نظر اول" }
+//     ];
+//     callback(comments);
+//   }, 1000);
+// }
+
+// console.log("\n===== مثال 3: Callback Hell =====");
+// // این ساختار بسیار تودرتو و خوانایی‌پذیری کم است:
+// /*
+// fetchUser(1, function(user) {
+//   console.log("کاربر:", user);
+//   fetchPosts(user.id, function(posts) {
+//     console.log("پست‌ها:", posts);
+//     fetchComments(posts[0].id, function(comments) {
+//       console.log("نظرات:", comments);
+//     });
+//   });
 // });
-// console.log("End");
-// // نکته: در این مثال، asyncOperation یک Promise است که یک عملیات زمان‌بر را شبیه‌سازی می‌کند. برنامه می‌تواند به عملیات بعدی بپردازد بدون اینکه منتظر بماند تا این عملیات کامل شود. هنگامی که عملیات کامل شد، تابع then اجرا می‌شود و نتیجه را چاپ می‌کند. این باعث می‌شود که برنامه واکنش‌پذیری بیشتری داشته باشد و کاربر بتواند با آن تعامل داشته باشد در حالی که عملیات در پس‌زمینه اجرا می‌شود.    
-// // نکته: استفاده از برنامه‌نویسی غیرهمزمان به ما اجازه می‌دهد تا برنامه‌های واکنش‌پذیرتر و کارآمدتری بسازیم که بتوانند با رویدادها و ورودی‌های کاربر به صورت همزمان تعامل داشته باشند. این ویژگی به ویژه در برنامه‌های وب بسیار مهم است، جایی که کاربران انتظار دارند که برنامه‌ها به سرعت واکنش نشان دهند و بتوانند با آن‌ها تعامل داشته باشند بدون اینکه منتظر بمانند تا عملیات زمان‌بر کامل شود.
-// // Challenge: Create an asynchronous function that fetches data from an API and logs the result to the console
+// */
+
+// // ====================================================================
+// // 3. Promise (وعده):
+// // ====================================================================
+// // Promise یک شی است که نمایندگی یک عملیات غیرهمزمان است.
+// // Promise می‌تواند در سه حالت باشد:
+// // - Pending (در انتظار): عملیات هنوز تکمیل نشده
+// // - Fulfilled (موفق): عملیات با موفقیت تکمیل شد و یک مقدار بازگشت
+// // - Rejected (ناموفق): عملیات ناموفق بود و یک خطا بازگشت
+
+// console.log("\n===== مثال 4: Promise =====");
+
+// // ایجاد یک Promise:
+// const myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const success = true;
+//     if (success) {
+//       resolve("عملیات با موفقیت تکمیل شد!"); // fulfilled
+//     } else {
+//       reject("خطایی رخ داد!"); // rejected
+//     }
+//   }, 2000);
+// });
+
+// // استفاده از Promise:
+// // myPromise
+// //   .then(result => {
+// //     console.log("نتیجه:", result);
+// //   })
+// //   .catch(error => {
+// //     console.error("خطا:", error);
+// //   });
+
+// // مثال عملی‌تر:
+// function fetchUserPromise(userId) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (userId > 0) {
+//         resolve({
+//           id: userId,
+//           name: "محمد",
+//           email: "mohammad@example.com"
+//         });
+//       } else {
+//         reject("شناسه کاربر باید مثبت باشد!");
+//       }
+//     }, 1500);
+//   });
+// }
+
+// console.log("\n===== مثال 5: Promise Chain =====");
+// // زنجیر Promise (بهتر از Callback Hell):
+// /*
+// fetchUserPromise(1)
+//   .then(user => {
+//     console.log("کاربر:", user);
+//     return fetchPosts(user.id);
+//   })
+//   .then(posts => {
+//     console.log("پست‌ها:", posts);
+//     return fetchComments(posts[0].id);
+//   })
+//   .then(comments => {
+//     console.log("نظرات:", comments);
+//   })
+//   .catch(error => {
+//     console.error("خطا در فرایند:", error);
+//   });
+// */
+
+// //resolve and reject in promise
+// // const samplePromise = new Promise((resolve, reject) => {
+// //   const condition = true; // تغییر این مقدار برای تست
+// //   if (condition) {
+// //     resolve("Promise resolved successfully!");
+// //   } else {
+// //     reject("Promise rejected with an error.");
+// //   }
+// // });
+// // samplePromise
+// //   .then((message) => {
+// //     console.log(message);
+// //   })
+// //   .catch((error) => {
+// //     console.error(error);
+// //   });
+
+
+// // ====================================================================
+// // 4. Async/Await:
+// // ====================================================================
+// // Async/Await روش مدرن‌تر و خوان‌تری برای کار با Promise است.
+// // async کلمه کلیدی تابع را غیرهمزمان می‌کند و همیشه یک Promise بازمی‌گرداند.
+// // await برای منتظر ماندن تا Promise حل شود استفاده می‌شود (فقط در تابع async).
+
+// console.log("\n===== مثال 6: Async/Await =====");
+
+// async function getUserWithPosts(userId) {
+//   try {
+//     console.log("درحال بارگذاری داده‌ها...");
+    
+//     // منتظر تا Promise حل شود
+//     const user = await fetchUserPromise(userId);
+//     console.log("کاربر دریافت شد:", user);
+    
+//     // می‌توانیم async را دوباره استفاده کنیم
+//     // const posts = await fetchPostsPromise(user.id);
+//     // console.log("پست‌ها:", posts);
+    
+//     return user;
+//   } catch (error) {
+//     console.error("خطا در دریافت داده‌ها:", error);
+//   }
+// }
+
+// // فراخوانی تابع async:
+// // getUserWithPosts(5)
+// //   .then(result => {
+// //     console.log("نتیجه نهایی:", result);
+// //   });
+
+// // ====================================================================
+// // 5. Parallel Execution (اجرای موازی):
+// // ====================================================================
+// // استفاده از Promise.all برای انجام چندین عملیات همزمان:
+
+// console.log("\n===== مثال 7: Promise.all =====");
+
+// function task1() {
+//   return new Promise(resolve => {
+//     setTimeout(() => resolve("تسک 1 تکمیل شد"), 1000);
+//   });
+// }
+
+// function task2() {
+//   return new Promise(resolve => {
+//     setTimeout(() => resolve("تسک 2 تکمیل شد"), 1500);
+//   });
+// }
+
+// function task3() {
+//   return new Promise(resolve => {
+//     setTimeout(() => resolve("تسک 3 تکمیل شد"), 800);
+//   });
+// }
+
+// // اجرای موازی - اگر یکی ناموفق شود، همه ناموفق می‌شوند:
+// /*
+// Promise.all([task1(), task2(), task3()])
+//   .then(results => {
+//     console.log("تمام تسک‌ها تکمیل شدند:", results);
+//   })
+//   .catch(error => {
+//     console.error("یکی از تسک‌ها ناموفق شد:", error);
+//   });
+// */
+
+// // Promise.race - اولین Promise تکمیل شده بازگشت می‌کند:
+// /*
+// Promise.race([task1(), task2(), task3()])
+//   .then(result => {
+//     console.log("اولین تسک تکمیل شد:", result);
+//   });
+// */
+
+// // ====================================================================
+// // 6. Error Handling (مدیریت خطا):
+// // ====================================================================
+// console.log("\n===== مثال 8: Error Handling =====");
+
+// async function fetchWithErrorHandling(url) {
+//   try {
+//     // در عملیات واقعی: const response = await fetch(url);
+//     // اگر URL نامعتبر باشد:
+//     if (!url) {
+//       throw new Error("URL نمی‌تواند خالی باشد!");
+//     }
+    
+//     // شبیه‌سازی درخواست:
+//     const result = await new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve({ status: 200, data: "موفق" });
+//       }, 1000);
+//     });
+    
+//     console.log("درخواست موفق:", result);
+//     return result;
+//   } catch (error) {
+//     console.error("خطا در درخواست:", error.message);
+//     // می‌توانیم خطا را دوباره پرتاب کنیم یا مقدار پیش‌فرض برگردانیم
+//     return { status: 500, error: error.message };
+//   } finally {
+//     // این بلاک همیشه اجرا می‌شود (موفق یا ناموفق)
+//     console.log("درخواست پایان یافت.");
+//   }
+// }
+
+// // فراخوانی:
+// // fetchWithErrorHandling("https://example.com")
+// //   .then(result => console.log("نتیجه:", result));
+
+// // ====================================================================
+// // 7. Real-World Example (مثال عملی واقعی):
+// // ====================================================================
+// console.log("\n===== مثال 9: مثال واقعی =====");
+
+// // شبیه‌سازی یک درخواست API واقعی:
+// function fetchFromAPI(endpoint) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (Math.random() > 0.3) {
+//         resolve({
+//           status: 200,
+//           data: `داده‌های ${endpoint}`,
+//           timestamp: new Date().toISOString()
+//         });
+//       } else {
+//         reject(new Error("Connection Timeout"));
+//       }
+//     }, 1000 + Math.random() * 2000);
+//   });
+// }
+
+// // استفاده از Async/Await:
+// async function getUserDataWithRetry(userId, maxRetries = 3) {
+//   let lastError;
+  
+//   for (let attempt = 1; attempt <= maxRetries; attempt++) {
+//     try {
+//       console.log(`تلاش ${attempt} برای دریافت داده‌های کاربر...`);
+//       const result = await fetchFromAPI(`/users/${userId}`);
+//       console.log("موفق! داده‌ها دریافت شدند:");
+//       return result;
+//     } catch (error) {
+//       lastError = error;
+//       console.log(`تلاش ${attempt} ناموفق بود: ${error.message}`);
+      
+//       if (attempt < maxRetries) {
+//         // منتظر 2 ثانیه قبل از تلاش دوباره
+//         await new Promise(resolve => setTimeout(resolve, 2000));
+//       }
+//     }
+//   }
+  
+//   // اگر تمام تلاش‌ها ناموفق شد:
+//   throw lastError;
+// }
+
+// // فراخوانی:
+// /*
+// getUserDataWithRetry(1)
+//   .then(data => {
+//     console.log("داده‌های نهایی:", data);
+//   })
+//   .catch(error => {
+//     console.error("ناتوانایی در دریافت داده‌ها بعد از تمام تلاش‌ها:", error);
+//   });
+// */
+
+// // ====================================================================
+// // 8. Event Loop و Call Stack:
+// // ====================================================================
+// console.log("\n===== مثال 10: Event Loop =====");
+
+// // درک اینکه چگونه Asynchronous کار می‌کند:
+// console.log("شروع برنامه");
+
+// setTimeout(() => {
+//   console.log("Timeout 1 (0ms)");
+// }, 0);
+
+// Promise.resolve()
+//   .then(() => {
+//     console.log("Promise تکمیل شد");
+//   });
+
+// setTimeout(() => {
+//   console.log("Timeout 2 (0ms)");
+// }, 0);
+
+// console.log("پایان برنامه");
+
+// /*
+// خروجی:
+// شروع برنامه
+// پایان برنامه
+// Promise تکمیل شد
+// Timeout 1 (0ms)
+// Timeout 2 (0ms)
+
+// توضیح:
+// 1. کد Synchronous ابتدا اجرا می‌شود
+// 2. سپس Microtasks (Promise) اجرا می‌شوند
+// 3. در نهایت Macrotasks (setTimeout) اجرا می‌شوند
+// */
+
+// // ====================================================================
+// // 9. خلاصه و نکات مهم:
+// // ====================================================================
+// console.log("\n===== خلاصه نکات مهم =====");
+
+// /*
+// ✓ Callback: روش قدیمی، منجر به Callback Hell می‌شود
+// ✓ Promise: بهتر از Callback، اما کد هنوز کمی پیچیده است
+// ✓ Async/Await: بهترین و خوان‌ترین روش، مثل کد Synchronous به نظر می‌رسد
+
+// ✓ try/catch برای مدیریت خطا استفاده کنید
+// ✓ await فقط در تابع async می‌تواند استفاده شود
+// ✓ Promise.all برای اجرای موازی چندین Promise
+// ✓ Event Loop درکش مهم است برای درک ترتیب اجرا
+
+// ✓ Asynchronous برنامه‌های واکنش‌پذیر و کارآمد ایجاد می‌کند
+// ✓ مناسب برای عملیات شبکه‌ای، فایل سیستم، و موارد دیگر
+// */
+
+// console.log("پایان توضیح مبحث Asynchronous");
+
+
+// // json , ajax ,api 
+// // JSON (JavaScript Object Notation) یک فرمت سبک برای تبادل داده‌ها است که به راحتی توسط انسان قابل خواندن و نوشتن است و توسط ماشین‌ها نیز به راحتی قابل تجزیه و تولید است. JSON معمولاً برای ارسال داده‌ها بین سرورها و برنامه‌های وب استفاده می‌شود.
+
+// // مثال از JSON:  
+// // const jsonData = `{
+// //   "name": "محمد",
+// //   "age": 30,
+// //   "isStudent": false,
+// //   "courses": ["ریاضی", "فیزیک", "برنامه‌نویسی"],
+// //   "address": {
+// //     "city": "تهران",
+// //     "country": "ایران"
+// //   }
+// // }`;
+// // // تبدیل JSON به شیء جاوااسکریپت
+// // const jsObject = JSON.parse(jsonData);
+// // console.log("JavaScript Object:", jsObject);
+// // // تبدیل شیء جاوااسکریپت به JSON
+// // const jsonString = JSON.stringify(jsObject);
+// // console.log("JSON String:", jsonString);
+// // AJAX (Asynchronous JavaScript and XML) یک تکنیک در توسعه وب است که به برنامه‌های وب اجازه می‌دهد تا به صورت غیرهمزمان با سرورها ارتباط برقرار کنند و داده‌ها را بدون نیاز به بارگذاری مجدد صفحه دریافت یا ارسال کنند. AJAX معمولاً از XMLHttpRequest یا Fetch API برای انجام درخواست‌های HTTP استفاده می‌کند.
+
+// // مثال از AJAX با استفاده از Fetch API:  
+// // fetch("https://jsonplaceholder.typicode.com/posts/1")
+// //   .then(response => response.json())
+// //   .then(data => {
+// //     console.log("Fetched Data:", data);
+// //   })
+// //   .catch(error => {
+// //     console.error("Error fetching data:", error);
+// //   });
+// // API (Application Programming Interface) یک رابط است که به برنامه‌ها اجازه می‌دهد تا با یکدیگر ارتباط برقرار کنند و از قابلیت‌ها و داده‌های یکدیگر استفاده کنند. APIها معمولاً شامل مجموعه‌ای از قوانین و پروتکل‌ها هستند که نحوه درخواست و پاسخ بین برنامه‌ها را تعریف می‌کنند. APIها می‌توانند به صورت محلی (local) یا از راه دور (remote) باشند و معمولاً از طریق پروتکل‌های HTTP/HTTPS برای برنامه‌های وب استفاده می‌شوند.
+// //xmlHttpRequest
+// const xhr = new XMLHttpRequest();
+// xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+// xhr.onreadystatechange = function () {
+//   if (xhr.readyState === 4) {
+//     if (xhr.status === 200) {  
+//       const data = JSON.parse(xhr.responseText);
+//       console.log("Fetched Data:", data);
+//     } else {
+//       console.error("Error fetching data:", xhr.statusText);
+//     }
+//   }
+// };
+// xhr.send();
+// //fetch api
+// fetch("https://jsonplaceholder.typicode.com/posts/1")
+//   .then(response => response.json())
+//   .then(data => {
+
+//     console.log("Fetched Data:", data);
+//   })
+//   .catch(error => {
+//     console.error("Error fetching data:", error);
+//   });  
+
+
+// // async await with fetch api
 // async function fetchData(url) {
 //   try {
 //     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error("Network response was not ok " + response.statusText);
+//     }
 //     const data = await response.json();
-//     console.log("Fetched data:", data);
+//     console.log("Fetched Data:", data);
 //   } catch (error) {
 //     console.error("Error fetching data:", error);
 //   }
 // }
 // fetchData("https://jsonplaceholder.typicode.com/posts/1");
-// // نکته: در این مثال، تابع fetchData یک تابع غیرهمزمان است که از API داده‌ها را واکشی می‌کند. با استفاده از کلمات کلیدی async و await، ما می‌توانیم عملیات واکشی داده‌ها را به صورت غیرهمزمان انجام دهیم و منتظر بمانیم تا داده‌ها دریافت شوند قبل از اینکه آن‌ها را چاپ کنیم. اگر خطایی رخ دهد، بخش catch آن را مدیریت می‌کند و پیام خطا را چاپ می‌کند. این ساختار به ما اجازه می‌دهد تا عملیات غیرهمزمان را به صورت ساده‌تر و قابل خواندن‌تر مدیریت کنیم.
-// // نکته: استفاده از برنامه‌نویسی غیرهمزمان به ما اجازه می‌دهد تا برنامه‌های واکنش‌پذیرتر و کارآمدتری بسازیم که بتوانند با رویدادها و ورودی‌های کاربر به صورت همزمان تعامل داشته باشند. این ویژگی به ویژه در برنامه‌های وب بسیار مهم است، جایی که کاربران انتظار دارند که برنامه‌ها به سرعت واکنش نشان دهند و بتوانند با آن‌ها تعامل داشته باشند بدون اینکه منتظر بمانند تا عملیات زمان‌بر کامل شود.
 
-// // در برنامه‌نویسی غیرهمزمان، کال‌بک‌ها (Callbacks) توابعی هستند که به عنوان آرگومان به یک تابع غیرهمزمان ارسال می‌شوند و زمانی که عملیات غیرهمزمان کامل شد، این توابع فراخوانی می‌شوند. کال‌بک‌ها به ما اجازه می‌دهند تا کدی را تعریف کنیم که باید پس از اتمام یک عملیات خاص اجرا شود، بدون اینکه برنامه منتظر بماند تا آن عملیات کامل شود.
-
-
-// ====================================================================
-// ================== مبحث Asynchronous (غیرهمزمان) ==================
-// ====================================================================
-
-// توضیح جامع و دقیق مبحث Asynchronous:
-
-// 1. مقدمه و تعریف:
-// Asynchronous برنامه‌نویسی (برنامه‌نویسی غیرهمزمان) به معنای انجام عملیات‌هایی است که
-// سریع تکمیل نمی‌شوند و برنامه نباید منتظر بماند تا آن‌ها کامل شوند.
-// در برنامه‌نویسی Synchronous (همزمان)، خطوط کد یکی‌یکی اجرا می‌شوند و اگر یک عملیات
-// زمان‌بر باشد، برنامه کل متوقف می‌شود. اما در Asynchronous، برنامه می‌تواند کارهای دیگری
-// را انجام دهد درحالی‌که منتظر است تا عملیات زمان‌بر تکمیل شود.
-
-console.log("===== مثال 1: Synchronous vs Asynchronous =====");
-
-
-// مثال Synchronous (زمان‌بر و بلاکینگ):
-function slowTask() {
-  console.log("شروع کار زمان‌بر...");
-  for (let i = 0; i < 1000000000; i++) {
-    // حلقه ای که وقت می‌برد
-  }
-  console.log("کار زمان‌بر تکمیل شد!");
-}
-
-
-console.log("1. قبل از شروع کار");
-// slowTask(); // این خط برنامه را کند می‌کند
-console.log("2. بعد از تعریف کار (توجه: کار هنوز شروع نشده)");
-
-// ====================================================================
-// 2. Callback Functions (توابع بازخوانی):
-// ====================================================================
-// Callback یک تابع است که به عنوان آرگومان به تابع دیگری پاس داده می‌شود
-// و بعد از اتمام یک عملیات غیرهمزمان فراخوانی می‌شود.
-
-console.log("\n===== مثال 2: Callback Functions =====");
-
-function fetchUserData(userId, callback) {
-  console.log(`درحال واکشی داده‌های کاربر ${userId}...`);
-  
-  // شبیه‌سازی یک درخواست شبکه‌ای که 2 ثانیه طول می‌کشد
-  setTimeout(() => {
-    const userData = {
-      id: userId,
-      name: "علی احمدی",
-      email: "ali@example.com"
-    };
-    // بعد از اتمام، callback را با داده‌ها فراخوانی کنید
-    callback(userData);
-  }, 2000);
-}
-
-// استفاده از callback:
-// fetchUserData(1, function(data) {
-//   console.log("داده‌های کاربر دریافت شد:", data);
+// //put and patch 
+// async function updateData(url, updatedData) {
+//   try {
+//     const response = await fetch(url, {
+//       method: "PUT", // یا "PATCH" برای به‌روزرسانی جزئی
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(updatedData)
+//     });
+//     if (!response.ok) {
+//       throw new Error("Network response was not ok " + response.statusText);
+//     }
+//     const data = await response.json();
+//     console.log("Updated Data:", data);
+//   } catch (error) {
+//     console.error("Error updating data:", error);
+//   } 
+// }
+// updateData("https://jsonplaceholder.typicode.com/posts/1", {
+//   title: "عنوان به‌روزرسانی شده",
+//   body: "متن به‌روزرسانی شده",
+//   userId: 1
 // });
 
-// مسئله Callback Hell (Pyramid of Doom):
-// زمانی که چندین عملیات غیرهمزمان درون یکدیگر تودرتو شوند:
-
-function fetchUser(userId, callback) {
-  setTimeout(() => {
-    const user = { id: userId, name: "علی" };
-    callback(user);
-  }, 1000);
-}
-
-function fetchPosts(userId, callback) {
-  setTimeout(() => {
-    const posts = [
-      { id: 1, title: "پست اول" },
-      { id: 2, title: "پست دوم" }
-    ];
-    callback(posts);
-  }, 1000);
-}
-
-function fetchComments(postId, callback) {
-  setTimeout(() => {
-    const comments = [
-      { id: 1, text: "نظر اول" }
-    ];
-    callback(comments);
-  }, 1000);
-}
-
-console.log("\n===== مثال 3: Callback Hell =====");
-// این ساختار بسیار تودرتو و خوانایی‌پذیری کم است:
-/*
-fetchUser(1, function(user) {
-  console.log("کاربر:", user);
-  fetchPosts(user.id, function(posts) {
-    console.log("پست‌ها:", posts);
-    fetchComments(posts[0].id, function(comments) {
-      console.log("نظرات:", comments);
-    });
-  });
-});
-*/
-
-// ====================================================================
-// 3. Promise (وعده):
-// ====================================================================
-// Promise یک شی است که نمایندگی یک عملیات غیرهمزمان است.
-// Promise می‌تواند در سه حالت باشد:
-// - Pending (در انتظار): عملیات هنوز تکمیل نشده
-// - Fulfilled (موفق): عملیات با موفقیت تکمیل شد و یک مقدار بازگشت
-// - Rejected (ناموفق): عملیات ناموفق بود و یک خطا بازگشت
-
-console.log("\n===== مثال 4: Promise =====");
-
-// ایجاد یک Promise:
-const myPromise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    const success = true;
-    if (success) {
-      resolve("عملیات با موفقیت تکمیل شد!"); // fulfilled
-    } else {
-      reject("خطایی رخ داد!"); // rejected
-    }
-  }, 2000);
-});
-
-// استفاده از Promise:
-// myPromise
-//   .then(result => {
-//     console.log("نتیجه:", result);
-//   })
-//   .catch(error => {
-//     console.error("خطا:", error);
-//   });
-
-// مثال عملی‌تر:
-function fetchUserPromise(userId) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (userId > 0) {
-        resolve({
-          id: userId,
-          name: "محمد",
-          email: "mohammad@example.com"
-        });
-      } else {
-        reject("شناسه کاربر باید مثبت باشد!");
-      }
-    }, 1500);
-  });
-}
-
-console.log("\n===== مثال 5: Promise Chain =====");
-// زنجیر Promise (بهتر از Callback Hell):
-/*
-fetchUserPromise(1)
-  .then(user => {
-    console.log("کاربر:", user);
-    return fetchPosts(user.id);
-  })
-  .then(posts => {
-    console.log("پست‌ها:", posts);
-    return fetchComments(posts[0].id);
-  })
-  .then(comments => {
-    console.log("نظرات:", comments);
-  })
-  .catch(error => {
-    console.error("خطا در فرایند:", error);
-  });
-*/
-
-//resolve and reject in promise
-// const samplePromise = new Promise((resolve, reject) => {
-//   const condition = true; // تغییر این مقدار برای تست
-//   if (condition) {
-//     resolve("Promise resolved successfully!");
-//   } else {
-//     reject("Promise rejected with an error.");
+// patchData("https://jsonplaceholder.typicode.com/posts/1", { 
+//   title: "عنوان به‌روزرسانی شده با PATCH"
+// }); 
+// async function patchData(url, updatedData) {
+//   try {
+//     const response = await fetch(url, {
+//       method: "PATCH", // یا "PATCH" برای به‌روزرسانی جزئی
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(updatedData)
+//     }); 
+//     if (!response.ok) {
+//       throw new Error("Network response was not ok " + response.statusText);
+//     }
+//     const data = await response.json();
+//     console.log("Patched Data:", data);
+//   } catch (error) {
+//     console.error("Error patching data:", error);
 //   }
-// });
-// samplePromise
-//   .then((message) => {
-//     console.log(message);
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
-
-
-// ====================================================================
-// 4. Async/Await:
-// ====================================================================
-// Async/Await روش مدرن‌تر و خوان‌تری برای کار با Promise است.
-// async کلمه کلیدی تابع را غیرهمزمان می‌کند و همیشه یک Promise بازمی‌گرداند.
-// await برای منتظر ماندن تا Promise حل شود استفاده می‌شود (فقط در تابع async).
-
-console.log("\n===== مثال 6: Async/Await =====");
-
-async function getUserWithPosts(userId) {
-  try {
-    console.log("درحال بارگذاری داده‌ها...");
-    
-    // منتظر تا Promise حل شود
-    const user = await fetchUserPromise(userId);
-    console.log("کاربر دریافت شد:", user);
-    
-    // می‌توانیم async را دوباره استفاده کنیم
-    // const posts = await fetchPostsPromise(user.id);
-    // console.log("پست‌ها:", posts);
-    
-    return user;
-  } catch (error) {
-    console.error("خطا در دریافت داده‌ها:", error);
-  }
-}
-
-// فراخوانی تابع async:
-// getUserWithPosts(5)
-//   .then(result => {
-//     console.log("نتیجه نهایی:", result);
-//   });
-
-// ====================================================================
-// 5. Parallel Execution (اجرای موازی):
-// ====================================================================
-// استفاده از Promise.all برای انجام چندین عملیات همزمان:
-
-console.log("\n===== مثال 7: Promise.all =====");
-
-function task1() {
-  return new Promise(resolve => {
-    setTimeout(() => resolve("تسک 1 تکمیل شد"), 1000);
-  });
-}
-
-function task2() {
-  return new Promise(resolve => {
-    setTimeout(() => resolve("تسک 2 تکمیل شد"), 1500);
-  });
-}
-
-function task3() {
-  return new Promise(resolve => {
-    setTimeout(() => resolve("تسک 3 تکمیل شد"), 800);
-  });
-}
-
-// اجرای موازی - اگر یکی ناموفق شود، همه ناموفق می‌شوند:
-/*
-Promise.all([task1(), task2(), task3()])
-  .then(results => {
-    console.log("تمام تسک‌ها تکمیل شدند:", results);
-  })
-  .catch(error => {
-    console.error("یکی از تسک‌ها ناموفق شد:", error);
-  });
-*/
-
-// Promise.race - اولین Promise تکمیل شده بازگشت می‌کند:
-/*
-Promise.race([task1(), task2(), task3()])
-  .then(result => {
-    console.log("اولین تسک تکمیل شد:", result);
-  });
-*/
-
-// ====================================================================
-// 6. Error Handling (مدیریت خطا):
-// ====================================================================
-console.log("\n===== مثال 8: Error Handling =====");
-
-async function fetchWithErrorHandling(url) {
-  try {
-    // در عملیات واقعی: const response = await fetch(url);
-    // اگر URL نامعتبر باشد:
-    if (!url) {
-      throw new Error("URL نمی‌تواند خالی باشد!");
-    }
-    
-    // شبیه‌سازی درخواست:
-    const result = await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({ status: 200, data: "موفق" });
-      }, 1000);
-    });
-    
-    console.log("درخواست موفق:", result);
-    return result;
-  } catch (error) {
-    console.error("خطا در درخواست:", error.message);
-    // می‌توانیم خطا را دوباره پرتاب کنیم یا مقدار پیش‌فرض برگردانیم
-    return { status: 500, error: error.message };
-  } finally {
-    // این بلاک همیشه اجرا می‌شود (موفق یا ناموفق)
-    console.log("درخواست پایان یافت.");
-  }
-}
-
-// فراخوانی:
-// fetchWithErrorHandling("https://example.com")
-//   .then(result => console.log("نتیجه:", result));
-
-// ====================================================================
-// 7. Real-World Example (مثال عملی واقعی):
-// ====================================================================
-console.log("\n===== مثال 9: مثال واقعی =====");
-
-// شبیه‌سازی یک درخواست API واقعی:
-function fetchFromAPI(endpoint) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (Math.random() > 0.3) {
-        resolve({
-          status: 200,
-          data: `داده‌های ${endpoint}`,
-          timestamp: new Date().toISOString()
-        });
-      } else {
-        reject(new Error("Connection Timeout"));
-      }
-    }, 1000 + Math.random() * 2000);
-  });
-}
-
-// استفاده از Async/Await:
-async function getUserDataWithRetry(userId, maxRetries = 3) {
-  let lastError;
-  
-  for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    try {
-      console.log(`تلاش ${attempt} برای دریافت داده‌های کاربر...`);
-      const result = await fetchFromAPI(`/users/${userId}`);
-      console.log("موفق! داده‌ها دریافت شدند:");
-      return result;
-    } catch (error) {
-      lastError = error;
-      console.log(`تلاش ${attempt} ناموفق بود: ${error.message}`);
-      
-      if (attempt < maxRetries) {
-        // منتظر 2 ثانیه قبل از تلاش دوباره
-        await new Promise(resolve => setTimeout(resolve, 2000));
-      }
-    }
-  }
-  
-  // اگر تمام تلاش‌ها ناموفق شد:
-  throw lastError;
-}
-
-// فراخوانی:
-/*
-getUserDataWithRetry(1)
-  .then(data => {
-    console.log("داده‌های نهایی:", data);
-  })
-  .catch(error => {
-    console.error("ناتوانایی در دریافت داده‌ها بعد از تمام تلاش‌ها:", error);
-  });
-*/
-
-// ====================================================================
-// 8. Event Loop و Call Stack:
-// ====================================================================
-console.log("\n===== مثال 10: Event Loop =====");
-
-// درک اینکه چگونه Asynchronous کار می‌کند:
-console.log("شروع برنامه");
-
-setTimeout(() => {
-  console.log("Timeout 1 (0ms)");
-}, 0);
-
-Promise.resolve()
-  .then(() => {
-    console.log("Promise تکمیل شد");
-  });
-
-setTimeout(() => {
-  console.log("Timeout 2 (0ms)");
-}, 0);
-
-console.log("پایان برنامه");
-
-/*
-خروجی:
-شروع برنامه
-پایان برنامه
-Promise تکمیل شد
-Timeout 1 (0ms)
-Timeout 2 (0ms)
-
-توضیح:
-1. کد Synchronous ابتدا اجرا می‌شود
-2. سپس Microtasks (Promise) اجرا می‌شوند
-3. در نهایت Macrotasks (setTimeout) اجرا می‌شوند
-*/
-
-// ====================================================================
-// 9. خلاصه و نکات مهم:
-// ====================================================================
-console.log("\n===== خلاصه نکات مهم =====");
-
-/*
-✓ Callback: روش قدیمی، منجر به Callback Hell می‌شود
-✓ Promise: بهتر از Callback، اما کد هنوز کمی پیچیده است
-✓ Async/Await: بهترین و خوان‌ترین روش، مثل کد Synchronous به نظر می‌رسد
-
-✓ try/catch برای مدیریت خطا استفاده کنید
-✓ await فقط در تابع async می‌تواند استفاده شود
-✓ Promise.all برای اجرای موازی چندین Promise
-✓ Event Loop درکش مهم است برای درک ترتیب اجرا
-
-✓ Asynchronous برنامه‌های واکنش‌پذیر و کارآمد ایجاد می‌کند
-✓ مناسب برای عملیات شبکه‌ای، فایل سیستم، و موارد دیگر
-*/
-
-console.log("پایان توضیح مبحث Asynchronous");
-
-
-// json , ajax ,api 
-// JSON (JavaScript Object Notation) یک فرمت سبک برای تبادل داده‌ها است که به راحتی توسط انسان قابل خواندن و نوشتن است و توسط ماشین‌ها نیز به راحتی قابل تجزیه و تولید است. JSON معمولاً برای ارسال داده‌ها بین سرورها و برنامه‌های وب استفاده می‌شود.
-
-// مثال از JSON:  
-// const jsonData = `{
-//   "name": "محمد",
-//   "age": 30,
-//   "isStudent": false,
-//   "courses": ["ریاضی", "فیزیک", "برنامه‌نویسی"],
-//   "address": {
-//     "city": "تهران",
-//     "country": "ایران"
-//   }
-// }`;
-// // تبدیل JSON به شیء جاوااسکریپت
-// const jsObject = JSON.parse(jsonData);
-// console.log("JavaScript Object:", jsObject);
-// // تبدیل شیء جاوااسکریپت به JSON
-// const jsonString = JSON.stringify(jsObject);
-// console.log("JSON String:", jsonString);
-// AJAX (Asynchronous JavaScript and XML) یک تکنیک در توسعه وب است که به برنامه‌های وب اجازه می‌دهد تا به صورت غیرهمزمان با سرورها ارتباط برقرار کنند و داده‌ها را بدون نیاز به بارگذاری مجدد صفحه دریافت یا ارسال کنند. AJAX معمولاً از XMLHttpRequest یا Fetch API برای انجام درخواست‌های HTTP استفاده می‌کند.
-
-// مثال از AJAX با استفاده از Fetch API:  
-// fetch("https://jsonplaceholder.typicode.com/posts/1")
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log("Fetched Data:", data);
-//   })
-//   .catch(error => {
-//     console.error("Error fetching data:", error);
-//   });
-// API (Application Programming Interface) یک رابط است که به برنامه‌ها اجازه می‌دهد تا با یکدیگر ارتباط برقرار کنند و از قابلیت‌ها و داده‌های یکدیگر استفاده کنند. APIها معمولاً شامل مجموعه‌ای از قوانین و پروتکل‌ها هستند که نحوه درخواست و پاسخ بین برنامه‌ها را تعریف می‌کنند. APIها می‌توانند به صورت محلی (local) یا از راه دور (remote) باشند و معمولاً از طریق پروتکل‌های HTTP/HTTPS برای برنامه‌های وب استفاده می‌شوند.
+// }
